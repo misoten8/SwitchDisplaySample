@@ -1,0 +1,2 @@
+# SwitchDisplaySample
+UI管理フレームワークテストプロジェクト
