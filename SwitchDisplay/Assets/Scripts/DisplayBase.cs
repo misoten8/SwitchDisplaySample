@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class DisplayBase : MonoBehaviour
 {
+	
+
 	void Start ()
 	{
 		
