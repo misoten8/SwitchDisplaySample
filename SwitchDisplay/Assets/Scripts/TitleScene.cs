@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// TitleScene クラス
@@ -13,7 +11,7 @@ public class TitleScene : MonoBehaviour
 
 	void Start ()
 	{
-		DisplayManager.SwitchDisplay(_firstUsingDisplay);
+		
 	}
 	
 	void Update ()

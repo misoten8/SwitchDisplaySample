@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 /// <summary>
 /// DisplayManager クラス
@@ -29,65 +30,30 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		{ DisplayType.Menu, "MenuDisplay" }
 	};
 
-	private DisplayBase _currentDisplay = null;
-	private DisplayBase _nextDisplay = null;
-
-	private Scene _currentDisplayScene = new Scene();
-	private Scene _nextDisplayScene = new Scene();
+	private AsyncOperation _async = null;
 
 	private void Start()
 	{
-		StartDisplay(CurrentDisplayType);
-	}
-
-	public static void StartDisplay(DisplayType type)
-	{
 		// シーン遷移
-		SceneManager.LoadSceneAsync(_DISPLAY_MAP[type], LoadSceneMode.Additive);
-		Debug.Log(_DISPLAY_MAP[type] + " シーン読み込みを開始します");
-
-		// シーンオブジェクトのAwake処理がどう呼ばれるか気になる
-
-		SceneManager.sceneLoaded += (scene, mode) =>
-		{
-			Instance._currentDisplayScene = scene;
-			Instance._currentDisplayType = type;
-			Debug.Log(_DISPLAY_MAP[type] + " シーン読み込み完了");
-		};
+		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[CurrentDisplayType], LoadSceneMode.Additive);
+		Instance._currentDisplayType = CurrentDisplayType;
+		SceneManager.sceneLoaded += (scene, mode) => Instance._async = null;
 	}
 
-	// シーンデータクラスを受け取る
+	/// <summary>
+	/// ディスプレイの切り替え処理
+	/// ディスプレイ遷移中に呼び出した場合、処理をスキップする
+	/// </summary>
 	public static void SwitchDisplay(DisplayType type)
 	{
-		// 代用処理ディスプレイクラスの実装完了後に消去する
-		if (SceneManager.sceneCount < 2)
+		if (Instance._async != null)
 			return;
 
-		//Scene currentScene = SceneManager.GetSceneAt(1);
-
 		// シーン遷移
-		SceneManager.LoadSceneAsync(_DISPLAY_MAP[type], LoadSceneMode.Additive);
+		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[type], LoadSceneMode.Additive);
 		Debug.Log(_DISPLAY_MAP[type] + " シーン読み込みを開始します");
-
-		// シーンオブジェクトのAwake処理がどう呼ばれるか気になる
-
-		SceneManager.sceneLoaded += (scene, mode) => 
-		{
-			Instance._nextDisplayScene = scene;
-			SceneManager.UnloadSceneAsync(Instance._currentDisplayScene);
-			Debug.Log(_DISPLAY_MAP[type] + " シーン読み込み完了\nこれより" + _DISPLAY_MAP[Instance._currentDisplayType] + " シーンの解放を行います");
-		};
-
-		SceneManager.sceneUnloaded += (secne) => 
-		{
-			Instance._currentDisplay = Instance._nextDisplay;
-			Instance._nextDisplay = null;
-			Instance._currentDisplayScene = Instance._nextDisplayScene;
-			Instance._nextDisplayScene = new Scene();
-			
-			Debug.Log(_DISPLAY_MAP[Instance._currentDisplayType] + " シーンの開放が完了しました");
-			Instance._currentDisplayType = type;
-		};
+		SceneManager.sceneLoaded += Instance.SceneLoaded;
+		SceneManager.sceneUnloaded += Instance.SceneUnloaded;
 	}
 
 	// 欲しいメソッドイメージ
@@ -104,12 +70,28 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	/// </summary>
 	public static T GetInstanceDisplay<T>() where T : DisplayBase
 	{
-
 		return default(T);
 	}
 
 	public static T GetInstanceSceneCache<T>() where T : SceneCacheBase
 	{
 		return default(T);
+	}
+
+	private void SceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		//SceneManager.sceneUnloaded -= SceneUnloaded;
+		SceneManager.UnloadSceneAsync(_DISPLAY_MAP[Instance._currentDisplayType]);
+		Debug.Log(scene.name + " シーン読み込み完了\nこれより" + Instance._currentDisplayType.ToString() + " シーンの解放を行います");
+		Instance._currentDisplayType = _DISPLAY_MAP.First(e => e.Value == scene.name).Key;
+		Instance._async = null;
+	}
+
+	private void SceneUnloaded(Scene scene)
+	{
+		//SceneManager.sceneLoaded -= SceneLoaded;
+		Debug.Log(scene.name + " シーンの開放が完了しました");
+		SceneManager.sceneLoaded -= SceneLoaded;
+		SceneManager.sceneUnloaded -= SceneUnloaded;
 	}
 }

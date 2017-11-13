@@ -12,6 +12,8 @@ public class DisplayTest : MonoBehaviour
 	{
 		if(GUI.Button(new Rect(new Vector2(200,0), new Vector2(400, 100)), "ディスプレイ切り替え"))
 		{
+			Debug.Log("ボタンが押されました");
+
 			switch (DisplayManager.CurrentDisplayType)
 			{
 				case DisplayManager.DisplayType.Logo:
