@@ -108,115 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &101701103
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 101701104}
-  - component: {fileID: 101701105}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &101701104
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 101701103}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &101701105
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 101701103}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &113224354
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +119,7 @@ GameObject:
   - component: {fileID: 113224358}
   - component: {fileID: 113224357}
   - component: {fileID: 113224356}
+  - component: {fileID: 113224355}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -235,6 +127,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!81 &113224355
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113224354}
+  m_Enabled: 1
 --- !u!124 &113224356
 Behaviour:
   m_ObjectHideFlags: 0
@@ -298,224 +197,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &308257309
+--- !u!1 &268186399
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 308257310}
-  - component: {fileID: 308257311}
+  - component: {fileID: 268186400}
+  - component: {fileID: 268186401}
   m_Layer: 0
-  m_Name: TextFx_AudioSource
+  m_Name: MenuDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &308257310
-Transform:
+--- !u!224 &268186400
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308257309}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 9
+  m_GameObject: {fileID: 268186399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 604433013}
+  - {fileID: 766971591}
+  m_Father: {fileID: 703328684}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &308257311
-AudioSource:
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &268186401
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308257309}
+  m_GameObject: {fileID: 268186399}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &363404515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 363404516}
-  - component: {fileID: 363404517}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &363404516
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 363404515}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &363404517
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 363404515}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26da6d328d79c84ca6e7c1581ed62ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &604433012
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,23 +268,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604433012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1059975927}
-  - {fileID: 1173538215}
-  - {fileID: 2005993799}
-  - {fileID: 713180914}
-  - {fileID: 1341565541}
-  - {fileID: 2047417090}
-  - {fileID: 363404516}
-  - {fileID: 1836129296}
-  - {fileID: 1994941505}
-  - {fileID: 308257310}
-  - {fileID: 101701104}
-  m_Father: {fileID: 703328684}
-  m_RootOrder: 1
+  m_Children: []
+  m_Father: {fileID: 268186400}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -648,9 +365,9 @@ MonoBehaviour:
             bottom_left: {r: 0, g: 0, b: 0, a: 0}
           m_from:
             top_left: {r: 0, g: 0, b: 0, a: 0}
-            top_right: {r: 1, g: 1, b: 1, a: 1}
-            bottom_right: {r: 1, g: 1, b: 1, a: 1}
-            bottom_left: {r: 1, g: 1, b: 1, a: 1}
+            top_right: {r: 1, g: 1, b: 1, a: 0}
+            bottom_right: {r: 1, g: 1, b: 1, a: 0}
+            bottom_left: {r: 1, g: 1, b: 1, a: 0}
           m_to:
             top_left: {r: 1, g: 1, b: 1, a: 1}
             top_right: {r: 1, g: 1, b: 1, a: 1}
@@ -661,7 +378,7 @@ MonoBehaviour:
             top_right: {r: 1, g: 1, b: 1, a: 1}
             bottom_right: {r: 1, g: 1, b: 1, a: 1}
             bottom_left: {r: 1, g: 1, b: 1, a: 1}
-          m_override_alpha: 0
+          m_override_alpha: 1
           m_use_colour_gradients: 0
           m_value_state: 2
           m_offset_progression:
@@ -688,20 +405,20 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - top_left: {r: 0, g: 0, b: 0, a: 0}
-            top_right: {r: 0, g: 0, b: 0, a: 0}
-            bottom_right: {r: 0, g: 0, b: 0, a: 0}
-            bottom_left: {r: 0, g: 0, b: 0, a: 0}
+          - top_left: {r: 0, g: 0, b: 0, a: 1}
+            top_right: {r: 0, g: 0, b: 0, a: 1}
+            bottom_right: {r: 0, g: 0, b: 0, a: 1}
+            bottom_left: {r: 0, g: 0, b: 0, a: 1}
           m_from:
-            top_left: {r: 0, g: 0, b: 0, a: 0}
+            top_left: {r: 0, g: 0, b: 0, a: 1}
             top_right: {r: 1, g: 1, b: 1, a: 1}
             bottom_right: {r: 1, g: 1, b: 1, a: 1}
             bottom_left: {r: 1, g: 1, b: 1, a: 1}
           m_to:
-            top_left: {r: 0.6910225, g: 0.9850746, b: 0.8123447, a: 1}
-            top_right: {r: 0.6910225, g: 0.9850746, b: 0.8123447, a: 1}
-            bottom_right: {r: 0.6910225, g: 0.9850746, b: 0.8123447, a: 1}
-            bottom_left: {r: 0.6910225, g: 0.9850746, b: 0.8123447, a: 1}
+            top_left: {r: 1, g: 1, b: 1, a: 1}
+            top_right: {r: 1, g: 1, b: 1, a: 1}
+            bottom_right: {r: 1, g: 1, b: 1, a: 1}
+            bottom_left: {r: 1, g: 1, b: 1, a: 1}
           m_to_to:
             top_left: {r: 1, g: 1, b: 1, a: 1}
             top_right: {r: 1, g: 1, b: 1, a: 1}
@@ -740,8 +457,19 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - {x: 0, y: 0, z: -25}
-          m_from: {x: 0, y: 0, z: -25}
+          - {x: 3.8638952, y: 0, z: 0}
+          - {x: 2.8470805, y: 0.16946909, z: 0}
+          - {x: 2.033629, y: 0.13557528, z: 0}
+          - {x: 1.2201774, y: 0.16946909, z: 0}
+          - {x: 0.6100887, y: 0.54230106, z: 0}
+          - {x: -0.13557526, y: 0, z: 0}
+          - {x: -0.8473454, y: 0, z: 0}
+          - {x: -1.3896464, y: 0.16946909, z: 0}
+          - {x: -2.203098, y: 0.30504435, z: 0}
+          - {x: -2.7453992, y: 0, z: 0}
+          - {x: -3.3215942, y: 0.16946909, z: 0}
+          - {x: -4.1011515, y: 0.30504435, z: 0}
+          m_from: {x: 0, y: 0, z: 0}
           m_to: {x: 0, y: 0, z: 0}
           m_to_to: {x: 0, y: 0, z: 0}
           m_ease_curve_per_axis: 0
@@ -762,7 +490,7 @@ MonoBehaviour:
             m_data_type: 0
             m_start_state: 0
             m_action_index: 0
-          m_force_position_override: 0
+          m_force_position_override: 1
         m_end_pos:
           m_reference_data:
             m_data_type: 8
@@ -1166,7 +894,7 @@ MonoBehaviour:
             m_data_type: 0
             m_start_state: 0
             m_action_index: 0
-        m_force_same_start_time: 0
+        m_force_same_start_time: 1
         m_delay_with_white_space_influence: 0
         m_delay_progression:
           m_reference_data:
@@ -1174,11 +902,11 @@ MonoBehaviour:
             m_start_state: 0
             m_action_index: 0
           m_progression: 0
-          m_progression_idx: 2
+          m_progression_idx: 1
           m_ease_type: 0
           m_is_offset_from_last: 0
           m_to_to_bool: 0
-          m_unique_randoms: 0
+          m_unique_randoms: 1
           m_animate_per: 0
           m_override_animate_per_option: 0
           m_custom_ease_curve:
@@ -1188,19 +916,19 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - 0
-          - 0.1375
-          - 0.275
-          - 0.41250002
-          - 0.55
-          - 0.6875
-          - 0.82500005
-          - 0.9625
-          - 1.1
-          - 1.2375
-          - 1.375
+          - 0.4484834
+          - 0.2153251
+          - 0.26881585
+          - 0.21906534
+          - 0.24911334
+          - 0.5290418
+          - 0.20526667
+          - 0.43892854
+          - 0.668555
+          - 0.5094909
+          - 0.39018637
           m_from: 0
-          m_to: 1.375
+          m_to: 0.6875
           m_to_to: 0
         m_duration_progression:
           m_reference_data:
@@ -1226,116 +954,12 @@ MonoBehaviour:
           m_from: 0.5
           m_to: 1
           m_to_to: 1
-        m_ease_type: 2
+        m_ease_type: 1
         m_letter_anchor_start: 4
         m_letter_anchor_end: 4
         m_letter_anchor_2_way: 0
         m_particle_effects: []
-        m_audio_effects:
-        - m_editor_display: 0
-          m_play_when: 1
-          m_effect_assignment: 0
-          m_loop_play_once: 0
-          CUSTOM_LETTERS_LIST_POS: {x: 0, y: 0}
-          m_effect_assignment_custom_letters: 
-          m_delay:
-            m_reference_data:
-              m_data_type: 0
-              m_start_state: 0
-              m_action_index: 0
-            m_progression: 0
-            m_progression_idx: 0
-            m_ease_type: 0
-            m_is_offset_from_last: 0
-            m_to_to_bool: 0
-            m_unique_randoms: 0
-            m_animate_per: 0
-            m_override_animate_per_option: 0
-            m_custom_ease_curve:
-              serializedVersion: 2
-              m_Curve: []
-              m_PreInfinity: 2
-              m_PostInfinity: 2
-              m_RotationOrder: 4
-            m_values:
-            - 0
-            m_from: 0
-            m_to: 0
-            m_to_to: 0
-          m_audio_clip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d,
-            type: 3}
-          m_offset_time:
-            m_reference_data:
-              m_data_type: 0
-              m_start_state: 0
-              m_action_index: 0
-            m_progression: 0
-            m_progression_idx: 0
-            m_ease_type: 0
-            m_is_offset_from_last: 0
-            m_to_to_bool: 0
-            m_unique_randoms: 0
-            m_animate_per: 0
-            m_override_animate_per_option: 0
-            m_custom_ease_curve:
-              serializedVersion: 2
-              m_Curve: []
-              m_PreInfinity: 2
-              m_PostInfinity: 2
-              m_RotationOrder: 4
-            m_values:
-            - 0
-            m_from: 0
-            m_to: 0
-            m_to_to: 0
-          m_volume:
-            m_reference_data:
-              m_data_type: 0
-              m_start_state: 0
-              m_action_index: 0
-            m_progression: 0
-            m_progression_idx: 0
-            m_ease_type: 0
-            m_is_offset_from_last: 0
-            m_to_to_bool: 0
-            m_unique_randoms: 0
-            m_animate_per: 0
-            m_override_animate_per_option: 0
-            m_custom_ease_curve:
-              serializedVersion: 2
-              m_Curve: []
-              m_PreInfinity: 2
-              m_PostInfinity: 2
-              m_RotationOrder: 4
-            m_values:
-            - 1
-            m_from: 1
-            m_to: 1
-            m_to_to: 1
-          m_pitch:
-            m_reference_data:
-              m_data_type: 0
-              m_start_state: 0
-              m_action_index: 0
-            m_progression: 0
-            m_progression_idx: 0
-            m_ease_type: 0
-            m_is_offset_from_last: 0
-            m_to_to_bool: 0
-            m_unique_randoms: 0
-            m_animate_per: 0
-            m_override_animate_per_option: 0
-            m_custom_ease_curve:
-              serializedVersion: 2
-              m_Curve: []
-              m_PreInfinity: 2
-              m_PostInfinity: 2
-              m_RotationOrder: 4
-            m_values:
-            - 1
-            m_from: 1
-            m_to: 1
-            m_to_to: 1
+        m_audio_effects: []
         m_anchor_offset: {x: 0.5, y: 0.5, z: 0}
         m_anchor_offset_end: {x: 0.5, y: 0.5, z: 0}
       - m_colour_section_foldout: 0
@@ -3184,7 +2808,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 7
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_end_colour:
           m_reference_data:
             m_data_type: 7
@@ -3230,7 +2854,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 7
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_position_transition_active: 1
         m_position_axis_ease_data:
           m_override_default: 0
@@ -3277,7 +2901,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 8
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
           m_force_position_override: 0
         m_end_pos:
           m_reference_data:
@@ -3368,7 +2992,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 10
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_global_end_euler_rotation:
           m_reference_data:
             m_data_type: 10
@@ -3457,7 +3081,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 9
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_end_euler_rotation:
           m_reference_data:
             m_data_type: 9
@@ -3546,7 +3170,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 12
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_global_end_scale:
           m_reference_data:
             m_data_type: 12
@@ -3635,7 +3259,7 @@ MonoBehaviour:
           m_offset_progression:
             m_data_type: 11
             m_start_state: 1
-            m_action_index: 2
+            m_action_index: 1
         m_end_scale:
           m_reference_data:
             m_data_type: 11
@@ -4444,10 +4068,10 @@ MonoBehaviour:
     m_time_type: 0
     m_letters:
     - m_base_vertices:
-      - {x: -124.811874, y: 17.0198, z: 0}
-      - {x: -92.66336, y: 17.0198, z: 0}
-      - {x: -92.66336, y: -17.0198, z: 0}
-      - {x: -124.811874, y: -17.0198, z: 0}
+      - {x: -116.32358, y: 15.862307, z: 0}
+      - {x: -84.59897, y: 15.862307, z: 0}
+      - {x: -84.59897, y: -15.862307, z: 0}
+      - {x: -116.32358, y: -15.862307, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4462,38 +4086,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 0
-      m_width: 32.148514
-      m_height: 34.0396
+      m_width: 31.72461
+      m_height: 31.724613
       m_progression_variables:
         m_letter_value: 0
         m_letter_value_inc_white_space: 0
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -124.811874, y: 18.984701, z: 0}
-      - {x: -92.66336, y: 18.984701, z: 0}
-      - {x: -92.66336, y: -18.984701, z: 0}
-      - {x: -124.811874, y: -18.984701, z: 0}
+      - {x: -116.32358, y: 15.862307, z: 0}
+      - {x: -84.59897, y: 15.862307, z: 0}
+      - {x: -84.59897, y: -15.862307, z: 0}
+      - {x: -116.32358, y: -15.862307, z: 0}
       m_current_animated_colours:
-      - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-      - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-      - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-      - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: -108.737625, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: -124.81188, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_center: {x: -108.737625, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_right: {x: -92.66337, y: 17.0198, z: 0}
-      m_active_anchor_offset_middle_left: {x: -124.81188, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: -108.737625, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: -92.66337, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: -124.81188, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_center: {x: -108.737625, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_right: {x: -92.66337, y: -17.0198, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: -100.46127, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -116.32358, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_center: {x: -100.46127, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_right: {x: -84.59897, y: 15.862307, z: 0}
+      m_active_anchor_offset_middle_left: {x: -116.32358, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: -100.46127, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: -84.59897, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -116.32358, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_center: {x: -100.46127, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_right: {x: -84.59897, y: -15.862307, z: 0}
     - m_base_vertices:
-      - {x: -92.66336, y: 9.455444, z: 0}
-      - {x: -68.0792, y: 9.455444, z: 0}
-      - {x: -68.0792, y: -18.910889, z: 0}
-      - {x: -92.66336, y: -18.910889, z: 0}
+      - {x: -86.36144, y: 8.812392, z: 0}
+      - {x: -61.686745, y: 8.812392, z: 0}
+      - {x: -61.686745, y: -17.624784, z: 0}
+      - {x: -86.36144, y: -17.624784, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4508,38 +4132,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 1
-      m_width: 24.58416
-      m_height: 28.366333
+      m_width: 24.674698
+      m_height: 26.437176
       m_progression_variables:
         m_letter_value: 1
         m_letter_value_inc_white_space: 1
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -92.66336, y: 10.605317, z: 0}
-      - {x: -68.0792, y: 10.605317, z: 0}
-      - {x: -68.0792, y: -20.06076, z: 0}
-      - {x: -92.66336, y: -20.06076, z: 0}
+      - {x: -86.36144, y: 8.812392, z: 0}
+      - {x: -61.686745, y: 8.812392, z: 0}
+      - {x: -61.686745, y: -17.624784, z: 0}
+      - {x: -86.36144, y: -17.624784, z: 0}
       m_current_animated_colours:
-      - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-      - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-      - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-      - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: -80.37128, y: -4.727722, z: 0}
-      m_active_anchor_offset_upper_left: {x: -92.66336, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_center: {x: -80.37128, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_right: {x: -68.07919, y: 9.455444, z: 0}
-      m_active_anchor_offset_middle_left: {x: -92.66336, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_center: {x: -80.37128, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_right: {x: -68.07919, y: -4.727722, z: 0}
-      m_active_anchor_offset_lower_left: {x: -92.66336, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_center: {x: -80.37128, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_right: {x: -68.07919, y: -18.910889, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: -74.02409, y: -4.406196, z: 0}
+      m_active_anchor_offset_upper_left: {x: -86.36144, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_center: {x: -74.02409, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_right: {x: -61.686745, y: 8.812391, z: 0}
+      m_active_anchor_offset_middle_left: {x: -86.36144, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_center: {x: -74.02409, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_right: {x: -61.686745, y: -4.406196, z: 0}
+      m_active_anchor_offset_lower_left: {x: -86.36144, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_center: {x: -74.02409, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_right: {x: -61.686745, y: -17.624784, z: 0}
     - m_base_vertices:
-      - {x: -68.0792, y: 9.455444, z: 0}
-      - {x: -45.386135, y: 9.455444, z: 0}
-      - {x: -45.386135, y: -17.0198, z: 0}
-      - {x: -68.0792, y: -17.0198, z: 0}
+      - {x: -63.449226, y: 8.812392, z: 0}
+      - {x: -42.299484, y: 8.812392, z: 0}
+      - {x: -42.299484, y: -15.862307, z: 0}
+      - {x: -63.449226, y: -15.862307, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4554,38 +4178,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 2
-      m_width: 22.693066
-      m_height: 26.475245
+      m_width: 21.149742
+      m_height: 24.674698
       m_progression_variables:
         m_letter_value: 2
         m_letter_value_inc_white_space: 2
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -68.0792, y: 10.073614, z: 0}
-      - {x: -45.386135, y: 10.073614, z: 0}
-      - {x: -45.386135, y: -17.63797, z: 0}
-      - {x: -68.0792, y: -17.63797, z: 0}
+      - {x: -63.449226, y: 8.812392, z: 0}
+      - {x: -42.299484, y: 8.812392, z: 0}
+      - {x: -42.299484, y: -15.862307, z: 0}
+      - {x: -63.449226, y: -15.862307, z: 0}
       m_current_animated_colours:
-      - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-      - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-      - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-      - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: -56.732666, y: -3.782178, z: 0}
-      m_active_anchor_offset_upper_left: {x: -68.0792, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_center: {x: -56.732666, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_right: {x: -45.38613, y: 9.455444, z: 0}
-      m_active_anchor_offset_middle_left: {x: -68.0792, y: -3.782178, z: 0}
-      m_active_anchor_offset_middle_center: {x: -56.732666, y: -3.782178, z: 0}
-      m_active_anchor_offset_middle_right: {x: -45.38613, y: -3.782178, z: 0}
-      m_active_anchor_offset_lower_left: {x: -68.0792, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_center: {x: -56.732666, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_right: {x: -45.38613, y: -17.0198, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: -52.87435, y: -3.5249572, z: 0}
+      m_active_anchor_offset_upper_left: {x: -63.449223, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_center: {x: -52.87435, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_right: {x: -42.29948, y: 8.812391, z: 0}
+      m_active_anchor_offset_middle_left: {x: -63.449223, y: -3.5249572, z: 0}
+      m_active_anchor_offset_middle_center: {x: -52.87435, y: -3.5249572, z: 0}
+      m_active_anchor_offset_middle_right: {x: -42.29948, y: -3.5249572, z: 0}
+      m_active_anchor_offset_lower_left: {x: -63.449223, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_center: {x: -52.87435, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_right: {x: -42.29948, y: -15.862307, z: 0}
     - m_base_vertices:
-      - {x: -45.386135, y: 7.564356, z: 0}
-      - {x: -22.693068, y: 7.564356, z: 0}
-      - {x: -22.693068, y: -18.910889, z: 0}
-      - {x: -45.386135, y: -18.910889, z: 0}
+      - {x: -42.299484, y: 8.812392, z: 0}
+      - {x: -21.149742, y: 8.812392, z: 0}
+      - {x: -21.149742, y: -17.624784, z: 0}
+      - {x: -42.299484, y: -17.624784, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4600,38 +4224,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 3
-      m_width: 22.693068
-      m_height: 26.475245
+      m_width: 21.149742
+      m_height: 26.437176
       m_progression_variables:
         m_letter_value: 3
         m_letter_value_inc_white_space: 3
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -45.386135, y: 7.7274837, z: 0}
-      - {x: -22.693068, y: 7.7274837, z: 0}
-      - {x: -22.693068, y: -19.074017, z: 0}
-      - {x: -45.386135, y: -19.074017, z: 0}
+      - {x: -42.299484, y: 8.812392, z: 0}
+      - {x: -21.149742, y: 8.812392, z: 0}
+      - {x: -21.149742, y: -17.624784, z: 0}
+      - {x: -42.299484, y: -17.624784, z: 0}
       m_current_animated_colours:
-      - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-      - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-      - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-      - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: -34.0396, y: -5.6732664, z: 0}
-      m_active_anchor_offset_upper_left: {x: -45.386135, y: 7.564356, z: 0}
-      m_active_anchor_offset_upper_center: {x: -34.0396, y: 7.564356, z: 0}
-      m_active_anchor_offset_upper_right: {x: -22.693066, y: 7.564356, z: 0}
-      m_active_anchor_offset_middle_left: {x: -45.386135, y: -5.6732664, z: 0}
-      m_active_anchor_offset_middle_center: {x: -34.0396, y: -5.6732664, z: 0}
-      m_active_anchor_offset_middle_right: {x: -22.693066, y: -5.6732664, z: 0}
-      m_active_anchor_offset_lower_left: {x: -45.386135, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_center: {x: -34.0396, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_right: {x: -22.693066, y: -18.910889, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: -31.724613, y: -4.406196, z: 0}
+      m_active_anchor_offset_upper_left: {x: -42.299484, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_center: {x: -31.724613, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_right: {x: -21.149742, y: 8.812391, z: 0}
+      m_active_anchor_offset_middle_left: {x: -42.299484, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_center: {x: -31.724613, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_right: {x: -21.149742, y: -4.406196, z: 0}
+      m_active_anchor_offset_lower_left: {x: -42.299484, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_center: {x: -31.724613, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_right: {x: -21.149742, y: -17.624784, z: 0}
     - m_base_vertices:
-      - {x: -22.693068, y: -15.128712, z: 0}
-      - {x: -11.346534, y: -15.128712, z: 0}
-      - {x: -11.346534, y: -15.128712, z: 0}
-      - {x: -22.693068, y: -15.128712, z: 0}
+      - {x: -21.149742, y: -14.099828, z: 0}
+      - {x: -10.574871, y: -14.099828, z: 0}
+      - {x: -10.574871, y: -14.099828, z: 0}
+      - {x: -21.149742, y: -14.099828, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4646,7 +4270,7 @@ MonoBehaviour:
       m_visible_character: 0
       m_stub_instance: 0
       m_mesh_index: 4
-      m_width: 11.346534
+      m_width: 10.574871
       m_height: 0
       m_progression_variables:
         m_letter_value: -1
@@ -4655,21 +4279,21 @@ MonoBehaviour:
         m_line_value: 0
       m_current_animated_vertices: []
       m_current_animated_colours: []
-      m_anchor_offset_middle_center: {x: -17.0198, y: -15.128712, z: 0}
-      m_active_anchor_offset_upper_left: {x: -22.693068, y: -15.128712, z: 0}
-      m_active_anchor_offset_upper_center: {x: -17.0198, y: -15.128712, z: 0}
-      m_active_anchor_offset_upper_right: {x: -11.346533, y: -15.128712, z: 0}
-      m_active_anchor_offset_middle_left: {x: -22.693068, y: -15.128712, z: 0}
-      m_active_anchor_offset_middle_center: {x: -17.0198, y: -15.128712, z: 0}
-      m_active_anchor_offset_middle_right: {x: -11.346533, y: -15.128712, z: 0}
-      m_active_anchor_offset_lower_left: {x: -22.693068, y: -15.128712, z: 0}
-      m_active_anchor_offset_lower_center: {x: -17.0198, y: -15.128712, z: 0}
-      m_active_anchor_offset_lower_right: {x: -11.346533, y: -15.128712, z: 0}
+      m_anchor_offset_middle_center: {x: -15.862307, y: -14.099828, z: 0}
+      m_active_anchor_offset_upper_left: {x: -21.149742, y: -14.099828, z: 0}
+      m_active_anchor_offset_upper_center: {x: -15.862307, y: -14.099828, z: 0}
+      m_active_anchor_offset_upper_right: {x: -10.574871, y: -14.099828, z: 0}
+      m_active_anchor_offset_middle_left: {x: -21.149742, y: -14.099828, z: 0}
+      m_active_anchor_offset_middle_center: {x: -15.862307, y: -14.099828, z: 0}
+      m_active_anchor_offset_middle_right: {x: -10.574871, y: -14.099828, z: 0}
+      m_active_anchor_offset_lower_left: {x: -21.149742, y: -14.099828, z: 0}
+      m_active_anchor_offset_lower_center: {x: -15.862307, y: -14.099828, z: 0}
+      m_active_anchor_offset_lower_right: {x: -10.574871, y: -14.099828, z: 0}
     - m_base_vertices:
-      - {x: -11.346534, y: 17.0198, z: 0}
-      - {x: 18.910889, y: 17.0198, z: 0}
-      - {x: 18.910889, y: -17.0198, z: 0}
-      - {x: -11.346534, y: -17.0198, z: 0}
+      - {x: -10.574871, y: 15.862307, z: 0}
+      - {x: 17.624784, y: 15.862307, z: 0}
+      - {x: 17.624784, y: -15.862307, z: 0}
+      - {x: -10.574871, y: -15.862307, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4684,38 +4308,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 5
-      m_width: 30.257423
-      m_height: 34.0396
+      m_width: 28.199656
+      m_height: 31.724613
       m_progression_variables:
         m_letter_value: 4
         m_letter_value_inc_white_space: 5
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -11.346534, y: 17.0198, z: 0}
-      - {x: 18.910889, y: 17.0198, z: 0}
-      - {x: 18.910889, y: -17.0198, z: 0}
-      - {x: -11.346534, y: -17.0198, z: 0}
+      - {x: -10.574871, y: 15.862307, z: 0}
+      - {x: 17.624784, y: 15.862307, z: 0}
+      - {x: 17.624784, y: -15.862307, z: 0}
+      - {x: -10.574871, y: -15.862307, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 3.7821772, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: -11.346535, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_center: {x: 3.7821772, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_right: {x: 18.910889, y: 17.0198, z: 0}
-      m_active_anchor_offset_middle_left: {x: -11.346535, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 3.7821772, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 18.910889, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: -11.346535, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_center: {x: 3.7821772, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_right: {x: 18.910889, y: -17.0198, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 3.5249567, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -10.574871, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_center: {x: 3.5249567, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_right: {x: 17.624784, y: 15.862307, z: 0}
+      m_active_anchor_offset_middle_left: {x: -10.574871, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: 3.5249567, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 17.624784, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -10.574871, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_center: {x: 3.5249567, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_right: {x: 17.624784, y: -15.862307, z: 0}
     - m_base_vertices:
-      - {x: 17.0198, y: 17.0198, z: 0}
-      - {x: 26.475246, y: 17.0198, z: 0}
-      - {x: 26.475246, y: -17.0198, z: 0}
-      - {x: 17.0198, y: -17.0198, z: 0}
+      - {x: 17.624784, y: 15.862307, z: 0}
+      - {x: 26.437178, y: 15.862307, z: 0}
+      - {x: 26.437178, y: -15.862307, z: 0}
+      - {x: 17.624784, y: -15.862307, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4730,38 +4354,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 6
-      m_width: 9.455446
-      m_height: 34.0396
+      m_width: 8.812393
+      m_height: 31.724613
       m_progression_variables:
         m_letter_value: 5
         m_letter_value_inc_white_space: 6
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 17.0198, y: 17.0198, z: 0}
-      - {x: 26.475246, y: 17.0198, z: 0}
-      - {x: 26.475246, y: -17.0198, z: 0}
-      - {x: 17.0198, y: -17.0198, z: 0}
+      - {x: 17.624784, y: 15.862307, z: 0}
+      - {x: 26.437178, y: 15.862307, z: 0}
+      - {x: 26.437178, y: -15.862307, z: 0}
+      - {x: 17.624784, y: -15.862307, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 21.747522, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: 17.019798, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_center: {x: 21.747522, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_right: {x: 26.475246, y: 17.0198, z: 0}
-      m_active_anchor_offset_middle_left: {x: 17.019798, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 21.747522, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 26.475246, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: 17.019798, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_center: {x: 21.747522, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_right: {x: 26.475246, y: -17.0198, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 22.030981, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: 17.624784, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_center: {x: 22.030981, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_right: {x: 26.437178, y: 15.862307, z: 0}
+      m_active_anchor_offset_middle_left: {x: 17.624784, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: 22.030981, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 26.437178, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: 17.624784, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_center: {x: 22.030981, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_right: {x: 26.437178, y: -15.862307, z: 0}
     - m_base_vertices:
-      - {x: 24.584156, y: 9.455444, z: 0}
-      - {x: 47.277225, y: 9.455444, z: 0}
-      - {x: 47.277225, y: -18.910889, z: 0}
-      - {x: 24.584156, y: -18.910889, z: 0}
+      - {x: 24.674698, y: 8.812392, z: 0}
+      - {x: 47.586918, y: 8.812392, z: 0}
+      - {x: 47.586918, y: -17.624784, z: 0}
+      - {x: 24.674698, y: -17.624784, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4776,38 +4400,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 7
-      m_width: 22.69307
-      m_height: 28.366333
+      m_width: 22.91222
+      m_height: 26.437176
       m_progression_variables:
         m_letter_value: 6
         m_letter_value_inc_white_space: 7
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 24.584156, y: 9.455444, z: 0}
-      - {x: 47.277225, y: 9.455444, z: 0}
-      - {x: 47.277225, y: -18.910889, z: 0}
-      - {x: 24.584156, y: -18.910889, z: 0}
+      - {x: 24.674698, y: 8.812392, z: 0}
+      - {x: 47.586918, y: 8.812392, z: 0}
+      - {x: 47.586918, y: -17.624784, z: 0}
+      - {x: 24.674698, y: -17.624784, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 35.93069, y: -4.727722, z: 0}
-      m_active_anchor_offset_upper_left: {x: 24.584156, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_center: {x: 35.93069, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_right: {x: 47.277225, y: 9.455444, z: 0}
-      m_active_anchor_offset_middle_left: {x: 24.584156, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_center: {x: 35.93069, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_right: {x: 47.277225, y: -4.727722, z: 0}
-      m_active_anchor_offset_lower_left: {x: 24.584156, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_center: {x: 35.93069, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_right: {x: 47.277225, y: -18.910889, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 36.130806, y: -4.406196, z: 0}
+      m_active_anchor_offset_upper_left: {x: 24.674696, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_center: {x: 36.130806, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_right: {x: 47.586914, y: 8.812391, z: 0}
+      m_active_anchor_offset_middle_left: {x: 24.674696, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_center: {x: 36.130806, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_right: {x: 47.586914, y: -4.406196, z: 0}
+      m_active_anchor_offset_lower_left: {x: 24.674696, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_center: {x: 36.130806, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_right: {x: 47.586914, y: -17.624784, z: 0}
     - m_base_vertices:
-      - {x: 47.277225, y: 9.455444, z: 0}
-      - {x: 69.97029, y: 9.455444, z: 0}
-      - {x: 69.97029, y: -26.475246, z: 0}
-      - {x: 47.277225, y: -26.475246, z: 0}
+      - {x: 45.82444, y: 8.812392, z: 0}
+      - {x: 68.736664, y: 8.812392, z: 0}
+      - {x: 68.736664, y: -24.674698, z: 0}
+      - {x: 45.82444, y: -24.674698, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4822,38 +4446,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 8
-      m_width: 22.693066
-      m_height: 35.93069
+      m_width: 22.912224
+      m_height: 33.48709
       m_progression_variables:
         m_letter_value: 7
         m_letter_value_inc_white_space: 8
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 47.277225, y: 9.455444, z: 0}
-      - {x: 69.97029, y: 9.455444, z: 0}
-      - {x: 69.97029, y: -26.475246, z: 0}
-      - {x: 47.277225, y: -26.475246, z: 0}
+      - {x: 45.82444, y: 8.812392, z: 0}
+      - {x: 68.736664, y: 8.812392, z: 0}
+      - {x: 68.736664, y: -24.674698, z: 0}
+      - {x: 45.82444, y: -24.674698, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 58.623756, y: -8.509901, z: 0}
-      m_active_anchor_offset_upper_left: {x: 47.27722, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_center: {x: 58.623756, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_right: {x: 69.97029, y: 9.455444, z: 0}
-      m_active_anchor_offset_middle_left: {x: 47.27722, y: -8.509901, z: 0}
-      m_active_anchor_offset_middle_center: {x: 58.623756, y: -8.509901, z: 0}
-      m_active_anchor_offset_middle_right: {x: 69.97029, y: -8.509901, z: 0}
-      m_active_anchor_offset_lower_left: {x: 47.27722, y: -26.475246, z: 0}
-      m_active_anchor_offset_lower_center: {x: 58.623756, y: -26.475246, z: 0}
-      m_active_anchor_offset_lower_right: {x: 69.97029, y: -26.475246, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 57.28055, y: -7.931153, z: 0}
+      m_active_anchor_offset_upper_left: {x: 45.824436, y: 8.812393, z: 0}
+      m_active_anchor_offset_upper_center: {x: 57.28055, y: 8.812393, z: 0}
+      m_active_anchor_offset_upper_right: {x: 68.736664, y: 8.812393, z: 0}
+      m_active_anchor_offset_middle_left: {x: 45.824436, y: -7.931153, z: 0}
+      m_active_anchor_offset_middle_center: {x: 57.28055, y: -7.931153, z: 0}
+      m_active_anchor_offset_middle_right: {x: 68.736664, y: -7.931153, z: 0}
+      m_active_anchor_offset_lower_left: {x: 45.824436, y: -24.674698, z: 0}
+      m_active_anchor_offset_lower_center: {x: 57.28055, y: -24.674698, z: 0}
+      m_active_anchor_offset_lower_right: {x: 68.736664, y: -24.674698, z: 0}
     - m_base_vertices:
-      - {x: 69.97029, y: 17.0198, z: 0}
-      - {x: 79.425735, y: 17.0198, z: 0}
-      - {x: 79.425735, y: -17.0198, z: 0}
-      - {x: 69.97029, y: -17.0198, z: 0}
+      - {x: 66.97418, y: 15.862307, z: 0}
+      - {x: 75.786575, y: 15.862307, z: 0}
+      - {x: 75.786575, y: -15.862307, z: 0}
+      - {x: 66.97418, y: -15.862307, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4868,38 +4492,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 9
-      m_width: 9.455444
-      m_height: 34.0396
+      m_width: 8.812393
+      m_height: 31.724613
       m_progression_variables:
         m_letter_value: 8
         m_letter_value_inc_white_space: 9
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 69.97029, y: 17.0198, z: 0}
-      - {x: 79.425735, y: 17.0198, z: 0}
-      - {x: 79.425735, y: -17.0198, z: 0}
-      - {x: 69.97029, y: -17.0198, z: 0}
+      - {x: 66.97418, y: 15.862307, z: 0}
+      - {x: 75.786575, y: 15.862307, z: 0}
+      - {x: 75.786575, y: -15.862307, z: 0}
+      - {x: 66.97418, y: -15.862307, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 74.69801, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: 69.97029, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_center: {x: 74.69801, y: 17.0198, z: 0}
-      m_active_anchor_offset_upper_right: {x: 79.425735, y: 17.0198, z: 0}
-      m_active_anchor_offset_middle_left: {x: 69.97029, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 74.69801, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 79.425735, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: 69.97029, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_center: {x: 74.69801, y: -17.0198, z: 0}
-      m_active_anchor_offset_lower_right: {x: 79.425735, y: -17.0198, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 71.38038, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: 66.97418, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_center: {x: 71.38038, y: 15.862307, z: 0}
+      m_active_anchor_offset_upper_right: {x: 75.786575, y: 15.862307, z: 0}
+      m_active_anchor_offset_middle_left: {x: 66.97418, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: 71.38038, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 75.786575, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: 66.97418, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_center: {x: 71.38038, y: -15.862307, z: 0}
+      m_active_anchor_offset_lower_right: {x: 75.786575, y: -15.862307, z: 0}
     - m_base_vertices:
-      - {x: 77.534645, y: 9.455444, z: 0}
-      - {x: 102.118805, y: 9.455444, z: 0}
-      - {x: 102.118805, y: -18.910889, z: 0}
-      - {x: 77.534645, y: -18.910889, z: 0}
+      - {x: 74.02409, y: 8.812392, z: 0}
+      - {x: 98.69879, y: 8.812392, z: 0}
+      - {x: 98.69879, y: -17.624784, z: 0}
+      - {x: 74.02409, y: -17.624784, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4914,38 +4538,38 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 10
-      m_width: 24.58416
-      m_height: 28.366333
+      m_width: 24.674698
+      m_height: 26.437176
       m_progression_variables:
         m_letter_value: 9
         m_letter_value_inc_white_space: 10
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 77.534645, y: 9.455444, z: 0}
-      - {x: 102.118805, y: 9.455444, z: 0}
-      - {x: 102.118805, y: -18.910889, z: 0}
-      - {x: 77.534645, y: -18.910889, z: 0}
+      - {x: 74.02409, y: 8.812392, z: 0}
+      - {x: 98.69879, y: 8.812392, z: 0}
+      - {x: 98.69879, y: -17.624784, z: 0}
+      - {x: 74.02409, y: -17.624784, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 89.82672, y: -4.727722, z: 0}
-      m_active_anchor_offset_upper_left: {x: 77.53464, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_center: {x: 89.82672, y: 9.455444, z: 0}
-      m_active_anchor_offset_upper_right: {x: 102.118805, y: 9.455444, z: 0}
-      m_active_anchor_offset_middle_left: {x: 77.53464, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_center: {x: 89.82672, y: -4.727722, z: 0}
-      m_active_anchor_offset_middle_right: {x: 102.118805, y: -4.727722, z: 0}
-      m_active_anchor_offset_lower_left: {x: 77.53464, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_center: {x: 89.82672, y: -18.910889, z: 0}
-      m_active_anchor_offset_lower_right: {x: 102.118805, y: -18.910889, z: 0}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 86.36145, y: -4.406196, z: 0}
+      m_active_anchor_offset_upper_left: {x: 74.0241, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_center: {x: 86.36145, y: 8.812391, z: 0}
+      m_active_anchor_offset_upper_right: {x: 98.6988, y: 8.812391, z: 0}
+      m_active_anchor_offset_middle_left: {x: 74.0241, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_center: {x: 86.36145, y: -4.406196, z: 0}
+      m_active_anchor_offset_middle_right: {x: 98.6988, y: -4.406196, z: 0}
+      m_active_anchor_offset_lower_left: {x: 74.0241, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_center: {x: 86.36145, y: -17.624784, z: 0}
+      m_active_anchor_offset_lower_right: {x: 98.6988, y: -17.624784, z: 0}
     - m_base_vertices:
-      - {x: 100.227715, y: 7.564356, z: 0}
-      - {x: 124.811874, y: 7.564356, z: 0}
-      - {x: 124.811874, y: -26.475246, z: 0}
-      - {x: 100.227715, y: -26.475246, z: 0}
+      - {x: 95.173836, y: 8.812392, z: 0}
+      - {x: 118.08606, y: 8.812392, z: 0}
+      - {x: 118.08606, y: -24.674698, z: 0}
+      - {x: 95.173836, y: -24.674698, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4960,45 +4584,34 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 11
-      m_width: 24.58416
-      m_height: 34.039604
+      m_width: 22.912224
+      m_height: 33.48709
       m_progression_variables:
         m_letter_value: 10
         m_letter_value_inc_white_space: 11
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 100.227715, y: 7.564356, z: 0}
-      - {x: 124.811874, y: 7.564356, z: 0}
-      - {x: 124.811874, y: -26.475246, z: 0}
-      - {x: 100.227715, y: -26.475246, z: 0}
+      - {x: 95.173836, y: 8.812392, z: 0}
+      - {x: 118.08606, y: 8.812392, z: 0}
+      - {x: 118.08606, y: -24.674698, z: 0}
+      - {x: 95.173836, y: -24.674698, z: 0}
       m_current_animated_colours:
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      - {r: 1, g: 1, b: 1, a: 1}
-      m_anchor_offset_middle_center: {x: 112.51979, y: -9.455445, z: 0}
-      m_active_anchor_offset_upper_left: {x: 100.22771, y: 7.564357, z: 0}
-      m_active_anchor_offset_upper_center: {x: 112.51979, y: 7.564357, z: 0}
-      m_active_anchor_offset_upper_right: {x: 124.811874, y: 7.564357, z: 0}
-      m_active_anchor_offset_middle_left: {x: 100.22771, y: -9.455445, z: 0}
-      m_active_anchor_offset_middle_center: {x: 112.51979, y: -9.455445, z: 0}
-      m_active_anchor_offset_middle_right: {x: 124.811874, y: -9.455445, z: 0}
-      m_active_anchor_offset_lower_left: {x: 100.22771, y: -26.475246, z: 0}
-      m_active_anchor_offset_lower_center: {x: 112.51979, y: -26.475246, z: 0}
-      m_active_anchor_offset_lower_right: {x: 124.811874, y: -26.475246, z: 0}
-    m_audio_sources:
-    - {fileID: 1059975928}
-    - {fileID: 1173538216}
-    - {fileID: 2005993800}
-    - {fileID: 713180915}
-    - {fileID: 1341565542}
-    - {fileID: 2047417091}
-    - {fileID: 363404517}
-    - {fileID: 1836129297}
-    - {fileID: 1994941506}
-    - {fileID: 308257311}
-    - {fileID: 101701105}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      - {r: 1, g: 1, b: 1, a: 2}
+      m_anchor_offset_middle_center: {x: 106.629944, y: -7.931153, z: 0}
+      m_active_anchor_offset_upper_left: {x: 95.17383, y: 8.812393, z: 0}
+      m_active_anchor_offset_upper_center: {x: 106.629944, y: 8.812393, z: 0}
+      m_active_anchor_offset_upper_right: {x: 118.08606, y: 8.812393, z: 0}
+      m_active_anchor_offset_middle_left: {x: 95.17383, y: -7.931153, z: 0}
+      m_active_anchor_offset_middle_center: {x: 106.629944, y: -7.931153, z: 0}
+      m_active_anchor_offset_middle_right: {x: 118.08606, y: -7.931153, z: 0}
+      m_active_anchor_offset_lower_left: {x: 95.17383, y: -24.674698, z: 0}
+      m_active_anchor_offset_lower_center: {x: 106.629944, y: -24.674698, z: 0}
+      m_active_anchor_offset_lower_right: {x: 118.08606, y: -24.674698, z: 0}
+    m_audio_sources: []
     m_particle_systems: []
     m_particle_effect_managers: []
     m_gameObect: {fileID: 604433012}
@@ -5007,107 +4620,107 @@ MonoBehaviour:
     m_num_letters: 12
     m_num_extra_verts_per_letter: 0
     m_textWidths:
-    - 249.62375
+    - 234.40964
     m_textHeights:
-    - 43.49505
+    - 40.537003
     m_current_mesh_verts:
-    - {x: -124.811874, y: 18.984701, z: 0}
-    - {x: -92.66336, y: 18.984701, z: 0}
-    - {x: -92.66336, y: -18.984701, z: 0}
-    - {x: -124.811874, y: -18.984701, z: 0}
-    - {x: -92.66336, y: 10.605317, z: 0}
-    - {x: -68.0792, y: 10.605317, z: 0}
-    - {x: -68.0792, y: -20.06076, z: 0}
-    - {x: -92.66336, y: -20.06076, z: 0}
-    - {x: -68.0792, y: 10.073614, z: 0}
-    - {x: -45.386135, y: 10.073614, z: 0}
-    - {x: -45.386135, y: -17.63797, z: 0}
-    - {x: -68.0792, y: -17.63797, z: 0}
-    - {x: -45.386135, y: 7.7274837, z: 0}
-    - {x: -22.693068, y: 7.7274837, z: 0}
-    - {x: -22.693068, y: -19.074017, z: 0}
-    - {x: -45.386135, y: -19.074017, z: 0}
-    - {x: -22.693068, y: -15.128712, z: 0}
-    - {x: -11.346534, y: -15.128712, z: 0}
-    - {x: -11.346534, y: -15.128712, z: 0}
-    - {x: -22.693068, y: -15.128712, z: 0}
-    - {x: -11.346534, y: 17.0198, z: 0}
-    - {x: 18.910889, y: 17.0198, z: 0}
-    - {x: 18.910889, y: -17.0198, z: 0}
-    - {x: -11.346534, y: -17.0198, z: 0}
-    - {x: 17.0198, y: 17.0198, z: 0}
-    - {x: 26.475246, y: 17.0198, z: 0}
-    - {x: 26.475246, y: -17.0198, z: 0}
-    - {x: 17.0198, y: -17.0198, z: 0}
-    - {x: 24.584156, y: 9.455444, z: 0}
-    - {x: 47.277225, y: 9.455444, z: 0}
-    - {x: 47.277225, y: -18.910889, z: 0}
-    - {x: 24.584156, y: -18.910889, z: 0}
-    - {x: 47.277225, y: 9.455444, z: 0}
-    - {x: 69.97029, y: 9.455444, z: 0}
-    - {x: 69.97029, y: -26.475246, z: 0}
-    - {x: 47.277225, y: -26.475246, z: 0}
-    - {x: 69.97029, y: 17.0198, z: 0}
-    - {x: 79.425735, y: 17.0198, z: 0}
-    - {x: 79.425735, y: -17.0198, z: 0}
-    - {x: 69.97029, y: -17.0198, z: 0}
-    - {x: 77.534645, y: 9.455444, z: 0}
-    - {x: 102.118805, y: 9.455444, z: 0}
-    - {x: 102.118805, y: -18.910889, z: 0}
-    - {x: 77.534645, y: -18.910889, z: 0}
-    - {x: 100.227715, y: 7.564356, z: 0}
-    - {x: 124.811874, y: 7.564356, z: 0}
-    - {x: 124.811874, y: -26.475246, z: 0}
-    - {x: 100.227715, y: -26.475246, z: 0}
+    - {x: -116.32358, y: 15.862307, z: 0}
+    - {x: -84.59897, y: 15.862307, z: 0}
+    - {x: -84.59897, y: -15.862307, z: 0}
+    - {x: -116.32358, y: -15.862307, z: 0}
+    - {x: -86.36144, y: 8.812392, z: 0}
+    - {x: -61.686745, y: 8.812392, z: 0}
+    - {x: -61.686745, y: -17.624784, z: 0}
+    - {x: -86.36144, y: -17.624784, z: 0}
+    - {x: -63.449226, y: 8.812392, z: 0}
+    - {x: -42.299484, y: 8.812392, z: 0}
+    - {x: -42.299484, y: -15.862307, z: 0}
+    - {x: -63.449226, y: -15.862307, z: 0}
+    - {x: -42.299484, y: 8.812392, z: 0}
+    - {x: -21.149742, y: 8.812392, z: 0}
+    - {x: -21.149742, y: -17.624784, z: 0}
+    - {x: -42.299484, y: -17.624784, z: 0}
+    - {x: -21.149742, y: -14.099828, z: 0}
+    - {x: -10.574871, y: -14.099828, z: 0}
+    - {x: -10.574871, y: -14.099828, z: 0}
+    - {x: -21.149742, y: -14.099828, z: 0}
+    - {x: -10.574871, y: 15.862307, z: 0}
+    - {x: 17.624784, y: 15.862307, z: 0}
+    - {x: 17.624784, y: -15.862307, z: 0}
+    - {x: -10.574871, y: -15.862307, z: 0}
+    - {x: 17.624784, y: 15.862307, z: 0}
+    - {x: 26.437178, y: 15.862307, z: 0}
+    - {x: 26.437178, y: -15.862307, z: 0}
+    - {x: 17.624784, y: -15.862307, z: 0}
+    - {x: 24.674698, y: 8.812392, z: 0}
+    - {x: 47.586918, y: 8.812392, z: 0}
+    - {x: 47.586918, y: -17.624784, z: 0}
+    - {x: 24.674698, y: -17.624784, z: 0}
+    - {x: 45.82444, y: 8.812392, z: 0}
+    - {x: 68.736664, y: 8.812392, z: 0}
+    - {x: 68.736664, y: -24.674698, z: 0}
+    - {x: 45.82444, y: -24.674698, z: 0}
+    - {x: 66.97418, y: 15.862307, z: 0}
+    - {x: 75.786575, y: 15.862307, z: 0}
+    - {x: 75.786575, y: -15.862307, z: 0}
+    - {x: 66.97418, y: -15.862307, z: 0}
+    - {x: 74.02409, y: 8.812392, z: 0}
+    - {x: 98.69879, y: 8.812392, z: 0}
+    - {x: 98.69879, y: -17.624784, z: 0}
+    - {x: 74.02409, y: -17.624784, z: 0}
+    - {x: 95.173836, y: 8.812392, z: 0}
+    - {x: 118.08606, y: 8.812392, z: 0}
+    - {x: 118.08606, y: -24.674698, z: 0}
+    - {x: 95.173836, y: -24.674698, z: 0}
     m_current_mesh_colours:
-    - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-    - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-    - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-    - {r: 0.70276445, g: 0.97505724, b: 1, a: 1}
-    - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-    - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-    - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-    - {r: 0.7912673, g: 0.98248404, b: 1, a: 1}
-    - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-    - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-    - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-    - {r: 0.8797701, g: 0.9899108, b: 1, a: 1}
-    - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-    - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-    - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
-    - {r: 0.96827286, g: 0.9973376, b: 1, a: 1}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
     - {r: 1, g: 1, b: 1, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
+    - {r: 1, g: 1, b: 1, a: 2}
     m_current_text: Menu Display
     m_num_words: 2
     m_num_lines: 1
@@ -5125,9 +4738,15 @@ MonoBehaviour:
         m_animation_idx: 0
         m_action_idx: 0
         m_action_progress_state_override: -1
-      - m_data_type: 8
+      - m_data_type: 9
         m_startState: 1
-        m_setting_name: Start Position
+        m_setting_name: Rotation
+        m_animation_idx: 0
+        m_action_idx: 0
+        m_action_progress_state_override: -1
+      - m_data_type: 19
+        m_startState: 1
+        m_setting_name: Randomised?
         m_animation_idx: 0
         m_action_idx: 0
         m_action_progress_state_override: -1
@@ -5221,7 +4840,7 @@ MonoBehaviour:
     m_preset_effect_settings:
     - m_data_type: 15
       m_startState: 1
-      m_setting_name: Delay Eased
+      m_setting_name: Delay Easing
       m_animation_idx: 0
       m_action_idx: 0
       m_action_progress_state_override: -1
@@ -5231,26 +4850,20 @@ MonoBehaviour:
       m_animation_idx: 0
       m_action_idx: 0
       m_action_progress_state_override: -1
-    - m_data_type: 7
-      m_startState: 0
-      m_setting_name: Highlight Colour
-      m_animation_idx: 0
-      m_action_idx: 0
-      m_action_progress_state_override: -1
-    - m_data_type: 11
-      m_startState: 0
-      m_setting_name: Shimmer Scale
-      m_animation_idx: 0
-      m_action_idx: 0
-      m_action_progress_state_override: -1
-    - m_data_type: 20
+    - m_data_type: 9
       m_startState: 1
-      m_setting_name: Num. Iterations
+      m_setting_name: Rotation
+      m_animation_idx: 0
+      m_action_idx: 0
+      m_action_progress_state_override: -1
+    - m_data_type: 19
+      m_startState: 1
+      m_setting_name: Randomised?
       m_animation_idx: 0
       m_action_idx: 0
       m_action_progress_state_override: -1
     m_using_quick_setup: 1
-    m_selected_intro_animation_idx: 4
+    m_selected_intro_animation_idx: 9
     m_selected_main_animation_idx: 3
     m_selected_outro_animation_idx: 6
     m_intro_animation_foldout: 0
@@ -5337,7 +4950,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1024, y: 764}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -5352,7 +4965,7 @@ Canvas:
   m_GameObject: {fileID: 703328680}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 113224358}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -5374,8 +4987,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 766971591}
-  - {fileID: 604433013}
+  - {fileID: 268186400}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5384,115 +4996,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &713180913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 713180914}
-  - component: {fileID: 713180915}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &713180914
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713180913}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &713180915
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713180913}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &766971590
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,12 +5019,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766971590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 703328684}
-  m_RootOrder: 0
+  m_Father: {fileID: 268186400}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5646,442 +5149,68 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766971590}
---- !u!1 &1059975926
+--- !u!1 &1393161911
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1059975927}
-  - component: {fileID: 1059975928}
+  - component: {fileID: 1393161914}
+  - component: {fileID: 1393161913}
+  - component: {fileID: 1393161912}
   m_Layer: 0
-  m_Name: TextFx_AudioSource
+  m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1059975927
+--- !u!114 &1393161912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393161911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1393161913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393161911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &1393161914
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059975926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
+  m_GameObject: {fileID: 1393161911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1059975928
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059975926}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &1173538214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1173538215}
-  - component: {fileID: 1173538216}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1173538215
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1173538214}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1173538216
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1173538214}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &1341565540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1341565541}
-  - component: {fileID: 1341565542}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1341565541
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1341565540}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1341565542
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1341565540}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &1836129295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1836129296}
-  - component: {fileID: 1836129297}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1836129296
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1836129295}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1836129297
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1836129295}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1979705475
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,330 +5276,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1994941504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1994941505}
-  - component: {fileID: 1994941506}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1994941505
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1994941504}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1994941506
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1994941504}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &2005993798
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2005993799}
-  - component: {fileID: 2005993800}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2005993799
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2005993798}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2005993800
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2005993798}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &2047417089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2047417090}
-  - component: {fileID: 2047417091}
-  m_Layer: 0
-  m_Name: TextFx_AudioSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2047417090
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047417089}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.616433, z: -595.479}
-  m_LocalScale: {x: 6.616433, y: 6.616433, z: 6.616433}
-  m_Children: []
-  m_Father: {fileID: 604433013}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2047417091
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047417089}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2746eacd6d3c424c8edfef00b230e4d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4

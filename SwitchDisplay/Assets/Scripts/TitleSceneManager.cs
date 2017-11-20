@@ -4,10 +4,13 @@
 /// TitleScene クラス
 /// 製作者：実川
 /// </summary>
-public class TitleScene : MonoBehaviour
+public class TitleSceneManager : MonoBehaviour
 {
 	[SerializeField]
 	DisplayManager.DisplayType _firstUsingDisplay;
+
+	[SerializeField]
+	TitleSceneCache _sceneCache;
 
 	void Start ()
 	{

@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// DisplayBase クラス
+/// GameSceneManager クラス
 /// 製作者：実川
 /// </summary>
-public class DisplayBase : MonoBehaviour
+public class GameSceneManager : MonoBehaviour 
 {
+	void Start () 
+	{
+		
+	}
 
+	void Update () 
+	{
+		
+	}
 }
