@@ -10,6 +10,11 @@ public interface IDisplay
 	bool IsSwitchAnimPlaying { get; }
 
 	/// <summary>
+	/// ディスプレイイベントの定義インターフェイス
+	/// </summary>
+	IEvents DisplayEvents { get; }
+
+	/// <summary>
 	/// ディスプレイ生成時に呼ばれるイベント
 	/// </summary>
 	void OnAwake(ISceneCache cache);

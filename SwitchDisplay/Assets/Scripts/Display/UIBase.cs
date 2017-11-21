@@ -12,7 +12,7 @@ public class UIBase : MonoBehaviour
 	/// <summary>
 	/// ディスプレイ生成時に呼ばれるイベント
 	/// </summary>
-	virtual public void OnAwake(ISceneCache cache) { }
+	virtual public void OnAwake(ISceneCache cache, IEvents displayEvents) { }
 
 	/// <summary>
 	/// 描画更新判定処理

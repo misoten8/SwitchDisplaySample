@@ -10,7 +10,7 @@ public class LogoAnimText : UIBase
 	private TitleSceneCache _cache;
 
 
-	public override void OnAwake (ISceneCache cache)
+	public override void OnAwake (ISceneCache cache, IEvents displayEvents)
 	{
 		_cache = cache as TitleSceneCache;
 	}

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 /// <summary>
 /// MenuDisplay クラス
@@ -6,9 +7,21 @@
 /// </summary>
 public class MenuDisplay : DisplayBase
 {
+	public override IEvents DisplayEvents
+	{
+		get { return _events; }
+	}
+
+	/// <summary>
+	/// UIオブジェクト呼び出しイベントクラス
+	/// </summary>
+	public MenuEvents _events = new MenuEvents();
+
 	public override void OnAwake(ISceneCache cache)
 	{
-		base.OnAwake (cache);
+		// シーンキャッシュとイベントクラスを各UIオブジェクトに渡す
+		uiList.ForEach(e => e.OnAwake(cache, _events));
+		isCallOnAwake = true;
 	}
 
 	void Update()

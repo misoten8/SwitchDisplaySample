@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// ディスプレイ基底クラス
 /// 製作者：実川
 /// </summary>
-public class DisplayBase : MonoBehaviour, IDisplay
+public abstract class DisplayBase : MonoBehaviour, IDisplay
 {
 	/// <summary>
 	/// ディスプレイ切り替えアニメーションが再生中かどうか
@@ -14,6 +14,14 @@ public class DisplayBase : MonoBehaviour, IDisplay
 	public bool IsSwitchAnimPlaying
 	{
 		get { return isSwitchAnimPlaying; }
+	}
+
+	/// <summary>
+	/// ディスプレイイベントの定義インターフェイス
+	/// </summary>
+	public virtual IEvents DisplayEvents
+	{
+		get { return null; }
 	}
 
 	/// <summary>
@@ -37,8 +45,8 @@ public class DisplayBase : MonoBehaviour, IDisplay
 	/// </summary>
 	public virtual void OnAwake(ISceneCache cache) 
 	{ 
-		// キャッシュを各UIオブジェクトに渡す
-		uiList.ForEach(e => e.OnAwake(cache));
+		// キャッシュを各UIオブジェクトに渡す(イベントクラスは渡さない)
+		uiList.ForEach(e => e.OnAwake(cache, null));
 		isCallOnAwake = true;
 	}
 

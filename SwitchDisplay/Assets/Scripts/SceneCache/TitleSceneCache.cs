@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// TitleSceneCache クラス
 /// 製作者：実川
 /// </summary>
-public class TitleSceneCache : MonoBehaviour, ISceneCache
+public class TitleSceneCache : SceneCacheBase, ISceneCache
 {
 	public TitleTimer titleTimer;
-	//[RequireComponent(typeof(TitleTimer))]
 }

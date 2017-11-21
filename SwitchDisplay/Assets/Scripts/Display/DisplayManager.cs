@@ -79,22 +79,14 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		SceneManager.sceneUnloaded += Instance.SceneUnloaded;
 	}
 
-	// 欲しいメソッドイメージ
-	// 各ディスプレイクラスのイベント関数を呼び出せる仕組み
-	// しかし、ディスプレイを直接参照することを許さず、このディスプレイ管理クラスを通して参照させる
-	// ここでは指定されたクラスのディスプレイインスタンスを渡す
-	// そしてnullチェックも行える仕組みにする
-
-	// ジェネリックを使用し、引数と戻り値はdisplayBaseを継承したクラスのみ許可する
-
 	/// <summary>
-	/// ディスプレイ継承クラスを取得する
+	/// ディスプレイイベント継承クラスを取得する
 	/// </summary>
-	public static T GetInstanceDisplay<T>() where T : class, IDisplay
+	public static T GetInstanceDisplayEvents<T>() where T : class, IEvents
 	{
-		T display = Instance._currentdisplay as T;
+		T events = Instance._currentdisplay.DisplayEvents as T;
 
-		return display != null ? display : default(T);
+		return events != null ? events : default(T);
 	}
 
 	private void SceneLoaded(Scene scene, LoadSceneMode mode)

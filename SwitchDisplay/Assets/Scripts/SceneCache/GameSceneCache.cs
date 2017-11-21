@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// GameSceneCache クラス
 /// 製作者：実川
 /// </summary>
-public class GameSceneCache : MonoBehaviour, ISceneCache
+public class GameSceneCache : SceneCacheBase, ISceneCache
 {
 }

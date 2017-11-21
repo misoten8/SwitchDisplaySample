@@ -12,15 +12,13 @@ public class MenuTimer : UIBase
 	private TitleSceneCache _cache;
 	private float _drawValue = 0.0f;
 
-	public override void OnAwake (ISceneCache cache)
+	public override void OnAwake (ISceneCache cache, IEvents displayEvents)
 	{
 		_cache = cache as TitleSceneCache;
 	}
 
 	public override bool IsDrawUpdate ()
 	{
-		//if (_cache == null)
-		//	return false;
 		if (_drawValue != _cache.titleTimer.ElapsedTime) 
 		{
 			_drawValue = _cache.titleTimer.ElapsedTime;
