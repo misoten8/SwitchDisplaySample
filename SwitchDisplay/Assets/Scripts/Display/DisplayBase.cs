@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// ディスプレイ基底クラス
@@ -6,6 +8,9 @@
 /// </summary>
 public class DisplayBase : MonoBehaviour, IDisplay
 {
+	/// <summary>
+	/// ディスプレイ切り替えアニメーションが再生中かどうか
+	/// </summary>
 	public bool IsSwitchAnimPlaying
 	{
 		get { return isSwitchAnimPlaying; }
@@ -17,9 +22,25 @@ public class DisplayBase : MonoBehaviour, IDisplay
 	protected bool isSwitchAnimPlaying;
 
 	/// <summary>
+	/// OnAwake が呼ばれたかどうか
+	/// </summary>
+	protected bool isCallOnAwake = false;
+
+	/// <summary>
+	/// UIオブジェクトのリスト
+	/// </summary>
+	[SerializeField]
+	protected List<UIBase> uiList = new List<UIBase>();
+
+	/// <summary>
 	/// ディスプレイ生成時に呼ばれるイベント
 	/// </summary>
-	public virtual void OnAwake(ISceneCache cache) { }
+	public virtual void OnAwake(ISceneCache cache) 
+	{ 
+		// キャッシュを各UIオブジェクトに渡す
+		uiList.ForEach(e => e.OnAwake(cache));
+		isCallOnAwake = true;
+	}
 
 	/// <summary>
 	/// ディスプレイ遷移開始時に呼ばれるイベント

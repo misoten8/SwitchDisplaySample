@@ -10,19 +10,25 @@ using System.Collections;
 /// </summary>
 public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 {
+	/// <summary>
+	/// 現在選択されているディスプレイの種類
+	/// </summary>
 	public static DisplayType CurrentDisplayType
 	{
 		get { return Instance._currentDisplayType; }
 	}
 
-	[SerializeField]
-	private DisplayType _currentDisplayType;
+	private DisplayType _currentDisplayType = DisplayType.None;
 
 	/// <summary>
 	/// ディスプレイの種類
 	/// </summary>
 	public enum DisplayType
 	{
+		/// <summary>
+		/// ディスプレイなし
+		/// </summary>
+		None,
 		Logo,
 		Menu
 	}
@@ -46,13 +52,13 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	private void Start()
 	{
 		// シーン遷移
-		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[CurrentDisplayType], LoadSceneMode.Additive);
-		Instance._currentDisplayType = CurrentDisplayType;
-		SceneManager.sceneLoaded += (scene, mode) => 
-		{
-			Instance._async = null;
-			StartCoroutine(LoadDisplayScene(scene));
-		};
+//		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[CurrentDisplayType], LoadSceneMode.Additive);
+//		Instance._currentDisplayType = CurrentDisplayType;
+//		SceneManager.sceneLoaded += (scene, mode) => 
+//		{
+//			Instance._async = null;
+//			StartCoroutine(LoadDisplayScene(scene));
+//		};
 	}
 
 	/// <summary>
@@ -112,7 +118,7 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	private IEnumerator SwitchDisplayScene(DisplayType deleteDisplayType, Scene scene)
 	{
 		// 解放するディスプレイシーンのアニメーション再生
-		Instance._currentdisplay.OnSwitchFadeOut();
+		Instance._currentdisplay?.OnSwitchFadeOut();
 
 		// アニメーション終了待ち
 
@@ -122,16 +128,22 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		// ディスプレイの初期化
 		Instance._currentdisplay.OnAwake(Instance._currentSceneCache);
 
-		AsyncOperation asyncOp;
+		if (deleteDisplayType != DisplayType.None) {
+			AsyncOperation asyncOp;
 		
-		// 過去のディスプレイシーン解放
-		asyncOp = SceneManager.UnloadSceneAsync(_DISPLAY_MAP[deleteDisplayType]);
+			// 過去のディスプレイシーン解放
+			asyncOp = SceneManager.UnloadSceneAsync (_DISPLAY_MAP [deleteDisplayType]);
 
-		// 過去のディスプレイシーン解放待ち
-		if (asyncOp.progress < 0.9f)
+			// 過去のディスプレイシーン解放待ち
+			while (asyncOp.progress < 0.9f)
+			{
+				yield return null;
+			}
+		}
+		else
 		{
-			Debug.Log(asyncOp.progress.ToString());
-			yield return null;
+			SceneManager.sceneLoaded -= SceneLoaded;
+			SceneManager.sceneUnloaded -= SceneUnloaded;
 		}
 
 		// ディスプレイ開始アニメーションの再生
