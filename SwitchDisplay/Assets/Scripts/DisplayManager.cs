@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityScript.Lang;
 
 /// <summary>
 /// DisplayManager クラス
@@ -17,18 +18,20 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	[SerializeField]
 	private DisplayType _currentDisplayType;
 
-	public enum DisplayType
+    public enum DisplayType
 	{
 		Logo,
-		Menu
-	}
+		Menu,
+        Move
+    }
 
 	private static readonly Dictionary<DisplayType, string> _DISPLAY_MAP = 
 		new Dictionary<DisplayType, string>
-	{
-		{ DisplayType.Logo, "LogoDisplay" },
-		{ DisplayType.Menu, "MenuDisplay" }
-	};
+    {
+        { DisplayType.Logo, "LogoDisplay" },
+        { DisplayType.Menu, "MenuDisplay" },
+        { DisplayType.Move, "MoveDisplay" }
+    };
 
 	private AsyncOperation _async = null;
 
@@ -94,4 +97,83 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		SceneManager.sceneLoaded -= SceneLoaded;
 		SceneManager.sceneUnloaded -= SceneUnloaded;
 	}
-}
+
+
+
+
+    [SerializeField]
+    static  float Player1Power = 0.0f;
+    [SerializeField]
+    static  float Player2Power = 0.0f;
+    [SerializeField]
+    static  float Player3Power = 0.1f;
+    [SerializeField]
+    static float Player4Power = 0.01f;
+
+    public static float GetPlayerPower(int No )
+    {
+        float AllPower = Player1Power + Player2Power + Player3Power + Player4Power;
+        float[] Power = { Player1Power , Player2Power , Player3Power , Player4Power};
+
+        //if (AllPower != 0.0f)
+        //{
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        Power[i] = Power[i] / AllPower;
+        //    }
+        //}
+        //Power[2] = Power[2] / AllPower;
+        //Power[3] = Power[3] / AllPower;
+        if (AllPower != 0.0f)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (Power[i] > 0.0f)
+                {
+                    Power[i] = Power[i] / AllPower;
+                }
+            }
+        }
+
+
+
+
+
+        switch (No)
+        {
+            case 1:
+                return Power[0];
+            case 2:
+                return (Power[0] + Power[1]);
+            case 3:
+                return (Power[0] + Power[1] + Power[2]);
+            default:
+                return (Power[0] + Power[1] + Power[2] + Power[3]);
+        }
+    }
+
+
+    public static void AddScore([SerializeField] int No, [SerializeField] float Value = 0.01f)
+    {
+        switch (No)
+        {
+            case 1:
+                Player1Power += Value;
+                break;
+            case 2:
+                Player2Power += Value;
+                break;
+            case 3:
+                Player3Power += Value;
+                break;
+            default:
+                Player4Power += Value;
+                break;
+        }
+    }
+
+
+
+
+
+    }

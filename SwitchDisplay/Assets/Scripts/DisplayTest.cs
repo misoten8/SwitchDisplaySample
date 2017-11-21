@@ -20,9 +20,12 @@ public class DisplayTest : MonoBehaviour
 					DisplayManager.SwitchDisplay(DisplayManager.DisplayType.Menu);
 					break;
 				case DisplayManager.DisplayType.Menu:
-					DisplayManager.SwitchDisplay(DisplayManager.DisplayType.Logo);
+					DisplayManager.SwitchDisplay(DisplayManager.DisplayType.Move);
 					break;
-				default:
+                case DisplayManager.DisplayType.Move:
+                    DisplayManager.SwitchDisplay(DisplayManager.DisplayType.Logo);
+                    break;
+                default:
 					break;
 			}
 		}

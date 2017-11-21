@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Display/MenuDisplay.unity
     guid: 6df9cdca38e463f4287a9964cb73d8c0
+  - enabled: 1
+    path: Assets/Scenes/Display/MoveDisplay.unity
+    guid: d7e42de8863241a43a0c1fdf78202f2d
