@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 using System.Linq;
 using System.Collections;
 
@@ -34,6 +35,16 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	}
 
 	/// <summary>
+	/// フェードインアニメーション終了時実行イベント
+	/// </summary>
+	public event Action onFadedIn;
+
+	/// <summary>
+	/// フェードアウトアニメーション終了時実行イベント
+	/// </summary>
+	public event Action onFadedOut;
+
+	/// <summary>
 	/// ディスプレイタイプとシーンの紐付けマップ
 	/// </summary>
 	private static readonly Dictionary<DisplayType, string> _DISPLAY_MAP = 
@@ -48,18 +59,6 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	private ISceneCache _currentSceneCache;
 
 	private AsyncOperation _async = null;
-
-	private void Start()
-	{
-		// シーン遷移
-//		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[CurrentDisplayType], LoadSceneMode.Additive);
-//		Instance._currentDisplayType = CurrentDisplayType;
-//		SceneManager.sceneLoaded += (scene, mode) => 
-//		{
-//			Instance._async = null;
-//			StartCoroutine(LoadDisplayScene(scene));
-//		};
-	}
 
 	/// <summary>
 	/// ディスプレイの切り替え処理
@@ -104,15 +103,18 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		SceneManager.sceneUnloaded -= SceneUnloaded;
 	}
 
+	//TODO:ディスプレイのフェード関数をコルーチンに変更する
+	// その方が視覚的に見やすい
 	/// <summary>
 	/// 別シーンのディスプレイに遷移
 	/// </summary>
 	private IEnumerator SwitchDisplayScene(DisplayType deleteDisplayType, Scene scene)
 	{
 		// 解放するディスプレイシーンのアニメーション再生
-		Instance._currentdisplay?.OnSwitchFadeOut();
+		yield return StartCoroutine(Instance._currentdisplay?.OnSwitchFadeOut());
 
-		// アニメーション終了待ち
+		onFadedOut?.Invoke();
+		onFadedOut = null;
 
 		// ディスプレイシーンの整理(このタイミングで_currentdisplay変更)
 		yield return StartCoroutine(LoadDisplayScene(scene));
@@ -121,16 +123,12 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		Instance._currentdisplay.OnAwake(Instance._currentSceneCache);
 
 		if (deleteDisplayType != DisplayType.None) {
-			AsyncOperation asyncOp;
-		
 			// 過去のディスプレイシーン解放
-			asyncOp = SceneManager.UnloadSceneAsync (_DISPLAY_MAP [deleteDisplayType]);
+			AsyncOperation asyncOp = SceneManager.UnloadSceneAsync (_DISPLAY_MAP [deleteDisplayType]);
 
 			// 過去のディスプレイシーン解放待ち
 			while (asyncOp.progress < 0.9f)
-			{
 				yield return null;
-			}
 		}
 		else
 		{
@@ -139,9 +137,10 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		}
 
 		// ディスプレイ開始アニメーションの再生
-		Instance._currentdisplay.OnSwitchFadeIn();
+		yield return StartCoroutine(Instance._currentdisplay.OnSwitchFadeIn());
 
-		// アニメーション終了待ち
+		onFadedIn?.Invoke();
+		onFadedIn = null;
 	}
 
 	/// <summary>

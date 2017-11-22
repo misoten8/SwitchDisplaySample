@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using System.Collections.Generic;
+using System.Collections;
+
+/// <summary>
 /// DisplayBase インターフェイス
 /// 製作者：実川
 /// </summary>
@@ -21,15 +24,13 @@ public interface IDisplay
 
 	/// <summary>
 	/// ディスプレイ遷移開始時に呼ばれるイベント
-	/// 使用例：UIの開始アニメーション呼び出し
 	/// </summary>
-	void OnSwitchFadeIn();
+	IEnumerator OnSwitchFadeIn();
 
 	/// <summary>
 	/// ディスプレイ遷移開始時に呼ばれるイベント
-	/// 使用例：UIの終了アニメーション呼び出し
 	/// </summary>
-	void OnSwitchFadeOut();
+	IEnumerator OnSwitchFadeOut();
 
 	/// <summary>
 	/// ディスプレイ消去時に呼ばれるイベント

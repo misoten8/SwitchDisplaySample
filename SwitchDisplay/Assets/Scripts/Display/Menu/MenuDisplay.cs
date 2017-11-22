@@ -22,6 +22,7 @@ public class MenuDisplay : DisplayBase
 		// シーンキャッシュとイベントクラスを各UIオブジェクトに渡す
 		uiList.ForEach(e => e.OnAwake(cache, _events));
 		isCallOnAwake = true;
+		switchAnim.OnAwake (uiList);
 	}
 
 	void Update()

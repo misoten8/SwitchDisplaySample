@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
 /// ディスプレイ基底クラス
 /// 製作者：実川
 /// </summary>
+[RequireComponent(typeof(DisplaySwitchAnim))]
 public abstract class DisplayBase : MonoBehaviour, IDisplay
 {
 	/// <summary>
@@ -23,7 +25,7 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	{
 		get { return null; }
 	}
-
+		
 	/// <summary>
 	/// ディスプレイ切り替えアニメーションが再生中かどうか
 	/// </summary>
@@ -40,6 +42,13 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	[SerializeField]
 	protected List<UIBase> uiList = new List<UIBase>();
 
+	//TODO:アタッチする
+	/// <summary>
+	/// ディスプレイ切り替えアニメーション
+	/// </summary>
+	[SerializeField]
+	protected DisplaySwitchAnim switchAnim;
+
 	/// <summary>
 	/// ディスプレイ生成時に呼ばれるイベント
 	/// </summary>
@@ -48,19 +57,28 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 		// キャッシュを各UIオブジェクトに渡す(イベントクラスは渡さない)
 		uiList.ForEach(e => e.OnAwake(cache, null));
 		isCallOnAwake = true;
+		switchAnim.OnAwake (uiList);
 	}
 
 	/// <summary>
 	/// ディスプレイ遷移開始時に呼ばれるイベント
-	/// 使用例：UIの開始アニメーション呼び出し
 	/// </summary>
-	public virtual void OnSwitchFadeIn() { }
+	public virtual IEnumerator OnSwitchFadeIn() 
+	{
+		switchAnim.OnPlayFadeIn ();
+		while (switchAnim.IsPlaying)
+			yield return null;
+	}
 
 	/// <summary>
 	/// ディスプレイ遷移開始時に呼ばれるイベント
-	/// 使用例：UIの終了アニメーション呼び出し
 	/// </summary>
-	public virtual void OnSwitchFadeOut() { }
+	public virtual IEnumerator OnSwitchFadeOut()
+	{ 
+		switchAnim.OnPlayFadeOut ();
+		while (switchAnim.IsPlaying)
+			yield return null;
+	}
 
 	/// <summary>
 	/// ディスプレイ消去時に呼ばれるイベント
