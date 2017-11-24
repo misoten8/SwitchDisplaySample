@@ -132,9 +132,6 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		// ディスプレイシーンの整理(このタイミングで_currentdisplay変更)
 		yield return StartCoroutine(LoadDisplayScene(scene));
 
-		// ディスプレイの初期化
-		Instance._currentdisplay.OnAwake(Instance._currentSceneCache);
-
 		if (deleteDisplayType != DisplayType.None) {
 			// 過去のディスプレイシーン解放
 			AsyncOperation asyncOp = SceneManager.UnloadSceneAsync (_DISPLAY_MAP [deleteDisplayType]);
@@ -143,6 +140,9 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 			while (asyncOp.progress < 0.9f)
 				yield return null;
 		}
+
+		// ディスプレイの初期化
+		Instance._currentdisplay.OnAwake(Instance._currentSceneCache);
 
 		// ディスプレイ開始アニメーションの再生
 		yield return StartCoroutine(Instance._currentdisplay.OnSwitchFadeIn());
@@ -182,6 +182,7 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 			{
 				// ディスプレイオブジェクトの取得
 				Instance._currentdisplay = display;
+				display.gameObject.SetActive(false);
 
 				// Canvas内のディスプレイオブジェクト以外の消去
 				foreach (Transform child in go.transform)

@@ -6,14 +6,14 @@ using TMPro;
 /// </summary>
 public class MenuTimer : UIBase
 {
-	[SerializeField]
 	private TextMeshProUGUI _text;
-
 	private TitleSceneCache _cache;
 	private float _drawValue = 0.0f;
 
 	public override void OnAwake (ISceneCache cache, IEvents displayEvents)
 	{
+		base.OnAwake(cache, displayEvents);
+		_text = uiObject as TextMeshProUGUI;
 		_cache = cache as TitleSceneCache;
 	}
 

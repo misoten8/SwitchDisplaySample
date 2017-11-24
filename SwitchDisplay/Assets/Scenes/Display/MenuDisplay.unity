@@ -250,6 +250,8 @@ MonoBehaviour:
   uiList:
   - {fileID: 300452848}
   - {fileID: 1216177076}
+  - {fileID: 604433017}
+  - {fileID: 766971594}
   switchAnim: {fileID: 268186402}
 --- !u!114 &268186402
 MonoBehaviour:
@@ -264,8 +266,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeInAnimTime: 1
   _fadeOutAnimTime: 1
-  _fadeInAnim: 2
-  _fadeOutAnim: 3
+  _fadeInAnim: 1
+  _fadeOutAnim: 2
 --- !u!1 &300452844
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9e47f39f209485db60b579238d4a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 300452846}
+  uiObject: {fileID: 300452846}
 --- !u!1 &604433012
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +445,7 @@ GameObject:
   - component: {fileID: 604433016}
   - component: {fileID: 604433015}
   - component: {fileID: 604433014}
+  - component: {fileID: 604433017}
   m_Layer: 5
   m_Name: TextFx Text
   m_TagString: Untagged
@@ -465,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604433014
@@ -1104,17 +1107,17 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - 0.16743445
-          - 0.48119876
-          - 0.00036019835
-          - 0.44159326
-          - 0.022674466
-          - 0.4056086
-          - 0.4584494
-          - 0.50589365
-          - 0.55056334
-          - 0.19778906
-          - 0.58797306
+          - 0.10972109
+          - 0.22862089
+          - 0.5397635
+          - 0.3750973
+          - 0.4746983
+          - 0.19321121
+          - 0.601945
+          - 0.3200231
+          - 0.5105292
+          - 0.027459653
+          - 0.03603754
           m_from: 0
           m_to: 0.6875
           m_to_to: 0
@@ -4282,10 +4285,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -15.862305, y: 15.862307, z: 0}
-      - {x: 15.862305, y: 15.862307, z: 0}
-      - {x: 15.862305, y: -15.862307, z: 0}
-      - {x: -15.862305, y: -15.862307, z: 0}
+      - {x: -19.441818, y: 16.538357, z: 0}
+      - {x: 10.878502, y: 16.538357, z: 0}
+      - {x: 10.878502, y: -15.160161, z: 0}
+      - {x: -19.441818, y: -15.160161, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4328,10 +4331,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -12.337349, y: 13.218588, z: 0}
-      - {x: 12.337349, y: 13.218588, z: 0}
-      - {x: 12.337349, y: -13.218588, z: 0}
-      - {x: -12.337349, y: -13.218588, z: 0}
+      - {x: -14.180481, y: 14.053572, z: 0}
+      - {x: 7.8706665, y: 14.053572, z: 0}
+      - {x: 7.8706665, y: -12.13216, z: 0}
+      - {x: -14.180481, y: -12.13216, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4374,10 +4377,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -10.574875, y: 12.337349, z: 0}
-      - {x: 10.574867, y: 12.337349, z: 0}
-      - {x: 10.574867, y: -12.337349, z: 0}
-      - {x: -10.574875, y: -12.337349, z: 0}
+      - {x: -13.279076, y: 13.172333, z: 0}
+      - {x: 8.772064, y: 13.172333, z: 0}
+      - {x: 8.772064, y: -11.635204, z: 0}
+      - {x: -13.279076, y: -11.635204, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4420,10 +4423,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -10.574871, y: 13.218588, z: 0}
-      - {x: 10.574871, y: 13.218588, z: 0}
-      - {x: 10.574871, y: -13.218588, z: 0}
-      - {x: -10.574871, y: -13.218588, z: 0}
+      - {x: -12.377674, y: 14.053572, z: 0}
+      - {x: 9.67347, y: 14.053572, z: 0}
+      - {x: 9.67347, y: -12.13216, z: 0}
+      - {x: -12.377674, y: -12.13216, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4504,10 +4507,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -14.099828, y: 15.862307, z: 0}
-      - {x: 14.099828, y: 15.862307, z: 0}
-      - {x: 14.099828, y: -15.862307, z: 0}
-      - {x: -14.099828, y: -15.862307, z: 0}
+      - {x: -13.172332, y: 16.538357, z: 0}
+      - {x: 14.391597, y: 16.538357, z: 0}
+      - {x: 14.391597, y: -15.160161, z: 0}
+      - {x: -13.172332, y: -15.160161, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4550,10 +4553,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -4.4061966, y: 15.862307, z: 0}
-      - {x: 4.4061966, y: 15.862307, z: 0}
-      - {x: 4.4061966, y: -15.862307, z: 0}
-      - {x: -4.4061966, y: -15.862307, z: 0}
+      - {x: -4.1144276, y: 16.538357, z: 0}
+      - {x: 4.1547527, y: 16.538357, z: 0}
+      - {x: 4.1547527, y: -15.160161, z: 0}
+      - {x: -4.1144276, y: -15.160161, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4596,10 +4599,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -11.456108, y: 13.218588, z: 0}
-      - {x: 11.456112, y: 13.218588, z: 0}
-      - {x: 11.456112, y: -13.218588, z: 0}
-      - {x: -11.456108, y: -13.218588, z: 0}
+      - {x: -11.323269, y: 14.053572, z: 0}
+      - {x: 10.727875, y: 14.053572, z: 0}
+      - {x: 10.727875, y: -12.13216, z: 0}
+      - {x: -11.323269, y: -12.13216, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4642,10 +4645,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -11.456108, y: 16.743546, z: 0}
-      - {x: 11.456116, y: 16.743546, z: 0}
-      - {x: 11.456116, y: -16.743546, z: 0}
-      - {x: -11.456108, y: -16.743546, z: 0}
+      - {x: -10.421867, y: 17.57853, z: 0}
+      - {x: 11.629272, y: 17.57853, z: 0}
+      - {x: 11.629272, y: -15.498187, z: 0}
+      - {x: -10.421867, y: -15.498187, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4688,10 +4691,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -4.4061966, y: 15.862307, z: 0}
-      - {x: 4.4061966, y: 15.862307, z: 0}
-      - {x: 4.4061966, y: -15.862307, z: 0}
-      - {x: -4.4061966, y: -15.862307, z: 0}
+      - {x: -2.4705582, y: 16.538357, z: 0}
+      - {x: 5.798622, y: 16.538357, z: 0}
+      - {x: 5.798622, y: -15.160161, z: 0}
+      - {x: -2.4705582, y: -15.160161, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4734,10 +4737,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -12.337357, y: 13.218588, z: 0}
-      - {x: 12.337341, y: 13.218588, z: 0}
-      - {x: 12.337341, y: -13.218588, z: 0}
-      - {x: -12.337357, y: -13.218588, z: 0}
+      - {x: -9.182449, y: 14.053572, z: 0}
+      - {x: 12.868698, y: 14.053572, z: 0}
+      - {x: 12.868698, y: -12.13216, z: 0}
+      - {x: -9.182449, y: -12.13216, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -4780,10 +4783,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -11.4561, y: 16.743546, z: 0}
-      - {x: 11.456123, y: 16.743546, z: 0}
-      - {x: 11.456123, y: -16.743546, z: 0}
-      - {x: -11.4561, y: -16.743546, z: 0}
+      - {x: -8.777985, y: 17.57853, z: 0}
+      - {x: 14.651352, y: 17.57853, z: 0}
+      - {x: 14.651352, y: -16.876385, z: 0}
+      - {x: -8.777985, y: -16.876385, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -5090,6 +5093,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 604433012}
+--- !u!114 &604433017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 604433012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ce92fc68ab9429abbd5882c079a9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiObject: {fileID: 604433015}
 --- !u!1 &679965882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,6 +5276,7 @@ GameObject:
   - component: {fileID: 766971591}
   - component: {fileID: 766971593}
   - component: {fileID: 766971592}
+  - component: {fileID: 766971594}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -5283,7 +5299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766971592
@@ -5404,6 +5420,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766971590}
+--- !u!114 &766971594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766971590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ce92fc68ab9429abbd5882c079a9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiObject: {fileID: 766971592}
 --- !u!1 &1216177071
 GameObject:
   m_ObjectHideFlags: 0
@@ -6077,17 +6105,17 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - 0.82657385
-          - 1.160797
-          - 0.9027423
-          - 1.3702141
-          - 0.0041397815
-          - 0.5081111
-          - 1.2207603
-          - 0.52867204
-          - 1.1714159
-          - 0.25583017
-          - 0.94394344
+          - 0.48247597
+          - 1.0805339
+          - 0.09066393
+          - 1.0359846
+          - 1.2636642
+          - 0.49846157
+          - 0.4520336
+          - 0.61986
+          - 0.58526427
+          - 0.7033929
+          - 0.8971586
           m_from: 0
           m_to: 1.375
           m_to_to: 0
@@ -6111,17 +6139,17 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_values:
-          - 2.0896325
-          - 2.7561512
-          - 2.8724031
-          - 2.4110832
-          - 2.4243143
-          - 2.7349496
-          - 2.478905
-          - 2.0137632
-          - 2.8404937
-          - 2.0385275
-          - 2.276937
+          - 2.1463537
+          - 2.3028328
+          - 2.8304274
+          - 2.5294793
+          - 2.5299652
+          - 2.563336
+          - 2.8794236
+          - 2.5292313
+          - 2.6931045
+          - 2.6656113
+          - 2.4217603
           m_from: 2
           m_to: 3
           m_to_to: 1
@@ -8054,10 +8082,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -195.94403, y: 456.67807, z: 0}
-      - {x: -142.1081, y: 447.35736, z: 0}
-      - {x: -152.93217, y: 384.8382, z: 0}
-      - {x: -206.76811, y: 394.15894, z: 0}
+      - {x: -194.12413, y: 456.3299, z: 0}
+      - {x: -139.80438, y: 446.9254, z: 0}
+      - {x: -150.61954, y: 384.4577, z: 0}
+      - {x: -204.9393, y: 393.86218, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8100,10 +8128,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -126.692894, y: 436.476, z: 0}
-      - {x: -93.26482, y: 407.7703, z: 0}
-      - {x: -124.26701, y: 371.66797, z: 0}
-      - {x: -157.6951, y: 400.3737, z: 0}
+      - {x: -124.00908, y: 434.63843, z: 0}
+      - {x: -92.64157, y: 407.70215, z: 0}
+      - {x: -123.16933, y: 372.1523, z: 0}
+      - {x: -154.53683, y: 399.08856, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8146,10 +8174,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -85.95598, y: 437.83527, z: 0}
-      - {x: -74.95971, y: 432.2413, z: 0}
-      - {x: -102.92954, y: 377.26, z: 0}
-      - {x: -113.925804, y: 382.85397, z: 0}
+      - {x: -83.45937, y: 435.7979, z: 0}
+      - {x: -73.63229, y: 430.7987, z: 0}
+      - {x: -101.1278, y: 376.7498, z: 0}
+      - {x: -110.95487, y: 381.749, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8192,10 +8220,10 @@ MonoBehaviour:
         m_word_value: 0
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -60.884186, y: 431.44775, z: 0}
-      - {x: -51.760983, y: 423.14252, z: 0}
-      - {x: -93.287285, y: 377.5265, z: 0}
-      - {x: -102.41049, y: 385.83176, z: 0}
+      - {x: -58.314762, y: 429.29498, z: 0}
+      - {x: -50.161587, y: 421.8728, z: 0}
+      - {x: -90.98367, y: 377.03033, z: 0}
+      - {x: -99.13685, y: 384.45255, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8276,10 +8304,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: -28.617878, y: 431.58105, z: 0}
-      - {x: 15.522575, y: 413.80084, z: 0}
-      - {x: -7.525822, y: 356.58176, z: 0}
-      - {x: -51.66628, y: 374.36194, z: 0}
+      - {x: -26.690811, y: 429.75027, z: 0}
+      - {x: 16.774145, y: 412.2422, z: 0}
+      - {x: -5.883392, y: 355.9934, z: 0}
+      - {x: -49.348347, y: 373.50153, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8322,10 +8350,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 16.466543, y: 408.5105, z: 0}
-      - {x: 54.092896, y: 389.18423, z: 0}
-      - {x: 33.15612, y: 348.42236, z: 0}
-      - {x: -4.470228, y: 367.7486, z: 0}
+      - {x: 19.252579, y: 407.37775, z: 0}
+      - {x: 57.25663, y: 387.8575, z: 0}
+      - {x: 36.47701, y: 347.40158, z: 0}
+      - {x: -1.5270427, y: 366.92184, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8368,10 +8396,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 36.943928, y: 381.8089, z: 0}
-      - {x: 76.53434, y: 401.1494, z: 0}
-      - {x: 97.422104, y: 358.39175, z: 0}
-      - {x: 57.831688, y: 339.05124, z: 0}
+      - {x: 40.282475, y: 381.38922, z: 0}
+      - {x: 77.43245, y: 399.53757, z: 0}
+      - {x: 98.000565, y: 357.43427, z: 0}
+      - {x: 60.85058, y: 339.28592, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8414,10 +8442,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 89.69945, y: 385.70407, z: 0}
-      - {x: 128.45119, y: 387.03326, z: 0}
-      - {x: 130.02206, y: 341.23578, z: 0}
-      - {x: 91.270325, y: 339.90656, z: 0}
+      - {x: 92.6305, y: 384.49753, z: 0}
+      - {x: 131.19731, y: 385.8204, z: 0}
+      - {x: 132.75641, y: 340.36664, z: 0}
+      - {x: 94.18958, y: 339.0438, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8460,10 +8488,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 120.41215, y: 386.64944, z: 0}
-      - {x: 144.68173, y: 397.13333, z: 0}
-      - {x: 169.14412, y: 340.5043, z: 0}
-      - {x: 144.87453, y: 330.02042, z: 0}
+      - {x: 124.24528, y: 385.86517, z: 0}
+      - {x: 145.75366, y: 395.15628, z: 0}
+      - {x: 169.8012, y: 339.48758, z: 0}
+      - {x: 148.29282, y: 330.19647, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8506,10 +8534,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 152.05, y: 389.48746, z: 0}
-      - {x: 165.67744, y: 393.10654, z: 0}
-      - {x: 181.51093, y: 333.48645, z: 0}
-      - {x: 167.88348, y: 329.86737, z: 0}
+      - {x: 153.85745, y: 387.85992, z: 0}
+      - {x: 167.17769, y: 391.39743, z: 0}
+      - {x: 182.74268, y: 332.7884, z: 0}
+      - {x: 169.42244, y: 329.2509, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8552,10 +8580,10 @@ MonoBehaviour:
         m_word_value: 1
         m_line_value: 0
       m_current_animated_vertices:
-      - {x: 179.51283, y: 387.58072, z: 0}
-      - {x: 193.55397, y: 388.86584, z: 0}
-      - {x: 199.17636, y: 327.43585, z: 0}
-      - {x: 185.13522, y: 326.15073, z: 0}
+      - {x: 180.39038, y: 386.06107, z: 0}
+      - {x: 194.11499, y: 387.3172, z: 0}
+      - {x: 199.64201, y: 326.92896, z: 0}
+      - {x: 185.9174, y: 325.67282, z: 0}
       m_current_animated_colours:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
@@ -8843,7 +8871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8b5bab770cefa428ea026315b43b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1216177074}
+  uiObject: {fileID: 1216177074}
 --- !u!1 &1393161911
 GameObject:
   m_ObjectHideFlags: 0

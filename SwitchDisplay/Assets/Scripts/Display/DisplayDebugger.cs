@@ -28,8 +28,12 @@ public class DisplayDebugger : MonoBehaviour
 	{
 		// ディスプレイ初期化処理呼び出し
 		_display.OnAwake(_sceneCache);
+		// フェードインアニメーション再生
+		_display.OnSwitchFadeIn();
 
 		// リフレクションを使用する(重いけど、デバッグ用でStart呼び出しだから多少はね？)
+		if (_display.DisplayEvents == null)
+			return;
 
 		// 型を取得
 		Type type = _display.DisplayEvents.GetType();

@@ -19,6 +19,7 @@ public class MenuDisplay : DisplayBase
 
 	public override void OnAwake(ISceneCache cache)
 	{
+		gameObject.SetActive(true);
 		// シーンキャッシュとイベントクラスを各UIオブジェクトに渡す
 		uiList.ForEach(e => e.OnAwake(cache, _events));
 		isCallOnAwake = true;

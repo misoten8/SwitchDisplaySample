@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class DisplaySwitchAnim : MonoBehaviour
 		/// 移動しない
 		/// </summary>
 		None,
+		/// <summary>
+		/// 外側から中心に向かって各UIオブジェクトが移動する
+		/// </summary>
+		CircleIn,
 		/// <summary>
 		/// 中心から外側に向かって各UIオブジェクトが移動する
 		/// </summary>
@@ -60,8 +65,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	[SerializeField]
 	private AnimType _fadeOutAnim = AnimType.None;
-
-	//TODO:アニメーションメソッドとアニメーションタイプを紐付けるマップ作成
+	
 	/// <summary>
 	/// アニメーションメソッドとアニメーションタイプを紐付けるマップ
 	/// </summary>
@@ -101,6 +105,8 @@ public class DisplaySwitchAnim : MonoBehaviour
 		_animationMap = new Dictionary<AnimType, Action<float, Vector3>>
 		{
 			{ AnimType.None, _Empty },
+			{ AnimType.CircleIn, _CircleIn },
+			{ AnimType.CircleOut, _CircleOut },
 			{ AnimType.SlideLeftIn, _SlideLeftIn },
 			{ AnimType.SlideLeftOut, _SlideLeftOut }
 		};
@@ -111,7 +117,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	public void OnPlayFadeIn()
 	{
-		_OnPlay (_fadeInAnim);
+		_OnPlay(_fadeInAnim);
 		_animTime = _fadeInAnimTime;
 	}
 
@@ -120,17 +126,17 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	public void OnPlayFadeOut()
 	{
-		_OnPlay (_fadeOutAnim);
+		_OnPlay(_fadeOutAnim);
 		_animTime = _fadeOutAnimTime;
 	}
-		
+
 	private void Update()
 	{
 		if (!_isPlaying)
 			return;
 
 		_playingAnimElapsedTime += Time.deltaTime;
-		_animPlayer?.Invoke (Mathf.Min(_playingAnimElapsedTime / _animTime, 1.0f), _anchorPos);
+		_animPlayer?.Invoke(Mathf.Min(_playingAnimElapsedTime / _animTime, 1.0f), _anchorPos);
 
 		if (_playingAnimElapsedTime > _animTime)
 			_isPlaying = false;
@@ -139,17 +145,38 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// <summary>
 	/// 共通のアニメーション再生処理
 	/// </summary>
-	/// <returns>The play.</returns>
 	private void _OnPlay(AnimType animType)
 	{
 		_isPlaying = true;
+		_playingAnimElapsedTime = 0.0f;
 		//TODO:DoTweenを導入し、アニメーション処理を実装する
-		_anchorPos = transform.localPosition;
 		_animPlayer = _animationMap[animType];
 		_animPlayer?.Invoke(0.0f, _anchorPos);
 	}
 
-	private void _Empty(float rate, Vector3 anchorPos){}
+	private void _Empty(float rate, Vector3 anchorPos) { }
+
+	private void _CircleIn(float rate, Vector3 anchorPos)
+	{
+		Vector3 direction, distance;
+		_uiList.ForEach(e =>
+		{
+			direction = Vector3.Normalize(e.AnchorPos - anchorPos);
+			distance = new Vector3(direction.x * (Screen.width * 3.0f), direction.y * (Screen.height * 3.0f), 0.0f);
+			e.transform.localPosition = Vector3.Lerp(e.AnchorPos + distance, e.AnchorPos, rate);
+		});
+	}
+
+	private void _CircleOut(float rate, Vector3 anchorPos)
+	{
+		Vector3 direction, distance;
+		_uiList.ForEach(e => 
+		{
+			direction = Vector3.Normalize(e.AnchorPos - anchorPos);
+			distance = new Vector3(direction.x * (Screen.width * 3.0f), direction.y * (Screen.height * 3.0f), 0.0f);
+			e.transform.localPosition = Vector3.Lerp(e.AnchorPos, e.AnchorPos + distance, rate);
+		});
+	}
 
 	private void _SlideLeftIn(float rate, Vector3 anchorPos)
 	{

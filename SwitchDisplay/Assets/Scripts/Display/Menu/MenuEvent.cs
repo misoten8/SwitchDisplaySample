@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TextFx;
+﻿using TextFx;
 
 /// <summary>
 /// MenuEvent クラス
@@ -9,12 +6,13 @@ using TextFx;
 /// </summary>
 public class MenuEvent : UIBase 
 {
-	[SerializeField]
 	private TextFxUGUI _text;
 
 	public override void OnAwake(ISceneCache cache, IEvents displayEvents)
 	{
+		base.OnAwake(cache, displayEvents);
 		var events = displayEvents as MenuEvents;
+		_text = uiObject as TextFxUGUI;
 
 		if (events != null)
 		{

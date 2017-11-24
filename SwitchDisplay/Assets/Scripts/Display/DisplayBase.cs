@@ -45,14 +45,15 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	/// <summary>
 	/// ディスプレイ切り替えアニメーション
 	/// </summary>
-	[SerializeField]
+	[SerializeField, HideInInspector]
 	protected DisplaySwitchAnim switchAnim;
 
 	/// <summary>
 	/// ディスプレイ生成時に呼ばれるイベント
 	/// </summary>
 	public virtual void OnAwake(ISceneCache cache) 
-	{ 
+	{
+		gameObject.SetActive(true);
 		// キャッシュを各UIオブジェクトに渡す(イベントクラスは渡さない)
 		uiList.ForEach(e => e.OnAwake(cache, null));
 		isCallOnAwake = true;
