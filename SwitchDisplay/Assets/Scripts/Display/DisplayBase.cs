@@ -42,7 +42,6 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	[SerializeField]
 	protected List<UIBase> uiList = new List<UIBase>();
 
-	//TODO:アタッチする
 	/// <summary>
 	/// ディスプレイ切り替えアニメーション
 	/// </summary>

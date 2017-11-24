@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268186400}
   - component: {fileID: 268186401}
+  - component: {fileID: 268186402}
   m_Layer: 0
   m_Name: MenuDisplay
   m_TagString: Untagged
@@ -248,6 +249,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiList:
   - {fileID: 300452848}
+  - {fileID: 1216177076}
+  switchAnim: {fileID: 268186402}
+--- !u!114 &268186402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268186399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb72e830e67aa48769fe7ccf88f94e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeInAnimTime: 1
+  _fadeOutAnimTime: 1
+  _fadeInAnim: 2
+  _fadeOutAnim: 3
 --- !u!1 &300452844
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,10 +4256,10 @@ MonoBehaviour:
     m_time_type: 0
     m_letters:
     - m_base_vertices:
-      - {x: -116.32358, y: 15.862307, z: 0}
-      - {x: -84.59897, y: 15.862307, z: 0}
-      - {x: -84.59897, y: -15.862307, z: 0}
-      - {x: -116.32358, y: -15.862307, z: 0}
+      - {x: -119.90309, y: 16.538357, z: 0}
+      - {x: -89.58277, y: 16.538357, z: 0}
+      - {x: -89.58277, y: -15.160161, z: 0}
+      - {x: -119.90309, y: -15.160161, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4256,8 +4274,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 0
-      m_width: 31.72461
-      m_height: 31.724613
+      m_width: 30.32032
+      m_height: 31.698517
       m_progression_variables:
         m_letter_value: 0
         m_letter_value_inc_white_space: 0
@@ -4273,21 +4291,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -100.46127, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: -116.32358, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: -100.46127, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: -84.59897, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: -116.32358, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: -100.46127, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: -84.59897, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: -116.32358, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_center: {x: -100.46127, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_right: {x: -84.59897, y: -15.862307, z: 0}
+      m_anchor_offset_middle_center: {x: -104.742935, y: 0.6890981, z: 0}
+      m_active_anchor_offset_upper_left: {x: -119.90309, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_center: {x: -104.742935, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_right: {x: -89.58278, y: 16.538357, z: 0}
+      m_active_anchor_offset_middle_left: {x: -119.90309, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_center: {x: -104.742935, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_right: {x: -89.58278, y: 0.6890981, z: 0}
+      m_active_anchor_offset_lower_left: {x: -119.90309, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_center: {x: -104.742935, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_right: {x: -89.58278, y: -15.16016, z: 0}
     - m_base_vertices:
-      - {x: -86.36144, y: 8.812392, z: 0}
-      - {x: -61.686745, y: 8.812392, z: 0}
-      - {x: -61.686745, y: -17.624784, z: 0}
-      - {x: -86.36144, y: -17.624784, z: 0}
+      - {x: -88.204575, y: 9.647375, z: 0}
+      - {x: -66.15343, y: 9.647375, z: 0}
+      - {x: -66.15343, y: -16.538357, z: 0}
+      - {x: -88.204575, y: -16.538357, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4302,8 +4320,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 1
-      m_width: 24.674698
-      m_height: 26.437176
+      m_width: 22.051147
+      m_height: 26.185732
       m_progression_variables:
         m_letter_value: 1
         m_letter_value_inc_white_space: 1
@@ -4319,21 +4337,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -74.02409, y: -4.406196, z: 0}
-      m_active_anchor_offset_upper_left: {x: -86.36144, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_center: {x: -74.02409, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_right: {x: -61.686745, y: 8.812391, z: 0}
-      m_active_anchor_offset_middle_left: {x: -86.36144, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_center: {x: -74.02409, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_right: {x: -61.686745, y: -4.406196, z: 0}
-      m_active_anchor_offset_lower_left: {x: -86.36144, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_center: {x: -74.02409, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_right: {x: -61.686745, y: -17.624784, z: 0}
+      m_anchor_offset_middle_center: {x: -77.179, y: -3.4454908, z: 0}
+      m_active_anchor_offset_upper_left: {x: -88.204575, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_center: {x: -77.179, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_right: {x: -66.15343, y: 9.647375, z: 0}
+      m_active_anchor_offset_middle_left: {x: -88.204575, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_center: {x: -77.179, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_right: {x: -66.15343, y: -3.4454908, z: 0}
+      m_active_anchor_offset_lower_left: {x: -88.204575, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_center: {x: -77.179, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_right: {x: -66.15343, y: -16.538357, z: 0}
     - m_base_vertices:
-      - {x: -63.449226, y: 8.812392, z: 0}
-      - {x: -42.299484, y: 8.812392, z: 0}
-      - {x: -42.299484, y: -15.862307, z: 0}
-      - {x: -63.449226, y: -15.862307, z: 0}
+      - {x: -66.15343, y: 9.647375, z: 0}
+      - {x: -44.102287, y: 9.647375, z: 0}
+      - {x: -44.102287, y: -15.160161, z: 0}
+      - {x: -66.15343, y: -15.160161, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4348,8 +4366,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 2
-      m_width: 21.149742
-      m_height: 24.674698
+      m_width: 22.05114
+      m_height: 24.807537
       m_progression_variables:
         m_letter_value: 2
         m_letter_value_inc_white_space: 2
@@ -4365,21 +4383,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -52.87435, y: -3.5249572, z: 0}
-      m_active_anchor_offset_upper_left: {x: -63.449223, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_center: {x: -52.87435, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_right: {x: -42.29948, y: 8.812391, z: 0}
-      m_active_anchor_offset_middle_left: {x: -63.449223, y: -3.5249572, z: 0}
-      m_active_anchor_offset_middle_center: {x: -52.87435, y: -3.5249572, z: 0}
-      m_active_anchor_offset_middle_right: {x: -42.29948, y: -3.5249572, z: 0}
-      m_active_anchor_offset_lower_left: {x: -63.449223, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_center: {x: -52.87435, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_right: {x: -42.29948, y: -15.862307, z: 0}
+      m_anchor_offset_middle_center: {x: -55.127857, y: -2.756393, z: 0}
+      m_active_anchor_offset_upper_left: {x: -66.15343, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_center: {x: -55.127857, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_right: {x: -44.102287, y: 9.647375, z: 0}
+      m_active_anchor_offset_middle_left: {x: -66.15343, y: -2.756393, z: 0}
+      m_active_anchor_offset_middle_center: {x: -55.127857, y: -2.756393, z: 0}
+      m_active_anchor_offset_middle_right: {x: -44.102287, y: -2.756393, z: 0}
+      m_active_anchor_offset_lower_left: {x: -66.15343, y: -15.160162, z: 0}
+      m_active_anchor_offset_lower_center: {x: -55.127857, y: -15.160162, z: 0}
+      m_active_anchor_offset_lower_right: {x: -44.102287, y: -15.160162, z: 0}
     - m_base_vertices:
-      - {x: -42.299484, y: 8.812392, z: 0}
-      - {x: -21.149742, y: 8.812392, z: 0}
-      - {x: -21.149742, y: -17.624784, z: 0}
-      - {x: -42.299484, y: -17.624784, z: 0}
+      - {x: -44.102287, y: 9.647375, z: 0}
+      - {x: -22.051144, y: 9.647375, z: 0}
+      - {x: -22.051144, y: -16.538357, z: 0}
+      - {x: -44.102287, y: -16.538357, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4394,8 +4412,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 3
-      m_width: 21.149742
-      m_height: 26.437176
+      m_width: 22.051144
+      m_height: 26.185732
       m_progression_variables:
         m_letter_value: 3
         m_letter_value_inc_white_space: 3
@@ -4411,21 +4429,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -31.724613, y: -4.406196, z: 0}
-      m_active_anchor_offset_upper_left: {x: -42.299484, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_center: {x: -31.724613, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_right: {x: -21.149742, y: 8.812391, z: 0}
-      m_active_anchor_offset_middle_left: {x: -42.299484, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_center: {x: -31.724613, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_right: {x: -21.149742, y: -4.406196, z: 0}
-      m_active_anchor_offset_lower_left: {x: -42.299484, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_center: {x: -31.724613, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_right: {x: -21.149742, y: -17.624784, z: 0}
+      m_anchor_offset_middle_center: {x: -33.076714, y: -3.4454908, z: 0}
+      m_active_anchor_offset_upper_left: {x: -44.102287, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_center: {x: -33.076714, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_right: {x: -22.051142, y: 9.647375, z: 0}
+      m_active_anchor_offset_middle_left: {x: -44.102287, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_center: {x: -33.076714, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_right: {x: -22.051142, y: -3.4454908, z: 0}
+      m_active_anchor_offset_lower_left: {x: -44.102287, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_center: {x: -33.076714, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_right: {x: -22.051142, y: -16.538357, z: 0}
     - m_base_vertices:
-      - {x: -21.149742, y: -14.099828, z: 0}
-      - {x: -10.574871, y: -14.099828, z: 0}
-      - {x: -10.574871, y: -14.099828, z: 0}
-      - {x: -21.149742, y: -14.099828, z: 0}
+      - {x: -22.051144, y: -13.781965, z: 0}
+      - {x: -11.025572, y: -13.781965, z: 0}
+      - {x: -11.025572, y: -13.781965, z: 0}
+      - {x: -22.051144, y: -13.781965, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4440,7 +4458,7 @@ MonoBehaviour:
       m_visible_character: 0
       m_stub_instance: 0
       m_mesh_index: 4
-      m_width: 10.574871
+      m_width: 11.025572
       m_height: 0
       m_progression_variables:
         m_letter_value: -1
@@ -4449,21 +4467,21 @@ MonoBehaviour:
         m_line_value: 0
       m_current_animated_vertices: []
       m_current_animated_colours: []
-      m_anchor_offset_middle_center: {x: -15.862307, y: -14.099828, z: 0}
-      m_active_anchor_offset_upper_left: {x: -21.149742, y: -14.099828, z: 0}
-      m_active_anchor_offset_upper_center: {x: -15.862307, y: -14.099828, z: 0}
-      m_active_anchor_offset_upper_right: {x: -10.574871, y: -14.099828, z: 0}
-      m_active_anchor_offset_middle_left: {x: -21.149742, y: -14.099828, z: 0}
-      m_active_anchor_offset_middle_center: {x: -15.862307, y: -14.099828, z: 0}
-      m_active_anchor_offset_middle_right: {x: -10.574871, y: -14.099828, z: 0}
-      m_active_anchor_offset_lower_left: {x: -21.149742, y: -14.099828, z: 0}
-      m_active_anchor_offset_lower_center: {x: -15.862307, y: -14.099828, z: 0}
-      m_active_anchor_offset_lower_right: {x: -10.574871, y: -14.099828, z: 0}
+      m_anchor_offset_middle_center: {x: -16.538357, y: -13.781965, z: 0}
+      m_active_anchor_offset_upper_left: {x: -22.051144, y: -13.781965, z: 0}
+      m_active_anchor_offset_upper_center: {x: -16.538357, y: -13.781965, z: 0}
+      m_active_anchor_offset_upper_right: {x: -11.025571, y: -13.781965, z: 0}
+      m_active_anchor_offset_middle_left: {x: -22.051144, y: -13.781965, z: 0}
+      m_active_anchor_offset_middle_center: {x: -16.538357, y: -13.781965, z: 0}
+      m_active_anchor_offset_middle_right: {x: -11.025571, y: -13.781965, z: 0}
+      m_active_anchor_offset_lower_left: {x: -22.051144, y: -13.781965, z: 0}
+      m_active_anchor_offset_lower_center: {x: -16.538357, y: -13.781965, z: 0}
+      m_active_anchor_offset_lower_right: {x: -11.025571, y: -13.781965, z: 0}
     - m_base_vertices:
-      - {x: -10.574871, y: 15.862307, z: 0}
-      - {x: 17.624784, y: 15.862307, z: 0}
-      - {x: 17.624784, y: -15.862307, z: 0}
-      - {x: -10.574871, y: -15.862307, z: 0}
+      - {x: -9.647375, y: 16.538357, z: 0}
+      - {x: 17.916553, y: 16.538357, z: 0}
+      - {x: 17.916553, y: -15.160161, z: 0}
+      - {x: -9.647375, y: -15.160161, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4478,8 +4496,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 5
-      m_width: 28.199656
-      m_height: 31.724613
+      m_width: 27.563929
+      m_height: 31.698517
       m_progression_variables:
         m_letter_value: 4
         m_letter_value_inc_white_space: 5
@@ -4495,21 +4513,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 3.5249567, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: -10.574871, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: 3.5249567, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: 17.624784, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: -10.574871, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 3.5249567, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 17.624784, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: -10.574871, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_center: {x: 3.5249567, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_right: {x: 17.624784, y: -15.862307, z: 0}
+      m_anchor_offset_middle_center: {x: 4.134589, y: 0.6890981, z: 0}
+      m_active_anchor_offset_upper_left: {x: -9.647375, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_center: {x: 4.134589, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_right: {x: 17.916553, y: 16.538357, z: 0}
+      m_active_anchor_offset_middle_left: {x: -9.647375, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_center: {x: 4.134589, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_right: {x: 17.916553, y: 0.6890981, z: 0}
+      m_active_anchor_offset_lower_left: {x: -9.647375, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_center: {x: 4.134589, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_right: {x: 17.916553, y: -15.16016, z: 0}
     - m_base_vertices:
-      - {x: 17.624784, y: 15.862307, z: 0}
-      - {x: 26.437178, y: 15.862307, z: 0}
-      - {x: 26.437178, y: -15.862307, z: 0}
-      - {x: 17.624784, y: -15.862307, z: 0}
+      - {x: 17.916553, y: 16.538357, z: 0}
+      - {x: 26.185734, y: 16.538357, z: 0}
+      - {x: 26.185734, y: -15.160161, z: 0}
+      - {x: 17.916553, y: -15.160161, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4524,8 +4542,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 6
-      m_width: 8.812393
-      m_height: 31.724613
+      m_width: 8.26918
+      m_height: 31.698517
       m_progression_variables:
         m_letter_value: 5
         m_letter_value_inc_white_space: 6
@@ -4541,21 +4559,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 22.030981, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: 17.624784, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: 22.030981, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: 26.437178, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: 17.624784, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 22.030981, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 26.437178, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: 17.624784, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_center: {x: 22.030981, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_right: {x: 26.437178, y: -15.862307, z: 0}
+      m_anchor_offset_middle_center: {x: 22.051144, y: 0.6890981, z: 0}
+      m_active_anchor_offset_upper_left: {x: 17.916553, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_center: {x: 22.051144, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_right: {x: 26.185734, y: 16.538357, z: 0}
+      m_active_anchor_offset_middle_left: {x: 17.916553, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_center: {x: 22.051144, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_right: {x: 26.185734, y: 0.6890981, z: 0}
+      m_active_anchor_offset_lower_left: {x: 17.916553, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_center: {x: 22.051144, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_right: {x: 26.185734, y: -15.16016, z: 0}
     - m_base_vertices:
-      - {x: 24.674698, y: 8.812392, z: 0}
-      - {x: 47.586918, y: 8.812392, z: 0}
-      - {x: 47.586918, y: -17.624784, z: 0}
-      - {x: 24.674698, y: -17.624784, z: 0}
+      - {x: 24.807537, y: 9.647375, z: 0}
+      - {x: 46.85868, y: 9.647375, z: 0}
+      - {x: 46.85868, y: -16.538357, z: 0}
+      - {x: 24.807537, y: -16.538357, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4570,8 +4588,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 7
-      m_width: 22.91222
-      m_height: 26.437176
+      m_width: 22.051144
+      m_height: 26.185732
       m_progression_variables:
         m_letter_value: 6
         m_letter_value_inc_white_space: 7
@@ -4587,21 +4605,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 36.130806, y: -4.406196, z: 0}
-      m_active_anchor_offset_upper_left: {x: 24.674696, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_center: {x: 36.130806, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_right: {x: 47.586914, y: 8.812391, z: 0}
-      m_active_anchor_offset_middle_left: {x: 24.674696, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_center: {x: 36.130806, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_right: {x: 47.586914, y: -4.406196, z: 0}
-      m_active_anchor_offset_lower_left: {x: 24.674696, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_center: {x: 36.130806, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_right: {x: 47.586914, y: -17.624784, z: 0}
+      m_anchor_offset_middle_center: {x: 35.833107, y: -3.4454908, z: 0}
+      m_active_anchor_offset_upper_left: {x: 24.807535, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_center: {x: 35.833107, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_right: {x: 46.85868, y: 9.647375, z: 0}
+      m_active_anchor_offset_middle_left: {x: 24.807535, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_center: {x: 35.833107, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_right: {x: 46.85868, y: -3.4454908, z: 0}
+      m_active_anchor_offset_lower_left: {x: 24.807535, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_center: {x: 35.833107, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_right: {x: 46.85868, y: -16.538357, z: 0}
     - m_base_vertices:
-      - {x: 45.82444, y: 8.812392, z: 0}
-      - {x: 68.736664, y: 8.812392, z: 0}
-      - {x: 68.736664, y: -24.674698, z: 0}
-      - {x: 45.82444, y: -24.674698, z: 0}
+      - {x: 46.85868, y: 9.647375, z: 0}
+      - {x: 68.90982, y: 9.647375, z: 0}
+      - {x: 68.90982, y: -23.42934, z: 0}
+      - {x: 46.85868, y: -23.42934, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4616,8 +4634,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 8
-      m_width: 22.912224
-      m_height: 33.48709
+      m_width: 22.05114
+      m_height: 33.076714
       m_progression_variables:
         m_letter_value: 7
         m_letter_value_inc_white_space: 8
@@ -4633,21 +4651,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 57.28055, y: -7.931153, z: 0}
-      m_active_anchor_offset_upper_left: {x: 45.824436, y: 8.812393, z: 0}
-      m_active_anchor_offset_upper_center: {x: 57.28055, y: 8.812393, z: 0}
-      m_active_anchor_offset_upper_right: {x: 68.736664, y: 8.812393, z: 0}
-      m_active_anchor_offset_middle_left: {x: 45.824436, y: -7.931153, z: 0}
-      m_active_anchor_offset_middle_center: {x: 57.28055, y: -7.931153, z: 0}
-      m_active_anchor_offset_middle_right: {x: 68.736664, y: -7.931153, z: 0}
-      m_active_anchor_offset_lower_left: {x: 45.824436, y: -24.674698, z: 0}
-      m_active_anchor_offset_lower_center: {x: 57.28055, y: -24.674698, z: 0}
-      m_active_anchor_offset_lower_right: {x: 68.736664, y: -24.674698, z: 0}
+      m_anchor_offset_middle_center: {x: 57.884247, y: -6.8909826, z: 0}
+      m_active_anchor_offset_upper_left: {x: 46.858677, y: 9.647374, z: 0}
+      m_active_anchor_offset_upper_center: {x: 57.884247, y: 9.647374, z: 0}
+      m_active_anchor_offset_upper_right: {x: 68.90982, y: 9.647374, z: 0}
+      m_active_anchor_offset_middle_left: {x: 46.858677, y: -6.8909826, z: 0}
+      m_active_anchor_offset_middle_center: {x: 57.884247, y: -6.8909826, z: 0}
+      m_active_anchor_offset_middle_right: {x: 68.90982, y: -6.8909826, z: 0}
+      m_active_anchor_offset_lower_left: {x: 46.858677, y: -23.42934, z: 0}
+      m_active_anchor_offset_lower_center: {x: 57.884247, y: -23.42934, z: 0}
+      m_active_anchor_offset_lower_right: {x: 68.90982, y: -23.42934, z: 0}
     - m_base_vertices:
-      - {x: 66.97418, y: 15.862307, z: 0}
-      - {x: 75.786575, y: 15.862307, z: 0}
-      - {x: 75.786575, y: -15.862307, z: 0}
-      - {x: 66.97418, y: -15.862307, z: 0}
+      - {x: 68.90982, y: 16.538357, z: 0}
+      - {x: 77.179, y: 16.538357, z: 0}
+      - {x: 77.179, y: -15.160161, z: 0}
+      - {x: 68.90982, y: -15.160161, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4662,8 +4680,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 9
-      m_width: 8.812393
-      m_height: 31.724613
+      m_width: 8.26918
+      m_height: 31.698517
       m_progression_variables:
         m_letter_value: 8
         m_letter_value_inc_white_space: 9
@@ -4679,21 +4697,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 71.38038, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: 66.97418, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: 71.38038, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: 75.786575, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: 66.97418, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: 71.38038, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: 75.786575, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: 66.97418, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_center: {x: 71.38038, y: -15.862307, z: 0}
-      m_active_anchor_offset_lower_right: {x: 75.786575, y: -15.862307, z: 0}
+      m_anchor_offset_middle_center: {x: 73.04441, y: 0.6890981, z: 0}
+      m_active_anchor_offset_upper_left: {x: 68.90982, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_center: {x: 73.04441, y: 16.538357, z: 0}
+      m_active_anchor_offset_upper_right: {x: 77.179, y: 16.538357, z: 0}
+      m_active_anchor_offset_middle_left: {x: 68.90982, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_center: {x: 73.04441, y: 0.6890981, z: 0}
+      m_active_anchor_offset_middle_right: {x: 77.179, y: 0.6890981, z: 0}
+      m_active_anchor_offset_lower_left: {x: 68.90982, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_center: {x: 73.04441, y: -15.16016, z: 0}
+      m_active_anchor_offset_lower_right: {x: 77.179, y: -15.16016, z: 0}
     - m_base_vertices:
-      - {x: 74.02409, y: 8.812392, z: 0}
-      - {x: 98.69879, y: 8.812392, z: 0}
-      - {x: 98.69879, y: -17.624784, z: 0}
-      - {x: 74.02409, y: -17.624784, z: 0}
+      - {x: 77.179, y: 9.647375, z: 0}
+      - {x: 99.23015, y: 9.647375, z: 0}
+      - {x: 99.23015, y: -16.538357, z: 0}
+      - {x: 77.179, y: -16.538357, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4708,8 +4726,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 10
-      m_width: 24.674698
-      m_height: 26.437176
+      m_width: 22.051147
+      m_height: 26.185732
       m_progression_variables:
         m_letter_value: 9
         m_letter_value_inc_white_space: 10
@@ -4725,21 +4743,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 86.36145, y: -4.406196, z: 0}
-      m_active_anchor_offset_upper_left: {x: 74.0241, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_center: {x: 86.36145, y: 8.812391, z: 0}
-      m_active_anchor_offset_upper_right: {x: 98.6988, y: 8.812391, z: 0}
-      m_active_anchor_offset_middle_left: {x: 74.0241, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_center: {x: 86.36145, y: -4.406196, z: 0}
-      m_active_anchor_offset_middle_right: {x: 98.6988, y: -4.406196, z: 0}
-      m_active_anchor_offset_lower_left: {x: 74.0241, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_center: {x: 86.36145, y: -17.624784, z: 0}
-      m_active_anchor_offset_lower_right: {x: 98.6988, y: -17.624784, z: 0}
+      m_anchor_offset_middle_center: {x: 88.204575, y: -3.4454908, z: 0}
+      m_active_anchor_offset_upper_left: {x: 77.179, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_center: {x: 88.204575, y: 9.647375, z: 0}
+      m_active_anchor_offset_upper_right: {x: 99.23015, y: 9.647375, z: 0}
+      m_active_anchor_offset_middle_left: {x: 77.179, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_center: {x: 88.204575, y: -3.4454908, z: 0}
+      m_active_anchor_offset_middle_right: {x: 99.23015, y: -3.4454908, z: 0}
+      m_active_anchor_offset_lower_left: {x: 77.179, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_center: {x: 88.204575, y: -16.538357, z: 0}
+      m_active_anchor_offset_lower_right: {x: 99.23015, y: -16.538357, z: 0}
     - m_base_vertices:
-      - {x: 95.173836, y: 8.812392, z: 0}
-      - {x: 118.08606, y: 8.812392, z: 0}
-      - {x: 118.08606, y: -24.674698, z: 0}
-      - {x: 95.173836, y: -24.674698, z: 0}
+      - {x: 97.85195, y: 9.647375, z: 0}
+      - {x: 121.28129, y: 9.647375, z: 0}
+      - {x: 121.28129, y: -24.807537, z: 0}
+      - {x: 97.85195, y: -24.807537, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -4754,8 +4772,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 11
-      m_width: 22.912224
-      m_height: 33.48709
+      m_width: 23.429337
+      m_height: 34.45491
       m_progression_variables:
         m_letter_value: 10
         m_letter_value_inc_white_space: 11
@@ -4771,16 +4789,16 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 106.629944, y: -7.931153, z: 0}
-      m_active_anchor_offset_upper_left: {x: 95.17383, y: 8.812393, z: 0}
-      m_active_anchor_offset_upper_center: {x: 106.629944, y: 8.812393, z: 0}
-      m_active_anchor_offset_upper_right: {x: 118.08606, y: 8.812393, z: 0}
-      m_active_anchor_offset_middle_left: {x: 95.17383, y: -7.931153, z: 0}
-      m_active_anchor_offset_middle_center: {x: 106.629944, y: -7.931153, z: 0}
-      m_active_anchor_offset_middle_right: {x: 118.08606, y: -7.931153, z: 0}
-      m_active_anchor_offset_lower_left: {x: 95.17383, y: -24.674698, z: 0}
-      m_active_anchor_offset_lower_center: {x: 106.629944, y: -24.674698, z: 0}
-      m_active_anchor_offset_lower_right: {x: 118.08606, y: -24.674698, z: 0}
+      m_anchor_offset_middle_center: {x: 109.56662, y: -7.580081, z: 0}
+      m_active_anchor_offset_upper_left: {x: 97.85195, y: 9.647374, z: 0}
+      m_active_anchor_offset_upper_center: {x: 109.56662, y: 9.647374, z: 0}
+      m_active_anchor_offset_upper_right: {x: 121.28129, y: 9.647374, z: 0}
+      m_active_anchor_offset_middle_left: {x: 97.85195, y: -7.580081, z: 0}
+      m_active_anchor_offset_middle_center: {x: 109.56662, y: -7.580081, z: 0}
+      m_active_anchor_offset_middle_right: {x: 121.28129, y: -7.580081, z: 0}
+      m_active_anchor_offset_lower_left: {x: 97.85195, y: -24.807537, z: 0}
+      m_active_anchor_offset_lower_center: {x: 109.56662, y: -24.807537, z: 0}
+      m_active_anchor_offset_lower_right: {x: 121.28129, y: -24.807537, z: 0}
     m_audio_sources: []
     m_particle_systems: []
     m_particle_effect_managers: []
@@ -4790,58 +4808,58 @@ MonoBehaviour:
     m_num_letters: 12
     m_num_extra_verts_per_letter: 0
     m_textWidths:
-    - 234.40964
+    - 241.18439
     m_textHeights:
-    - 40.537003
+    - 41.345894
     m_current_mesh_verts:
-    - {x: -116.32358, y: 15.862307, z: 0}
-    - {x: -84.59897, y: 15.862307, z: 0}
-    - {x: -84.59897, y: -15.862307, z: 0}
-    - {x: -116.32358, y: -15.862307, z: 0}
-    - {x: -86.36144, y: 8.812392, z: 0}
-    - {x: -61.686745, y: 8.812392, z: 0}
-    - {x: -61.686745, y: -17.624784, z: 0}
-    - {x: -86.36144, y: -17.624784, z: 0}
-    - {x: -63.449226, y: 8.812392, z: 0}
-    - {x: -42.299484, y: 8.812392, z: 0}
-    - {x: -42.299484, y: -15.862307, z: 0}
-    - {x: -63.449226, y: -15.862307, z: 0}
-    - {x: -42.299484, y: 8.812392, z: 0}
-    - {x: -21.149742, y: 8.812392, z: 0}
-    - {x: -21.149742, y: -17.624784, z: 0}
-    - {x: -42.299484, y: -17.624784, z: 0}
-    - {x: -21.149742, y: -14.099828, z: 0}
-    - {x: -10.574871, y: -14.099828, z: 0}
-    - {x: -10.574871, y: -14.099828, z: 0}
-    - {x: -21.149742, y: -14.099828, z: 0}
-    - {x: -10.574871, y: 15.862307, z: 0}
-    - {x: 17.624784, y: 15.862307, z: 0}
-    - {x: 17.624784, y: -15.862307, z: 0}
-    - {x: -10.574871, y: -15.862307, z: 0}
-    - {x: 17.624784, y: 15.862307, z: 0}
-    - {x: 26.437178, y: 15.862307, z: 0}
-    - {x: 26.437178, y: -15.862307, z: 0}
-    - {x: 17.624784, y: -15.862307, z: 0}
-    - {x: 24.674698, y: 8.812392, z: 0}
-    - {x: 47.586918, y: 8.812392, z: 0}
-    - {x: 47.586918, y: -17.624784, z: 0}
-    - {x: 24.674698, y: -17.624784, z: 0}
-    - {x: 45.82444, y: 8.812392, z: 0}
-    - {x: 68.736664, y: 8.812392, z: 0}
-    - {x: 68.736664, y: -24.674698, z: 0}
-    - {x: 45.82444, y: -24.674698, z: 0}
-    - {x: 66.97418, y: 15.862307, z: 0}
-    - {x: 75.786575, y: 15.862307, z: 0}
-    - {x: 75.786575, y: -15.862307, z: 0}
-    - {x: 66.97418, y: -15.862307, z: 0}
-    - {x: 74.02409, y: 8.812392, z: 0}
-    - {x: 98.69879, y: 8.812392, z: 0}
-    - {x: 98.69879, y: -17.624784, z: 0}
-    - {x: 74.02409, y: -17.624784, z: 0}
-    - {x: 95.173836, y: 8.812392, z: 0}
-    - {x: 118.08606, y: 8.812392, z: 0}
-    - {x: 118.08606, y: -24.674698, z: 0}
-    - {x: 95.173836, y: -24.674698, z: 0}
+    - {x: -119.90309, y: 16.538357, z: 0}
+    - {x: -89.58277, y: 16.538357, z: 0}
+    - {x: -89.58277, y: -15.160161, z: 0}
+    - {x: -119.90309, y: -15.160161, z: 0}
+    - {x: -88.204575, y: 9.647375, z: 0}
+    - {x: -66.15343, y: 9.647375, z: 0}
+    - {x: -66.15343, y: -16.538357, z: 0}
+    - {x: -88.204575, y: -16.538357, z: 0}
+    - {x: -66.15343, y: 9.647375, z: 0}
+    - {x: -44.102287, y: 9.647375, z: 0}
+    - {x: -44.102287, y: -15.160161, z: 0}
+    - {x: -66.15343, y: -15.160161, z: 0}
+    - {x: -44.102287, y: 9.647375, z: 0}
+    - {x: -22.051144, y: 9.647375, z: 0}
+    - {x: -22.051144, y: -16.538357, z: 0}
+    - {x: -44.102287, y: -16.538357, z: 0}
+    - {x: -22.051144, y: -13.781965, z: 0}
+    - {x: -11.025572, y: -13.781965, z: 0}
+    - {x: -11.025572, y: -13.781965, z: 0}
+    - {x: -22.051144, y: -13.781965, z: 0}
+    - {x: -9.647375, y: 16.538357, z: 0}
+    - {x: 17.916553, y: 16.538357, z: 0}
+    - {x: 17.916553, y: -15.160161, z: 0}
+    - {x: -9.647375, y: -15.160161, z: 0}
+    - {x: 17.916553, y: 16.538357, z: 0}
+    - {x: 26.185734, y: 16.538357, z: 0}
+    - {x: 26.185734, y: -15.160161, z: 0}
+    - {x: 17.916553, y: -15.160161, z: 0}
+    - {x: 24.807537, y: 9.647375, z: 0}
+    - {x: 46.85868, y: 9.647375, z: 0}
+    - {x: 46.85868, y: -16.538357, z: 0}
+    - {x: 24.807537, y: -16.538357, z: 0}
+    - {x: 46.85868, y: 9.647375, z: 0}
+    - {x: 68.90982, y: 9.647375, z: 0}
+    - {x: 68.90982, y: -23.42934, z: 0}
+    - {x: 46.85868, y: -23.42934, z: 0}
+    - {x: 68.90982, y: 16.538357, z: 0}
+    - {x: 77.179, y: 16.538357, z: 0}
+    - {x: 77.179, y: -15.160161, z: 0}
+    - {x: 68.90982, y: -15.160161, z: 0}
+    - {x: 77.179, y: 9.647375, z: 0}
+    - {x: 99.23015, y: 9.647375, z: 0}
+    - {x: 99.23015, y: -16.538357, z: 0}
+    - {x: 77.179, y: -16.538357, z: 0}
+    - {x: 97.85195, y: 9.647375, z: 0}
+    - {x: 121.28129, y: 9.647375, z: 0}
+    - {x: 121.28129, y: -24.807537, z: 0}
+    - {x: 97.85195, y: -24.807537, z: 0}
     m_current_mesh_colours:
     - {r: 1, g: 1, b: 1, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
@@ -8010,10 +8028,10 @@ MonoBehaviour:
     m_time_type: 0
     m_letters:
     - m_base_vertices:
-      - {x: -204.44751, y: 31.724613, z: 0}
-      - {x: -149.81067, y: 31.724613, z: 0}
-      - {x: -149.81067, y: -31.724613, z: 0}
-      - {x: -204.44751, y: -31.724613, z: 0}
+      - {x: -202.59488, y: 31.698519, z: 0}
+      - {x: -147.46703, y: 31.698519, z: 0}
+      - {x: -147.46703, y: -31.698519, z: 0}
+      - {x: -202.59488, y: -31.698519, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8028,8 +8046,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 0
-      m_width: 54.63684
-      m_height: 63.449226
+      m_width: 55.127853
+      m_height: 63.397038
       m_progression_variables:
         m_letter_value: 0
         m_letter_value_inc_white_space: 0
@@ -8045,21 +8063,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -177.12909, y: 0, z: 0}
-      m_active_anchor_offset_upper_left: {x: -204.44751, y: 31.724613, z: 0}
-      m_active_anchor_offset_upper_center: {x: -177.12909, y: 31.724613, z: 0}
-      m_active_anchor_offset_upper_right: {x: -149.81067, y: 31.724613, z: 0}
-      m_active_anchor_offset_middle_left: {x: -204.44751, y: 0, z: 0}
-      m_active_anchor_offset_middle_center: {x: -177.12909, y: 0, z: 0}
-      m_active_anchor_offset_middle_right: {x: -149.81067, y: 0, z: 0}
-      m_active_anchor_offset_lower_left: {x: -204.44751, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_center: {x: -177.12909, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_right: {x: -149.81067, y: -31.724613, z: 0}
+      m_anchor_offset_middle_center: {x: -175.03094, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -202.59488, y: 31.698519, z: 0}
+      m_active_anchor_offset_upper_center: {x: -175.03094, y: 31.698519, z: 0}
+      m_active_anchor_offset_upper_right: {x: -147.46701, y: 31.698519, z: 0}
+      m_active_anchor_offset_middle_left: {x: -202.59488, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: -175.03094, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: -147.46701, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -202.59488, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_center: {x: -175.03094, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_right: {x: -147.46701, y: -31.698519, z: 0}
     - m_base_vertices:
-      - {x: -148.04819, y: 15.862307, z: 0}
-      - {x: -103.98623, y: 15.862307, z: 0}
-      - {x: -103.98623, y: -31.724613, z: 0}
-      - {x: -148.04819, y: -31.724613, z: 0}
+      - {x: -144.71063, y: 15.160161, z: 0}
+      - {x: -103.36474, y: 15.160161, z: 0}
+      - {x: -103.36474, y: -31.698519, z: 0}
+      - {x: -144.71063, y: -31.698519, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8074,8 +8092,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 1
-      m_width: 44.06196
-      m_height: 47.58692
+      m_width: 41.345894
+      m_height: 46.85868
       m_progression_variables:
         m_letter_value: 1
         m_letter_value_inc_white_space: 1
@@ -8091,21 +8109,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -126.01721, y: -7.9311533, z: 0}
-      m_active_anchor_offset_upper_left: {x: -148.04819, y: 15.862308, z: 0}
-      m_active_anchor_offset_upper_center: {x: -126.01721, y: 15.862308, z: 0}
-      m_active_anchor_offset_upper_right: {x: -103.98624, y: 15.862308, z: 0}
-      m_active_anchor_offset_middle_left: {x: -148.04819, y: -7.9311533, z: 0}
-      m_active_anchor_offset_middle_center: {x: -126.01721, y: -7.9311533, z: 0}
-      m_active_anchor_offset_middle_right: {x: -103.98624, y: -7.9311533, z: 0}
-      m_active_anchor_offset_lower_left: {x: -148.04819, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_center: {x: -126.01721, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_right: {x: -103.98624, y: -31.724613, z: 0}
+      m_anchor_offset_middle_center: {x: -124.03769, y: -8.269178, z: 0}
+      m_active_anchor_offset_upper_left: {x: -144.71063, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_center: {x: -124.03769, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_right: {x: -103.364746, y: 15.160162, z: 0}
+      m_active_anchor_offset_middle_left: {x: -144.71063, y: -8.269178, z: 0}
+      m_active_anchor_offset_middle_center: {x: -124.03769, y: -8.269178, z: 0}
+      m_active_anchor_offset_middle_right: {x: -103.364746, y: -8.269178, z: 0}
+      m_active_anchor_offset_lower_left: {x: -144.71063, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_center: {x: -124.03769, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_right: {x: -103.364746, y: -31.698519, z: 0}
     - m_base_vertices:
-      - {x: -102.223755, y: 31.724613, z: 0}
-      - {x: -89.8864, y: 31.724613, z: 0}
-      - {x: -89.8864, y: -29.962133, z: 0}
-      - {x: -102.223755, y: -29.962133, z: 0}
+      - {x: -99.23015, y: 30.320322, z: 0}
+      - {x: -88.204575, y: 30.320322, z: 0}
+      - {x: -88.204575, y: -30.320322, z: 0}
+      - {x: -99.23015, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8120,8 +8138,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 2
-      m_width: 12.337357
-      m_height: 61.686745
+      m_width: 11.025574
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 2
         m_letter_value_inc_white_space: 2
@@ -8137,21 +8155,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -96.05508, y: 0.8812394, z: 0}
-      m_active_anchor_offset_upper_left: {x: -102.223755, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_center: {x: -96.05508, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_right: {x: -89.8864, y: 31.724611, z: 0}
-      m_active_anchor_offset_middle_left: {x: -102.223755, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_center: {x: -96.05508, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_right: {x: -89.8864, y: 0.8812394, z: 0}
-      m_active_anchor_offset_lower_left: {x: -102.223755, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: -96.05508, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: -89.8864, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: -93.71736, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -99.23015, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_center: {x: -93.71736, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_right: {x: -88.204575, y: 30.320322, z: 0}
+      m_active_anchor_offset_middle_left: {x: -99.23015, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: -93.71736, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: -88.204575, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -99.23015, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: -93.71736, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: -88.204575, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: -84.59897, y: 31.724613, z: 0}
-      - {x: -72.26162, y: 31.724613, z: 0}
-      - {x: -72.26162, y: -29.962133, z: 0}
-      - {x: -84.59897, y: -29.962133, z: 0}
+      - {x: -81.31359, y: 30.320322, z: 0}
+      - {x: -70.28802, y: 30.320322, z: 0}
+      - {x: -70.28802, y: -30.320322, z: 0}
+      - {x: -81.31359, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8166,8 +8184,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 3
-      m_width: 12.337349
-      m_height: 61.686745
+      m_width: 11.025574
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 3
         m_letter_value_inc_white_space: 3
@@ -8183,21 +8201,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -78.4303, y: 0.8812394, z: 0}
-      m_active_anchor_offset_upper_left: {x: -84.59897, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_center: {x: -78.4303, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_right: {x: -72.26163, y: 31.724611, z: 0}
-      m_active_anchor_offset_middle_left: {x: -84.59897, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_center: {x: -78.4303, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_right: {x: -72.26163, y: 0.8812394, z: 0}
-      m_active_anchor_offset_lower_left: {x: -84.59897, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: -78.4303, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: -72.26163, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: -75.800804, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -81.31359, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_center: {x: -75.800804, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_right: {x: -70.28802, y: 30.320322, z: 0}
+      m_active_anchor_offset_middle_left: {x: -81.31359, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: -75.800804, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: -70.28802, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -81.31359, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: -75.800804, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: -70.28802, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: -68.736664, y: -28.199656, z: 0}
-      - {x: -45.82444, y: -28.199656, z: 0}
-      - {x: -45.82444, y: -28.199656, z: 0}
-      - {x: -68.736664, y: -28.199656, z: 0}
+      - {x: -66.15343, y: -28.942125, z: 0}
+      - {x: -44.102287, y: -28.942125, z: 0}
+      - {x: -44.102287, y: -28.942125, z: 0}
+      - {x: -66.15343, y: -28.942125, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8212,7 +8230,7 @@ MonoBehaviour:
       m_visible_character: 0
       m_stub_instance: 0
       m_mesh_index: 4
-      m_width: 22.912224
+      m_width: 22.05114
       m_height: 0
       m_progression_variables:
         m_letter_value: -1
@@ -8221,21 +8239,21 @@ MonoBehaviour:
         m_line_value: 0
       m_current_animated_vertices: []
       m_current_animated_colours: []
-      m_anchor_offset_middle_center: {x: -57.280552, y: -28.199656, z: 0}
-      m_active_anchor_offset_upper_left: {x: -68.736664, y: -28.199656, z: 0}
-      m_active_anchor_offset_upper_center: {x: -57.280552, y: -28.199656, z: 0}
-      m_active_anchor_offset_upper_right: {x: -45.82444, y: -28.199656, z: 0}
-      m_active_anchor_offset_middle_left: {x: -68.736664, y: -28.199656, z: 0}
-      m_active_anchor_offset_middle_center: {x: -57.280552, y: -28.199656, z: 0}
-      m_active_anchor_offset_middle_right: {x: -45.82444, y: -28.199656, z: 0}
-      m_active_anchor_offset_lower_left: {x: -68.736664, y: -28.199656, z: 0}
-      m_active_anchor_offset_lower_center: {x: -57.280552, y: -28.199656, z: 0}
-      m_active_anchor_offset_lower_right: {x: -45.82444, y: -28.199656, z: 0}
+      m_anchor_offset_middle_center: {x: -55.127857, y: -28.942125, z: 0}
+      m_active_anchor_offset_upper_left: {x: -66.15343, y: -28.942125, z: 0}
+      m_active_anchor_offset_upper_center: {x: -55.127857, y: -28.942125, z: 0}
+      m_active_anchor_offset_upper_right: {x: -44.102287, y: -28.942125, z: 0}
+      m_active_anchor_offset_middle_left: {x: -66.15343, y: -28.942125, z: 0}
+      m_active_anchor_offset_middle_center: {x: -55.127857, y: -28.942125, z: 0}
+      m_active_anchor_offset_middle_right: {x: -44.102287, y: -28.942125, z: 0}
+      m_active_anchor_offset_lower_left: {x: -66.15343, y: -28.942125, z: 0}
+      m_active_anchor_offset_lower_center: {x: -55.127857, y: -28.942125, z: 0}
+      m_active_anchor_offset_lower_right: {x: -44.102287, y: -28.942125, z: 0}
     - m_base_vertices:
-      - {x: -42.299484, y: 31.724613, z: 0}
-      - {x: 5.2874355, y: 31.724613, z: 0}
-      - {x: 5.2874355, y: -29.962133, z: 0}
-      - {x: -42.299484, y: -29.962133, z: 0}
+      - {x: -39.967697, y: 30.320322, z: 0}
+      - {x: 6.8909826, y: 30.320322, z: 0}
+      - {x: 6.8909826, y: -30.320322, z: 0}
+      - {x: -39.967697, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8250,8 +8268,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 5
-      m_width: 47.58692
-      m_height: 61.686745
+      m_width: 46.85868
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 4
         m_letter_value_inc_white_space: 5
@@ -8267,21 +8285,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: -18.506023, y: 0.8812394, z: 0}
-      m_active_anchor_offset_upper_left: {x: -42.299484, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_center: {x: -18.506023, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_right: {x: 5.2874374, y: 31.724611, z: 0}
-      m_active_anchor_offset_middle_left: {x: -42.299484, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_center: {x: -18.506023, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_right: {x: 5.2874374, y: 0.8812394, z: 0}
-      m_active_anchor_offset_lower_left: {x: -42.299484, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: -18.506023, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: 5.2874374, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: -16.538357, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: -39.967697, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_center: {x: -16.538357, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_right: {x: 6.8909836, y: 30.320322, z: 0}
+      m_active_anchor_offset_middle_left: {x: -39.967697, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: -16.538357, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 6.8909836, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: -39.967697, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: -16.538357, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: 6.8909836, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: 5.2874355, y: 15.862307, z: 0}
-      - {x: 47.586918, y: 15.862307, z: 0}
-      - {x: 47.586918, y: -29.962133, z: 0}
-      - {x: 5.2874355, y: -29.962133, z: 0}
+      - {x: 8.269178, y: 15.160161, z: 0}
+      - {x: 50.99327, y: 15.160161, z: 0}
+      - {x: 50.99327, y: -30.320322, z: 0}
+      - {x: 8.269178, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8296,8 +8314,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 6
-      m_width: 42.299484
-      m_height: 45.82444
+      m_width: 42.72409
+      m_height: 45.480484
       m_progression_variables:
         m_letter_value: 5
         m_letter_value_inc_white_space: 6
@@ -8313,21 +8331,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 26.437178, y: -7.0499134, z: 0}
-      m_active_anchor_offset_upper_left: {x: 5.2874355, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: 26.437178, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: 47.58692, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: 5.2874355, y: -7.0499134, z: 0}
-      m_active_anchor_offset_middle_center: {x: 26.437178, y: -7.0499134, z: 0}
-      m_active_anchor_offset_middle_right: {x: 47.58692, y: -7.0499134, z: 0}
-      m_active_anchor_offset_lower_left: {x: 5.2874355, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: 26.437178, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: 47.58692, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: 29.631226, y: -7.5800805, z: 0}
+      m_active_anchor_offset_upper_left: {x: 8.26918, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_center: {x: 29.631226, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_right: {x: 50.99327, y: 15.160162, z: 0}
+      m_active_anchor_offset_middle_left: {x: 8.26918, y: -7.5800805, z: 0}
+      m_active_anchor_offset_middle_center: {x: 29.631226, y: -7.5800805, z: 0}
+      m_active_anchor_offset_middle_right: {x: 50.99327, y: -7.5800805, z: 0}
+      m_active_anchor_offset_lower_left: {x: 8.26918, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: 29.631226, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: 50.99327, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: 47.586918, y: 15.862307, z: 0}
-      - {x: 91.64888, y: 15.862307, z: 0}
-      - {x: 91.64888, y: -31.724613, z: 0}
-      - {x: 47.586918, y: -31.724613, z: 0}
+      - {x: 50.99327, y: 15.160161, z: 0}
+      - {x: 92.339165, y: 15.160161, z: 0}
+      - {x: 92.339165, y: -31.698519, z: 0}
+      - {x: 50.99327, y: -31.698519, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8342,8 +8360,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 7
-      m_width: 44.061962
-      m_height: 47.58692
+      m_width: 41.345894
+      m_height: 46.85868
       m_progression_variables:
         m_letter_value: 6
         m_letter_value_inc_white_space: 7
@@ -8359,21 +8377,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 69.6179, y: -7.9311533, z: 0}
-      m_active_anchor_offset_upper_left: {x: 47.586914, y: 15.862308, z: 0}
-      m_active_anchor_offset_upper_center: {x: 69.6179, y: 15.862308, z: 0}
-      m_active_anchor_offset_upper_right: {x: 91.64888, y: 15.862308, z: 0}
-      m_active_anchor_offset_middle_left: {x: 47.586914, y: -7.9311533, z: 0}
-      m_active_anchor_offset_middle_center: {x: 69.6179, y: -7.9311533, z: 0}
-      m_active_anchor_offset_middle_right: {x: 91.64888, y: -7.9311533, z: 0}
-      m_active_anchor_offset_lower_left: {x: 47.586914, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_center: {x: 69.6179, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_right: {x: 91.64888, y: -31.724613, z: 0}
+      m_anchor_offset_middle_center: {x: 71.666214, y: -8.269178, z: 0}
+      m_active_anchor_offset_upper_left: {x: 50.993267, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_center: {x: 71.666214, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_right: {x: 92.33916, y: 15.160162, z: 0}
+      m_active_anchor_offset_middle_left: {x: 50.993267, y: -8.269178, z: 0}
+      m_active_anchor_offset_middle_center: {x: 71.666214, y: -8.269178, z: 0}
+      m_active_anchor_offset_middle_right: {x: 92.33916, y: -8.269178, z: 0}
+      m_active_anchor_offset_lower_left: {x: 50.993267, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_center: {x: 71.666214, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_right: {x: 92.33916, y: -31.698519, z: 0}
     - m_base_vertices:
-      - {x: 93.41136, y: 15.862307, z: 0}
-      - {x: 132.18588, y: 15.862307, z: 0}
-      - {x: 132.18588, y: -29.962133, z: 0}
-      - {x: 93.41136, y: -29.962133, z: 0}
+      - {x: 96.473755, y: 15.160161, z: 0}
+      - {x: 135.06325, y: 15.160161, z: 0}
+      - {x: 135.06325, y: -30.320322, z: 0}
+      - {x: 96.473755, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8388,8 +8406,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 8
-      m_width: 38.77452
-      m_height: 45.82444
+      m_width: 38.589493
+      m_height: 45.480484
       m_progression_variables:
         m_letter_value: 7
         m_letter_value_inc_white_space: 8
@@ -8405,21 +8423,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 112.79863, y: -7.0499134, z: 0}
-      m_active_anchor_offset_upper_left: {x: 93.41137, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_center: {x: 112.79863, y: 15.862307, z: 0}
-      m_active_anchor_offset_upper_right: {x: 132.18588, y: 15.862307, z: 0}
-      m_active_anchor_offset_middle_left: {x: 93.41137, y: -7.0499134, z: 0}
-      m_active_anchor_offset_middle_center: {x: 112.79863, y: -7.0499134, z: 0}
-      m_active_anchor_offset_middle_right: {x: 132.18588, y: -7.0499134, z: 0}
-      m_active_anchor_offset_lower_left: {x: 93.41137, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: 112.79863, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: 132.18588, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: 115.7685, y: -7.5800805, z: 0}
+      m_active_anchor_offset_upper_left: {x: 96.473755, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_center: {x: 115.7685, y: 15.160162, z: 0}
+      m_active_anchor_offset_upper_right: {x: 135.06325, y: 15.160162, z: 0}
+      m_active_anchor_offset_middle_left: {x: 96.473755, y: -7.5800805, z: 0}
+      m_active_anchor_offset_middle_center: {x: 115.7685, y: -7.5800805, z: 0}
+      m_active_anchor_offset_middle_right: {x: 135.06325, y: -7.5800805, z: 0}
+      m_active_anchor_offset_lower_left: {x: 96.473755, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: 115.7685, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: 135.06325, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: 133.94836, y: 29.962133, z: 0}
-      - {x: 160.38554, y: 29.962133, z: 0}
-      - {x: 160.38554, y: -31.724613, z: 0}
-      - {x: 133.94836, y: -31.724613, z: 0}
+      - {x: 137.81964, y: 28.942125, z: 0}
+      - {x: 161.249, y: 28.942125, z: 0}
+      - {x: 161.249, y: -31.698519, z: 0}
+      - {x: 137.81964, y: -31.698519, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8434,8 +8452,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 9
-      m_width: 26.43718
-      m_height: 61.686745
+      m_width: 23.429352
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 8
         m_letter_value_inc_white_space: 9
@@ -8451,21 +8469,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 147.16696, y: -0.8812399, z: 0}
-      m_active_anchor_offset_upper_left: {x: 133.94836, y: 29.962132, z: 0}
-      m_active_anchor_offset_upper_center: {x: 147.16696, y: 29.962132, z: 0}
-      m_active_anchor_offset_upper_right: {x: 160.38556, y: 29.962132, z: 0}
-      m_active_anchor_offset_middle_left: {x: 133.94836, y: -0.8812399, z: 0}
-      m_active_anchor_offset_middle_center: {x: 147.16696, y: -0.8812399, z: 0}
-      m_active_anchor_offset_middle_right: {x: 160.38556, y: -0.8812399, z: 0}
-      m_active_anchor_offset_lower_left: {x: 133.94836, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_center: {x: 147.16696, y: -31.724613, z: 0}
-      m_active_anchor_offset_lower_right: {x: 160.38556, y: -31.724613, z: 0}
+      m_anchor_offset_middle_center: {x: 149.53432, y: -1.3781967, z: 0}
+      m_active_anchor_offset_upper_left: {x: 137.81964, y: 28.942125, z: 0}
+      m_active_anchor_offset_upper_center: {x: 149.53432, y: 28.942125, z: 0}
+      m_active_anchor_offset_upper_right: {x: 161.249, y: 28.942125, z: 0}
+      m_active_anchor_offset_middle_left: {x: 137.81964, y: -1.3781967, z: 0}
+      m_active_anchor_offset_middle_center: {x: 149.53432, y: -1.3781967, z: 0}
+      m_active_anchor_offset_middle_right: {x: 161.249, y: -1.3781967, z: 0}
+      m_active_anchor_offset_lower_left: {x: 137.81964, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_center: {x: 149.53432, y: -31.698519, z: 0}
+      m_active_anchor_offset_lower_right: {x: 161.249, y: -31.698519, z: 0}
     - m_base_vertices:
-      - {x: 162.14803, y: 31.724613, z: 0}
-      - {x: 176.24785, y: 31.724613, z: 0}
-      - {x: 176.24785, y: -29.962133, z: 0}
-      - {x: 162.14803, y: -29.962133, z: 0}
+      - {x: 164.00539, y: 30.320322, z: 0}
+      - {x: 177.78734, y: 30.320322, z: 0}
+      - {x: 177.78734, y: -30.320322, z: 0}
+      - {x: 164.00539, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8480,8 +8498,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 10
-      m_width: 14.099823
-      m_height: 61.686745
+      m_width: 13.781952
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 9
         m_letter_value_inc_white_space: 10
@@ -8497,21 +8515,21 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 169.19794, y: 0.8812394, z: 0}
-      m_active_anchor_offset_upper_left: {x: 162.14803, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_center: {x: 169.19794, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_right: {x: 176.24785, y: 31.724611, z: 0}
-      m_active_anchor_offset_middle_left: {x: 162.14803, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_center: {x: 169.19794, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_right: {x: 176.24785, y: 0.8812394, z: 0}
-      m_active_anchor_offset_lower_left: {x: 162.14803, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: 169.19794, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: 176.24785, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: 170.89636, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: 164.00539, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_center: {x: 170.89636, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_right: {x: 177.78734, y: 30.320322, z: 0}
+      m_active_anchor_offset_middle_left: {x: 164.00539, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: 170.89636, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 177.78734, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: 164.00539, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: 170.89636, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: 177.78734, y: -30.320322, z: 0}
     - m_base_vertices:
-      - {x: 185.06024, y: 31.724613, z: 0}
-      - {x: 199.16006, y: 31.724613, z: 0}
-      - {x: 199.16006, y: -29.962133, z: 0}
-      - {x: 185.06024, y: -29.962133, z: 0}
+      - {x: 186.05652, y: 30.320322, z: 0}
+      - {x: 199.83849, y: 30.320322, z: 0}
+      - {x: 199.83849, y: -30.320322, z: 0}
+      - {x: 186.05652, y: -30.320322, z: 0}
       m_base_extra_vertices: []
       m_using_curved_data: 0
       m_curve_base_vertices: []
@@ -8526,8 +8544,8 @@ MonoBehaviour:
       m_visible_character: 1
       m_stub_instance: 0
       m_mesh_index: 11
-      m_width: 14.099823
-      m_height: 61.686745
+      m_width: 13.781967
+      m_height: 60.640644
       m_progression_variables:
         m_letter_value: 10
         m_letter_value_inc_white_space: 11
@@ -8543,16 +8561,16 @@ MonoBehaviour:
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
       - {r: 1, g: 1, b: 1, a: 0}
-      m_anchor_offset_middle_center: {x: 192.11015, y: 0.8812394, z: 0}
-      m_active_anchor_offset_upper_left: {x: 185.06024, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_center: {x: 192.11015, y: 31.724611, z: 0}
-      m_active_anchor_offset_upper_right: {x: 199.16006, y: 31.724611, z: 0}
-      m_active_anchor_offset_middle_left: {x: 185.06024, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_center: {x: 192.11015, y: 0.8812394, z: 0}
-      m_active_anchor_offset_middle_right: {x: 199.16006, y: 0.8812394, z: 0}
-      m_active_anchor_offset_lower_left: {x: 185.06024, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_center: {x: 192.11015, y: -29.962133, z: 0}
-      m_active_anchor_offset_lower_right: {x: 199.16006, y: -29.962133, z: 0}
+      m_anchor_offset_middle_center: {x: 192.94751, y: 0, z: 0}
+      m_active_anchor_offset_upper_left: {x: 186.05652, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_center: {x: 192.94751, y: 30.320322, z: 0}
+      m_active_anchor_offset_upper_right: {x: 199.8385, y: 30.320322, z: 0}
+      m_active_anchor_offset_middle_left: {x: 186.05652, y: 0, z: 0}
+      m_active_anchor_offset_middle_center: {x: 192.94751, y: 0, z: 0}
+      m_active_anchor_offset_middle_right: {x: 199.8385, y: 0, z: 0}
+      m_active_anchor_offset_lower_left: {x: 186.05652, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_center: {x: 192.94751, y: -30.320322, z: 0}
+      m_active_anchor_offset_lower_right: {x: 199.8385, y: -30.320322, z: 0}
     m_audio_sources: []
     m_particle_systems: []
     m_particle_effect_managers: []
@@ -8562,58 +8580,58 @@ MonoBehaviour:
     m_num_letters: 12
     m_num_extra_verts_per_letter: 0
     m_textWidths:
-    - 403.60757
+    - 402.43335
     m_textHeights:
-    - 63.449226
+    - 63.397038
     m_current_mesh_verts:
-    - {x: -204.44751, y: 31.724613, z: 0}
-    - {x: -149.81067, y: 31.724613, z: 0}
-    - {x: -149.81067, y: -31.724613, z: 0}
-    - {x: -204.44751, y: -31.724613, z: 0}
-    - {x: -148.04819, y: 15.862307, z: 0}
-    - {x: -103.98623, y: 15.862307, z: 0}
-    - {x: -103.98623, y: -31.724613, z: 0}
-    - {x: -148.04819, y: -31.724613, z: 0}
-    - {x: -102.223755, y: 31.724613, z: 0}
-    - {x: -89.8864, y: 31.724613, z: 0}
-    - {x: -89.8864, y: -29.962133, z: 0}
-    - {x: -102.223755, y: -29.962133, z: 0}
-    - {x: -84.59897, y: 31.724613, z: 0}
-    - {x: -72.26162, y: 31.724613, z: 0}
-    - {x: -72.26162, y: -29.962133, z: 0}
-    - {x: -84.59897, y: -29.962133, z: 0}
-    - {x: -68.736664, y: -28.199656, z: 0}
-    - {x: -45.82444, y: -28.199656, z: 0}
-    - {x: -45.82444, y: -28.199656, z: 0}
-    - {x: -68.736664, y: -28.199656, z: 0}
-    - {x: -42.299484, y: 31.724613, z: 0}
-    - {x: 5.2874355, y: 31.724613, z: 0}
-    - {x: 5.2874355, y: -29.962133, z: 0}
-    - {x: -42.299484, y: -29.962133, z: 0}
-    - {x: 5.2874355, y: 15.862307, z: 0}
-    - {x: 47.586918, y: 15.862307, z: 0}
-    - {x: 47.586918, y: -29.962133, z: 0}
-    - {x: 5.2874355, y: -29.962133, z: 0}
-    - {x: 47.586918, y: 15.862307, z: 0}
-    - {x: 91.64888, y: 15.862307, z: 0}
-    - {x: 91.64888, y: -31.724613, z: 0}
-    - {x: 47.586918, y: -31.724613, z: 0}
-    - {x: 93.41136, y: 15.862307, z: 0}
-    - {x: 132.18588, y: 15.862307, z: 0}
-    - {x: 132.18588, y: -29.962133, z: 0}
-    - {x: 93.41136, y: -29.962133, z: 0}
-    - {x: 133.94836, y: 29.962133, z: 0}
-    - {x: 160.38554, y: 29.962133, z: 0}
-    - {x: 160.38554, y: -31.724613, z: 0}
-    - {x: 133.94836, y: -31.724613, z: 0}
-    - {x: 162.14803, y: 31.724613, z: 0}
-    - {x: 176.24785, y: 31.724613, z: 0}
-    - {x: 176.24785, y: -29.962133, z: 0}
-    - {x: 162.14803, y: -29.962133, z: 0}
-    - {x: 185.06024, y: 31.724613, z: 0}
-    - {x: 199.16006, y: 31.724613, z: 0}
-    - {x: 199.16006, y: -29.962133, z: 0}
-    - {x: 185.06024, y: -29.962133, z: 0}
+    - {x: -202.59488, y: 31.698519, z: 0}
+    - {x: -147.46703, y: 31.698519, z: 0}
+    - {x: -147.46703, y: -31.698519, z: 0}
+    - {x: -202.59488, y: -31.698519, z: 0}
+    - {x: -144.71063, y: 15.160161, z: 0}
+    - {x: -103.36474, y: 15.160161, z: 0}
+    - {x: -103.36474, y: -31.698519, z: 0}
+    - {x: -144.71063, y: -31.698519, z: 0}
+    - {x: -99.23015, y: 30.320322, z: 0}
+    - {x: -88.204575, y: 30.320322, z: 0}
+    - {x: -88.204575, y: -30.320322, z: 0}
+    - {x: -99.23015, y: -30.320322, z: 0}
+    - {x: -81.31359, y: 30.320322, z: 0}
+    - {x: -70.28802, y: 30.320322, z: 0}
+    - {x: -70.28802, y: -30.320322, z: 0}
+    - {x: -81.31359, y: -30.320322, z: 0}
+    - {x: -66.15343, y: -28.942125, z: 0}
+    - {x: -44.102287, y: -28.942125, z: 0}
+    - {x: -44.102287, y: -28.942125, z: 0}
+    - {x: -66.15343, y: -28.942125, z: 0}
+    - {x: -39.967697, y: 30.320322, z: 0}
+    - {x: 6.8909826, y: 30.320322, z: 0}
+    - {x: 6.8909826, y: -30.320322, z: 0}
+    - {x: -39.967697, y: -30.320322, z: 0}
+    - {x: 8.269178, y: 15.160161, z: 0}
+    - {x: 50.99327, y: 15.160161, z: 0}
+    - {x: 50.99327, y: -30.320322, z: 0}
+    - {x: 8.269178, y: -30.320322, z: 0}
+    - {x: 50.99327, y: 15.160161, z: 0}
+    - {x: 92.339165, y: 15.160161, z: 0}
+    - {x: 92.339165, y: -31.698519, z: 0}
+    - {x: 50.99327, y: -31.698519, z: 0}
+    - {x: 96.473755, y: 15.160161, z: 0}
+    - {x: 135.06325, y: 15.160161, z: 0}
+    - {x: 135.06325, y: -30.320322, z: 0}
+    - {x: 96.473755, y: -30.320322, z: 0}
+    - {x: 137.81964, y: 28.942125, z: 0}
+    - {x: 161.249, y: 28.942125, z: 0}
+    - {x: 161.249, y: -31.698519, z: 0}
+    - {x: 137.81964, y: -31.698519, z: 0}
+    - {x: 164.00539, y: 30.320322, z: 0}
+    - {x: 177.78734, y: 30.320322, z: 0}
+    - {x: 177.78734, y: -30.320322, z: 0}
+    - {x: 164.00539, y: -30.320322, z: 0}
+    - {x: 186.05652, y: 30.320322, z: 0}
+    - {x: 199.83849, y: 30.320322, z: 0}
+    - {x: 199.83849, y: -30.320322, z: 0}
+    - {x: 186.05652, y: -30.320322, z: 0}
     m_current_mesh_colours:
     - {r: 1, g: 1, b: 1, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}

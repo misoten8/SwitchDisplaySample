@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f880da22caad443408d984cddb085924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstUsingDisplay: 1
+  firstUsingDisplay: 2
   _sceneCache: {fileID: 549958610}
 --- !u!114 &549958610
 MonoBehaviour:

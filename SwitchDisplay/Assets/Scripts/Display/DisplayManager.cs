@@ -54,11 +54,31 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		{ DisplayType.Menu, "MenuDisplay" }
 	};
 
+	/// <summary>
+	/// 現在表示されているディスプレイ
+	/// </summary>
 	private IDisplay _currentdisplay;
 
+	/// <summary>
+	/// 現在表示されているシーンのキャッシュ
+	/// </summary>
 	private ISceneCache _currentSceneCache;
 
-	private AsyncOperation _async = null;
+	/// <summary>
+	/// ディスプレイ切り替え中かどうか
+	/// </summary>
+	private bool _isSwitching = false;
+
+	private void Start()
+	{
+		SceneManager.sceneLoaded += (scene, mode) =>
+		{
+			DisplayType prevDisplayType = Instance._currentDisplayType;
+			Instance._currentDisplayType = _DISPLAY_MAP.First(e => e.Value == scene.name).Key;
+			// ディスプレイ切り替え処理の開始
+			StartCoroutine(SwitchEnd(prevDisplayType, scene));
+		};
+	}
 
 	/// <summary>
 	/// ディスプレイの切り替え処理
@@ -66,16 +86,14 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	/// </summary>
 	public static void SwitchDisplay(DisplayType type, ISceneCache sceneCache)
 	{
-		if (Instance._async != null)
+		if (Instance._isSwitching)
 			return;
 
 		Instance._currentSceneCache = sceneCache;
+		Instance._isSwitching = true;
 
 		// シーン遷移
-		Instance._async = SceneManager.LoadSceneAsync(_DISPLAY_MAP[type], LoadSceneMode.Additive);
-		Debug.Log(_DISPLAY_MAP[type] + " シーン読み込みを開始します");
-		SceneManager.sceneLoaded += Instance.SceneLoaded;
-		SceneManager.sceneUnloaded += Instance.SceneUnloaded;
+		Instance.StartCoroutine(Instance.SwitchBegin(type));
 	}
 
 	/// <summary>
@@ -88,34 +106,29 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		return events != null ? events : default(T);
 	}
 
-	private void SceneLoaded(Scene scene, LoadSceneMode mode)
-	{
-		DisplayType prevDisplayType = Instance._currentDisplayType;
-		Instance._currentDisplayType = _DISPLAY_MAP.First(e => e.Value == scene.name).Key;
-		// ディスプレイ切り替え処理の開始
-		StartCoroutine(SwitchDisplayScene(prevDisplayType, scene));
-		Instance._async = null;
-	}
-
-	private void SceneUnloaded(Scene scene)
-	{
-		SceneManager.sceneLoaded -= SceneLoaded;
-		SceneManager.sceneUnloaded -= SceneUnloaded;
-	}
-
-	//TODO:ディスプレイのフェード関数をコルーチンに変更する
-	// その方が視覚的に見やすい
 	/// <summary>
-	/// 別シーンのディスプレイに遷移
+	/// ディスプレイ切り替え開始処理
 	/// </summary>
-	private IEnumerator SwitchDisplayScene(DisplayType deleteDisplayType, Scene scene)
+	private IEnumerator SwitchBegin(DisplayType LoadDisplayType)
 	{
 		// 解放するディスプレイシーンのアニメーション再生
-		yield return StartCoroutine(Instance._currentdisplay?.OnSwitchFadeOut());
+		if (_currentDisplayType != DisplayType.None)
+			yield return StartCoroutine(Instance._currentdisplay?.OnSwitchFadeOut());
 
 		onFadedOut?.Invoke();
 		onFadedOut = null;
 
+		SceneManager.LoadSceneAsync(_DISPLAY_MAP[LoadDisplayType], LoadSceneMode.Additive);
+		Debug.Log(_DISPLAY_MAP[LoadDisplayType] + " シーン読み込みを開始します");
+
+		// ローディング画面を表示すると良いかも
+	}
+
+	/// <summary>
+	/// ディスプレイ切り替え終了処理
+	/// </summary>
+	private IEnumerator SwitchEnd(DisplayType deleteDisplayType, Scene scene)
+	{
 		// ディスプレイシーンの整理(このタイミングで_currentdisplay変更)
 		yield return StartCoroutine(LoadDisplayScene(scene));
 
@@ -130,17 +143,15 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 			while (asyncOp.progress < 0.9f)
 				yield return null;
 		}
-		else
-		{
-			SceneManager.sceneLoaded -= SceneLoaded;
-			SceneManager.sceneUnloaded -= SceneUnloaded;
-		}
 
 		// ディスプレイ開始アニメーションの再生
 		yield return StartCoroutine(Instance._currentdisplay.OnSwitchFadeIn());
 
 		onFadedIn?.Invoke();
 		onFadedIn = null;
+
+		// ディスプレイ切り替え終了
+		Instance._isSwitching = false;
 	}
 
 	/// <summary>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,8 +16,15 @@ public class DisplaySwitchAnim : MonoBehaviour
 		/// <summary>
 		/// 中心から外側に向かって各UIオブジェクトが移動する
 		/// </summary>
-		CircleOut
-		//SlideLeftIn...
+		CircleOut,
+		/// <summary>
+		/// 左方向で外側から中心へ各UIオブジェクトが移動する
+		/// </summary>
+		SlideLeftIn,
+		/// <summary>
+		/// 左方向で中心から外側へ各UIオブジェクトが移動する
+		/// </summary>
+		SlideLeftOut
 	}
 
 	/// <summary>
@@ -55,19 +61,36 @@ public class DisplaySwitchAnim : MonoBehaviour
 	[SerializeField]
 	private AnimType _fadeOutAnim = AnimType.None;
 
+	//TODO:アニメーションメソッドとアニメーションタイプを紐付けるマップ作成
+	/// <summary>
+	/// アニメーションメソッドとアニメーションタイプを紐付けるマップ
+	/// </summary>
+	private Dictionary<AnimType, Action<float, Vector3>> _animationMap;
+
 	/// <summary>
 	/// UIオブジェクトリスト
 	/// </summary>
 	private List<UIBase> _uiList = null;
 
+	/// <summary>
+	/// アニメーション再生経過時間
+	/// </summary>
 	private float _playingAnimElapsedTime = 0.0f;
 
+	/// <summary>
+	/// アニメーション再生時間
+	/// </summary>
 	private float _animTime = 0.0f;
+
+	/// <summary>
+	/// ディスプレイ中心座標
+	/// </summary>
+	private Vector3 _anchorPos;
 
 	/// <summary>
 	/// アニメーション再生処理
 	/// </summary>
-	private Action<float> _animPlayer;
+	private Action<float, Vector3> _animPlayer;
 
 	/// <summary>
 	/// 初期化処理
@@ -75,6 +98,12 @@ public class DisplaySwitchAnim : MonoBehaviour
 	public void OnAwake(List<UIBase> uiList)
 	{
 		_uiList = uiList;
+		_animationMap = new Dictionary<AnimType, Action<float, Vector3>>
+		{
+			{ AnimType.None, _Empty },
+			{ AnimType.SlideLeftIn, _SlideLeftIn },
+			{ AnimType.SlideLeftOut, _SlideLeftOut }
+		};
 	}
 
 	/// <summary>
@@ -82,7 +111,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	public void OnPlayFadeIn()
 	{
-		_OnPlay ();
+		_OnPlay (_fadeInAnim);
 		_animTime = _fadeInAnimTime;
 	}
 
@@ -91,9 +120,8 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	public void OnPlayFadeOut()
 	{
-		_OnPlay ();
+		_OnPlay (_fadeOutAnim);
 		_animTime = _fadeOutAnimTime;
-
 	}
 		
 	private void Update()
@@ -102,7 +130,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 			return;
 
 		_playingAnimElapsedTime += Time.deltaTime;
-		_animPlayer?.Invoke (Mathf.Min(_playingAnimElapsedTime / _animTime, 1.0f));
+		_animPlayer?.Invoke (Mathf.Min(_playingAnimElapsedTime / _animTime, 1.0f), _anchorPos);
 
 		if (_playingAnimElapsedTime > _animTime)
 			_isPlaying = false;
@@ -112,12 +140,24 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// 共通のアニメーション再生処理
 	/// </summary>
 	/// <returns>The play.</returns>
-	private void _OnPlay()
+	private void _OnPlay(AnimType animType)
 	{
 		_isPlaying = true;
 		//TODO:DoTweenを導入し、アニメーション処理を実装する
-		//処理ごとに関数化し、Action<float>型　変数に登録してUpdateで実行させる
-		_animPlayer = (rate) => {};
-		_animPlayer?.Invoke (0.0f);
+		_anchorPos = transform.localPosition;
+		_animPlayer = _animationMap[animType];
+		_animPlayer?.Invoke(0.0f, _anchorPos);
+	}
+
+	private void _Empty(float rate, Vector3 anchorPos){}
+
+	private void _SlideLeftIn(float rate, Vector3 anchorPos)
+	{
+		transform.localPosition = new Vector3(Mathf.Lerp(anchorPos.x + 2000.0f, anchorPos.x, rate), anchorPos.y, anchorPos.z);
+	}
+
+	private void _SlideLeftOut(float rate, Vector3 anchorPos)
+	{
+		transform.localPosition = new Vector3(Mathf.Lerp(anchorPos.x, anchorPos.x - 2000.0f, rate), anchorPos.y, anchorPos.z);
 	}
 }
