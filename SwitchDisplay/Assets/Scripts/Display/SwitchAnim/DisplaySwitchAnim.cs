@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,7 +64,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	[SerializeField]
 	private AnimType _fadeOutAnim = AnimType.None;
-	
+
 	/// <summary>
 	/// アニメーションメソッドとアニメーションタイプを紐付けるマップ
 	/// </summary>
@@ -149,7 +148,6 @@ public class DisplaySwitchAnim : MonoBehaviour
 	{
 		_isPlaying = true;
 		_playingAnimElapsedTime = 0.0f;
-		//TODO:DoTweenを導入し、アニメーション処理を実装する
 		_animPlayer = _animationMap[animType];
 		_animPlayer?.Invoke(0.0f, _anchorPos);
 	}
@@ -170,7 +168,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	private void _CircleOut(float rate, Vector3 anchorPos)
 	{
 		Vector3 direction, distance;
-		_uiList.ForEach(e => 
+		_uiList.ForEach(e =>
 		{
 			direction = Vector3.Normalize(e.AnchorPos - anchorPos);
 			distance = new Vector3(direction.x * (Screen.width * 3.0f), direction.y * (Screen.height * 3.0f), 0.0f);
@@ -180,11 +178,11 @@ public class DisplaySwitchAnim : MonoBehaviour
 
 	private void _SlideLeftIn(float rate, Vector3 anchorPos)
 	{
-		transform.localPosition = new Vector3(Mathf.Lerp(anchorPos.x + 2000.0f, anchorPos.x, rate), anchorPos.y, anchorPos.z);
+		transform.localPosition = Vector3.Slerp(anchorPos + new Vector3(2000.0f, 0.0f, 0.0f), anchorPos, rate);
 	}
 
 	private void _SlideLeftOut(float rate, Vector3 anchorPos)
 	{
-		transform.localPosition = new Vector3(Mathf.Lerp(anchorPos.x, anchorPos.x - 2000.0f, rate), anchorPos.y, anchorPos.z);
+		transform.localPosition = Vector3.Slerp(anchorPos, anchorPos - new Vector3(2000.0f, 0.0f, 0.0f), rate);
 	}
 }

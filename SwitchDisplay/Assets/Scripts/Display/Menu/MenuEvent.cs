@@ -1,4 +1,5 @@
-﻿using TextFx;
+﻿using UnityEngine;
+using TextFx;
 
 /// <summary>
 /// MenuEvent クラス
@@ -6,17 +7,17 @@
 /// </summary>
 public class MenuEvent : UIBase 
 {
-	private TextFxUGUI _text;
+	private TextFxUGUI _textFx;
 
 	public override void OnAwake(ISceneCache cache, IEvents displayEvents)
 	{
 		base.OnAwake(cache, displayEvents);
 		var events = displayEvents as MenuEvents;
-		_text = uiObject as TextFxUGUI;
+		_textFx = uiObject as TextFxUGUI;
 
 		if (events != null)
 		{
-			events.onCallEvent += () => _text.AnimationManager.OnStart();
+			events.onCallEvent += () => _textFx.AnimationManager.PlayAnimation();
 		}
 	}
 }

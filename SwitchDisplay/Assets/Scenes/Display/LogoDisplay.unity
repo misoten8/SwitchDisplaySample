@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb72e830e67aa48769fe7ccf88f94e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fadeInAnimTime: 1
-  _fadeOutAnimTime: 1
+  _fadeInAnimTime: 0.5
+  _fadeOutAnimTime: 0.5
   _fadeInAnim: 1
   _fadeOutAnim: 2
 --- !u!1 &301090933
