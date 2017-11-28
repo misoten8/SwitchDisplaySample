@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 /// <summary>
 /// シーン基底クラス
 /// 製作者：実川洋孝
 /// </summary>
-public class SceneBase<T> : MonoBehaviour where T : SceneBase<T>
+public abstract class SceneBase<T> : MonoBehaviour where T : SceneBase<T>
 {
 	/// <summary>
 	/// メインシーンの種類
@@ -16,6 +16,22 @@ public class SceneBase<T> : MonoBehaviour where T : SceneBase<T>
 	{
 		Title,
 		Game
+	}
+
+	/// <summary>
+	/// このオブジェクトが存在するシーン
+	/// </summary>
+	public Scene FromScene
+	{
+		get { return gameObject.scene; }
+	}
+
+	/// <summary>
+	/// 外部シーンが利用できるデータキャッシュ
+	/// </summary>
+	public abstract ISceneCache SceneCache
+	{
+		get;
 	}
 
 	/// <summary>
@@ -29,26 +45,45 @@ public class SceneBase<T> : MonoBehaviour where T : SceneBase<T>
 	};
 
 	/// <summary>
-	/// シーン切り替え時実行イベント
-	/// </summary>
-	public event Action<T> onSwitchScene;
-
-	/// <summary>
 	/// シーン生成時に最初に表示されるディスプレイ
 	/// </summary>
 	[SerializeField]
 	protected DisplayManager.DisplayType firstUsingDisplay;
 
 	/// <summary>
-	/// シーン切り替え
+	/// シーン遷移中かどうか
 	/// </summary>
-	public virtual void Switch(SceneType nextScene) { }
+	protected bool duringTransScene = false;
 
 	/// <summary>
-	/// シーン切り替え時実行イベント呼び出し
+	/// シーン切り替え
 	/// </summary>
-	protected void OnSwitchScene(T overrideThis)
+	public abstract void Switch(SceneType nextScene);
+
+	/// <summary>
+	/// 派生クラスのインスタンスを取得
+	/// </summary>
+	protected abstract T GetOverrideInstance();
+
+	/// <summary>
+	/// 非同期シーン切り替え
+	/// </summary>
+	protected IEnumerator SwitchAsync(SceneType nextScene)
 	{
-		onSwitchScene?.Invoke(overrideThis);
+		duringTransScene = true;
+
+		DisplayManager.OnSceneEnd();
+
+		// ディスプレイ解放待ち
+		while (DisplayManager.IsSwitching)
+			yield return null;
+
+		SceneManager.LoadSceneAsync(SCENE_MAP[nextScene], LoadSceneMode.Single);
+	}
+
+	private void Awake()
+	{
+		// シーン情報を渡す
+		DisplayManager.OnSceneStart(GetOverrideInstance());
 	}
 }

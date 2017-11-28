@@ -26,6 +26,15 @@ public class DisplayDebugger : MonoBehaviour
 
 	private void Start()
 	{
+		// デバッグモードかどうか
+		if(!DisplayManager.IsEmpty())
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		Debug.Log("ディスプレイデバッガー起動");
+
 		// ディスプレイ初期化処理呼び出し
 		_display?.OnAwake(_sceneCache);
 		// フェードインアニメーション再生

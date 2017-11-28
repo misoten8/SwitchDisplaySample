@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
-using System.Linq;
 using System.Collections;
 
 /// <summary>
@@ -20,6 +19,16 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	}
 
 	private DisplayType _currentDisplayType = DisplayType.None;
+
+	/// <summary>
+	/// ディスプレイ切り替え中かどうか
+	/// </summary>
+	public static bool IsSwitching
+	{
+		get { return Instance._isSwitching || Instance._switchStack != 0; }
+	}
+
+	private bool _isSwitching = false;
 
 	/// <summary>
 	/// ディスプレイの種類
@@ -47,9 +56,10 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	/// <summary>
 	/// ディスプレイタイプとシーンの紐付けマップ
 	/// </summary>
-	private static readonly Dictionary<DisplayType, string> _DISPLAY_MAP = 
+	private static readonly Dictionary<DisplayType, string> _DISPLAY_MAP =
 		new Dictionary<DisplayType, string>
 	{
+		{ DisplayType.None, "None" },
 		{ DisplayType.Logo, "LogoDisplay" },
 		{ DisplayType.Menu, "MenuDisplay" }
 	};
@@ -65,35 +75,40 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	private ISceneCache _currentSceneCache;
 
 	/// <summary>
-	/// ディスプレイ切り替え中かどうか
+	/// シーン切り替え予約数
 	/// </summary>
-	private bool _isSwitching = false;
+	private uint _switchStack = 0;
 
-	private void Start()
+	/// <summary>
+	/// シーン開始時実行イベント
+	/// </summary>
+	public static void OnSceneStart<T>(SceneBase<T> sceneBase) where T : SceneBase<T>
 	{
-		SceneManager.sceneLoaded += (scene, mode) =>
-		{
-			DisplayType prevDisplayType = Instance._currentDisplayType;
-			Instance._currentDisplayType = _DISPLAY_MAP.First(e => e.Value == scene.name).Key;
-			// ディスプレイ切り替え処理の開始
-			StartCoroutine(SwitchEnd(prevDisplayType, scene));
-		};
+		Instance._currentSceneCache = sceneBase.SceneCache;
+	}
+
+	/// <summary>
+	/// シーン遷移時実行イベント
+	/// </summary>
+	public static void OnSceneEnd()
+	{
+		// ディスプレイ解放処理
+		Switch(DisplayType.None);
 	}
 
 	/// <summary>
 	/// ディスプレイの切り替え処理
-	/// ディスプレイ遷移中に呼び出した場合、処理をスキップする
+	/// ディスプレイ遷移中に呼び出した場合、遷移後に切り替えを開始する
 	/// </summary>
-	public static void SwitchDisplay(DisplayType type, ISceneCache sceneCache)
+	public static void Switch(DisplayType type)
 	{
-		if (Instance._isSwitching)
+		if (Instance._switchStack > 0)
+		{
+			Debug.LogWarning("ディスプレイ遷移の予約は最大2つまでです");
 			return;
+		}
 
-		Instance._currentSceneCache = sceneCache;
-		Instance._isSwitching = true;
-
-		// シーン遷移
-		Instance.StartCoroutine(Instance.SwitchBegin(type));
+		Instance.StartCoroutine(Instance._SwitchDisplay(type));
 	}
 
 	/// <summary>
@@ -106,61 +121,104 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		return events != null ? events : default(T);
 	}
 
+	public static bool IsEmpty()
+	{
+		return Instance == null;
+	}
+
+	/// <summary>
+	/// ディスプレイ切替の非同期ステップ実行処理
+	/// </summary>
+	private IEnumerator _SwitchDisplay(DisplayType type)
+	{
+		_switchStack++;
+
+		// ディスプレイ切り替え待ち
+		while (_isSwitching)
+			yield return null;
+
+		// ディスプレイ切り替え開始
+		_isSwitching = true;
+
+		// ディスプレイ解放
+		yield return StartCoroutine(SwitchFadeOut(_currentDisplayType));
+
+		// ディスプレイ読み込み
+		yield return StartCoroutine(SwitchFadeIn(type));
+
+		_switchStack--;
+
+		// ディスプレイ切り替え終了
+		_isSwitching = false;
+	}
+
 	/// <summary>
 	/// ディスプレイ切り替え開始処理
 	/// </summary>
-	private IEnumerator SwitchBegin(DisplayType LoadDisplayType)
+	private IEnumerator SwitchFadeOut(DisplayType DeleteDisplayType)
 	{
+		// 解放するディスプレイが無い場合、処理を中断する
+		if (DeleteDisplayType == DisplayType.None)
+			yield break;
+
 		// 解放するディスプレイシーンのアニメーション再生
-		if (_currentDisplayType != DisplayType.None)
-			yield return StartCoroutine(Instance._currentdisplay?.OnSwitchFadeOut());
+		yield return StartCoroutine(_currentdisplay.OnSwitchFadeOut());
 
 		onFadedOut?.Invoke();
 		onFadedOut = null;
 
-		SceneManager.LoadSceneAsync(_DISPLAY_MAP[LoadDisplayType], LoadSceneMode.Additive);
-		Debug.Log(_DISPLAY_MAP[LoadDisplayType] + " シーン読み込みを開始します");
+		_currentdisplay.OnDelete();
 
-		// ローディング画面を表示すると良いかも
+		// ディスプレイシーン解放
+		AsyncOperation asyncOp = SceneManager.UnloadSceneAsync(_DISPLAY_MAP[DeleteDisplayType]);
+
+		// ディスプレイシーン解放待ち
+		while (asyncOp.progress < 0.9f)
+			yield return null;
+
+		_currentDisplayType = DisplayType.None;
 	}
 
 	/// <summary>
 	/// ディスプレイ切り替え終了処理
 	/// </summary>
-	private IEnumerator SwitchEnd(DisplayType deleteDisplayType, Scene scene)
+	private IEnumerator SwitchFadeIn(DisplayType LoadDisplayType)
 	{
+		// 読み込むディスプレイが無い場合、処理を中断する
+		if (LoadDisplayType == DisplayType.None)
+			yield break;
+
+		// ディスプレイシーン読み込み
+		AsyncOperation asyncOp = SceneManager.LoadSceneAsync(_DISPLAY_MAP[LoadDisplayType], LoadSceneMode.Additive);
+
+		// ディスプレイシーン読み込み待ち
+		while (!asyncOp.isDone)
+			yield return null;
+
 		// ディスプレイシーンの整理(このタイミングで_currentdisplay変更)
-		yield return StartCoroutine(LoadDisplayScene(scene));
-
-		if (deleteDisplayType != DisplayType.None) {
-			// 過去のディスプレイシーン解放
-			AsyncOperation asyncOp = SceneManager.UnloadSceneAsync (_DISPLAY_MAP [deleteDisplayType]);
-
-			// 過去のディスプレイシーン解放待ち
-			while (asyncOp.progress < 0.9f)
-				yield return null;
-		}
+		yield return StartCoroutine(FindDisplayAndCleanUpScene(SceneManager.GetSceneByName(_DISPLAY_MAP[LoadDisplayType])));
 
 		// ディスプレイの初期化
-		Instance._currentdisplay.OnAwake(Instance._currentSceneCache);
+		_currentdisplay.OnAwake(_currentSceneCache);
 
 		// ディスプレイ開始アニメーションの再生
-		yield return StartCoroutine(Instance._currentdisplay.OnSwitchFadeIn());
+		yield return StartCoroutine(_currentdisplay.OnSwitchFadeIn());
 
 		onFadedIn?.Invoke();
 		onFadedIn = null;
 
-		// ディスプレイ切り替え終了
-		Instance._isSwitching = false;
+		_currentDisplayType = LoadDisplayType;
 	}
 
 	/// <summary>
 	/// ディスプレイシーン内の不要なオブジェクトを全て消去し、ディスプレイクラスを取得する
 	/// </summary>
-	private IEnumerator LoadDisplayScene(Scene scene)
+	private IEnumerator FindDisplayAndCleanUpScene(Scene scene)
 	{
 		// ルートオブジェクト取得
 		GameObject[] goList = scene.GetRootGameObjects();
+		//TODO:IsNullOrEmpty作成
+		//プロジェクト結合時にUtilityクラスにコレクション型のIsNullOrEmptyメソッドを拡張メソッド形式で作成する
 		if (goList == null)
 		{
 			yield break;
@@ -171,12 +229,12 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		}
 
 		DisplayBase display;
-		
+
 		// ディスプレイオブジェクト取得処理
 		foreach (var go in goList)
 		{
 			display = go.GetComponentInChildren<DisplayBase>();
-			
+
 			// displayを含んでいる場合(goがCanvas)
 			if (display != null)
 			{
