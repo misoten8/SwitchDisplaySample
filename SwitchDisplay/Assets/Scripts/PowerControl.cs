@@ -8,7 +8,7 @@ public class PowerControl : MonoBehaviour {
     [SerializeField]
     int No = 1;
 
-    public Image UIobj;
+    public Slider UIobj;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +19,7 @@ public class PowerControl : MonoBehaviour {
 	void Update () {
         
         //UIobj = GetComponent<Image>();
-        UIobj.fillAmount = DisplayManager.GetPlayerPower(No);
+        UIobj.value = DisplayManager.GetPlayerPower(No);
 
 
     }

@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityScript.Lang;
 
+
+
+
+using UnityEditor;
+using UnityEngine;
+
+
 /// <summary>
 /// DisplayManager クラス
 /// 製作者：実川
@@ -99,81 +106,97 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	}
 
 
-
-
+    //勢力図関係ココカラ///////////////////////////////////////////////////////////////////////////////////////////
     [SerializeField]
-    static  float Player1Power = 0.0f;
+    static float Player1Power = 1.0f;
     [SerializeField]
-    static  float Player2Power = 0.0f;
+    static float Player2Power = 2.0f;
     [SerializeField]
-    static  float Player3Power = 0.1f;
+    static float Player3Power = 3.0f;
     [SerializeField]
-    static float Player4Power = 0.01f;
-
-    public static float GetPlayerPower(int No )
+    static float Player4Power = 4.0f;
+    /// <summary>
+    /// 勢力図ゲージの表示計算
+    /// </summary>
+    /// <param name="No">Noはプレイヤーの番号を入れる</param>
+    /// <returns></returns>
+    public static float GetPlayerPower( int No )
     {
-        float AllPower = Player1Power + Player2Power + Player3Power + Player4Power;
-        float[] Power = { Player1Power , Player2Power , Player3Power , Player4Power};
+        float AllPower =   Player1Power + Player2Power + Player3Power + Player4Power;
+        float[] Power  = { Player1Power , Player2Power , Player3Power , Player4Power };
+        if ( AllPower > 0.0f ) Power[ No - 1 ] = Power[ No - 1 ] / AllPower;
+        return Power[No-1];
+    }
 
-        //if (AllPower != 0.0f)
-        //{
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        Power[i] = Power[i] / AllPower;
-        //    }
-        //}
-        //Power[2] = Power[2] / AllPower;
-        //Power[3] = Power[3] / AllPower;
-        if (AllPower != 0.0f)
+    //任意のプレイヤーのスコアを増やす
+    //public void AddScore(int No, float Value = 0.01f)
+    //{
+    //    switch (No)
+    //    {
+    //        case 1:
+    //            Player1Power += Value;
+    //            break;
+    //        case 2:
+    //            Player2Power += Value;
+    //            break;
+    //        case 3:
+    //            Player3Power += Value;
+    //            break;
+    //        default:
+    //            Player4Power += Value;
+    //            break;
+    //    }
+    //}
+
+    //Inspector上にボタンを作る
+    [CustomEditor(typeof(DisplayManager))]//拡張するクラスを指定
+    public class DisplayManagerEditor : Editor
+    {
+
+        /// <summary>
+        /// InspectorのGUIを更新
+        /// </summary>
+        public override void OnInspectorGUI()
         {
-            for (int i = 0; i < 4; i++)
+            //元のInspector部分を表示
+            base.OnInspectorGUI();
+
+            //ボタンを表示
+            if (GUILayout.Button("Player1PowerUp"))
             {
-                if (Power[i] > 0.0f)
-                {
-                    Power[i] = Power[i] / AllPower;
-                }
+                Player1Power += 1.0f;
             }
-        }
+            if (GUILayout.Button("Player2PowerUp"))
+            {
+                Player2Power += 1.0f;
+            }
+            if (GUILayout.Button("Player3PowerUp"))
+            {
+                Player3Power += 1.0f;
+            }
+            if (GUILayout.Button("Player4PowerUp"))
+            {
+                Player4Power += 1.0f;
+            }
 
-
-
-
-
-        switch (No)
-        {
-            case 1:
-                return Power[0];
-            case 2:
-                return (Power[0] + Power[1]);
-            case 3:
-                return (Power[0] + Power[1] + Power[2]);
-            default:
-                return (Power[0] + Power[1] + Power[2] + Power[3]);
         }
     }
+    //勢力図関係ココマデ//////////////////////////////////////////////////////////////////////////////////////////
 
 
-    public static void AddScore([SerializeField] int No, [SerializeField] float Value = 0.01f)
+
+
+
+    //コントローラーの角度関係ココカラ//////////////////////////////////////////////////////////////////////////////////////////
+    static float ControllerAngle;
+
+    public static float GetControllerAngle()
     {
-        switch (No)
-        {
-            case 1:
-                Player1Power += Value;
-                break;
-            case 2:
-                Player2Power += Value;
-                break;
-            case 3:
-                Player3Power += Value;
-                break;
-            default:
-                Player4Power += Value;
-                break;
-        }
+        return ControllerAngle;
     }
+    //コントローラーの角度関係ココマデ//////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-
-    }
+}
