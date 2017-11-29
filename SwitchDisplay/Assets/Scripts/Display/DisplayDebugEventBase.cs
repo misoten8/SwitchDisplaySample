@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// DisplayDebugEventBase クラス
-/// 製作者：実川
+/// デバッグ用ディスプレイイベント呼び出しクラス
 /// </summary>
 public abstract class DisplayDebugEventBase : MonoBehaviour 
 {

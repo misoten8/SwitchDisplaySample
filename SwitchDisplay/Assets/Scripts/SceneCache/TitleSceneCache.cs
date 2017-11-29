@@ -1,6 +1,5 @@
 ﻿/// <summary>
-/// TitleSceneCache クラス
-/// 製作者：実川
+/// (サンプル)タイトルシーンのキャッシュデータ
 /// </summary>
 public class TitleSceneCache : SceneCacheBase, ISceneCache
 {

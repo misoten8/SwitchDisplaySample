@@ -1,6 +1,5 @@
 ﻿/// <summary>
-/// GameSceneCache クラス
-/// 製作者：実川
+/// (サンプル)ゲームシーンのキャッシュデータ
 /// </summary>
 public class GameSceneCache : SceneCacheBase, ISceneCache
 {

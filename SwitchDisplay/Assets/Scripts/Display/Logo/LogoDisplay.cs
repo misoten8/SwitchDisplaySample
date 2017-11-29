@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 
 /// <summary>
-/// LogoDisplay クラス
-/// 製作者：実川
+/// (サンプル)ロゴディスプレイクラス
 /// </summary>
 public class LogoDisplay : DisplayBase
 {

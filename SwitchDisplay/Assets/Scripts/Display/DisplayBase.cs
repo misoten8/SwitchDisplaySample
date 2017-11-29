@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
 /// ディスプレイ基底クラス
-/// 製作者：実川
 /// </summary>
 [RequireComponent(typeof(DisplaySwitchAnim))]
 public abstract class DisplayBase : MonoBehaviour, IDisplay

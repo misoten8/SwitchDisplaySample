@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 /// <summary>
 /// UIオブジェクトのスクリプト制御クラス
-/// 製作者：実川
 /// </summary>
 [DisallowMultipleComponent]
 public class UIBase : MonoBehaviour

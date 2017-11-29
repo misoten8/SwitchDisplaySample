@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 /// <summary>
-/// MenuDisplay クラス
-/// 製作者：実川
+/// (サンプル)メニューディスプレイクラス
 /// </summary>
 public class MenuDisplay : DisplayBase
 {

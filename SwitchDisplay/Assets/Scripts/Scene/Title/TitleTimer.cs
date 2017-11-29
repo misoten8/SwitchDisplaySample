@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// (サンプル)タイマー
+/// </summary>
 public class TitleTimer : MonoBehaviour 
 {
 	/// <summary>

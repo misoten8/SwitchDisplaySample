@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-using TextFx;
+﻿using TextFx;
 
 /// <summary>
-/// MenuEvent クラス
-/// 製作者：実川
+/// (サンプル)イベント呼び出しによって動く、テキストUIクラス
 /// </summary>
 public class MenuEvent : UIBase 
 {

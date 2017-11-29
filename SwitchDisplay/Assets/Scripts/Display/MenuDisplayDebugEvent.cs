@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// MenuDisplayDebugEvent クラス
-/// 製作者：実川
+/// (サンプル)メニューディスプレイのデバッグ用イベント呼び出しクラス
 /// </summary>
 public class MenuDisplayDebugEvent : DisplayDebugEventBase 
 {

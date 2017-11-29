@@ -5,7 +5,6 @@ using System.Collections;
 
 /// <summary>
 /// シーン基底クラス
-/// 製作者：実川洋孝
 /// </summary>
 public abstract class SceneBase<T> : MonoBehaviour where T : SceneBase<T>
 {

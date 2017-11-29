@@ -4,9 +4,10 @@ using System.Collections.Generic;
 
 /// <summary>
 /// ディスプレイ単体駆動補助クラス
-/// ディスプレイシーン単体でのテストはこのクラスを使用してください
-/// 製作者：実川
 /// </summary>
+/// <remarks>
+/// ディスプレイシーン単体でのテストはこのクラスを使用してください
+/// </remarks>
 public class DisplayDebugger : MonoBehaviour
 {
 	/// <summary>

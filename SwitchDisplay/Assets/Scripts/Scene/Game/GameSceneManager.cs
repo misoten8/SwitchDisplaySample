@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// GameSceneManager クラス
-/// 製作者：実川
+/// (サンプル)ゲームシーン管理クラス
 /// </summary>
 [RequireComponent(typeof(GameSceneCache))]
 public class GameSceneManager : SceneBase<GameSceneManager>

@@ -5,9 +5,12 @@ using System;
 using System.Collections;
 
 /// <summary>
-/// DisplayManager クラス
-/// 製作者：実川
+/// ディスプレイ管理クラス
 /// </summary>
+/// <remarks>
+/// ディスプレイの切り替え及び、ディスプレイのイベントの取得はこのクラスを参照してください
+/// シーンクラスに一部処理を依存しています
+/// </remarks>
 public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 {
 	/// <summary>

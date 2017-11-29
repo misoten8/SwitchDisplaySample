@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Collections;
+﻿using System.Collections;
 
 /// <summary>
-/// DisplayBase インターフェイス
-/// 製作者：実川
+/// ディスプレイインターフェイス
 /// </summary>
 public interface IDisplay
 {

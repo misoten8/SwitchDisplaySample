@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// TitleScene クラス
-/// 製作者：実川
+/// (サンプル)タイトルシーン管理クラス
 /// </summary>
 [RequireComponent(typeof(TitleSceneCache))]
 public class TitleSceneManager : SceneBase<TitleSceneManager>

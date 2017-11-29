@@ -2,7 +2,7 @@
 using TMPro;
 
 /// <summary>
-/// メニュータイマー
+/// (サンプル)メニュータイマー
 /// </summary>
 public class MenuTimer : UIBase
 {

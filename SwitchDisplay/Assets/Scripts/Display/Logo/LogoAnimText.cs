@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using TMPro;
-using TextFx;
+﻿using TextFx;
 
+/// <summary>
+/// (サンプル)イベント呼び出しによって動く、テキストUIクラス
+/// </summary>
 public class LogoAnimText : UIBase
 {
 	private TextFxUGUI _text;

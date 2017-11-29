@@ -1,8 +1,7 @@
 ﻿using System;
 
 /// <summary>
-/// メニューディスプレイのUIオブジェクト呼び出しイベントクラス
-/// 製作者：実川
+/// (サンプル)メニューディスプレイのUIオブジェクト呼び出しイベントクラス
 /// </summary>
 public class MenuEvents : EventsBase 
 {
