@@ -43,7 +43,7 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	/// <summary>
 	/// ディスプレイ切り替えアニメーション
 	/// </summary>
-	[SerializeField, HideInInspector]
+	[SerializeField]
 	protected DisplaySwitchAnim switchAnim;
 
 	/// <summary>
@@ -53,7 +53,7 @@ public abstract class DisplayBase : MonoBehaviour, IDisplay
 	{
 		gameObject.SetActive(true);
 		// キャッシュを各UIオブジェクトに渡す(イベントクラスは渡さない)
-		uiList.ForEach(e => e.OnAwake(cache, null));
+		uiList.ForEach(e => e?.OnAwake(cache, null));
 		isCallOnAwake = true;
 		switchAnim.OnAwake (uiList);
 	}

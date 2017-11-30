@@ -17,8 +17,8 @@ public class ContllolerDisp : MonoBehaviour {
 	void Update () {
         float z;
         
-        z = DisplayManager.GetControllerAngle();
-        this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, z);
+        //z = DisplayManager.GetControllerAngle();
+        //this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, z);
 
     }
 }

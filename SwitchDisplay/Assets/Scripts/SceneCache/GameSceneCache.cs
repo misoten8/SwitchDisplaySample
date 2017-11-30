@@ -3,4 +3,7 @@
 /// </summary>
 public class GameSceneCache : SceneCacheBase, ISceneCache
 {
+    public PowerControl powercontrol;
+
+
 }

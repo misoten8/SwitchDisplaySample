@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -100,7 +101,7 @@ public class DisplaySwitchAnim : MonoBehaviour
 	/// </summary>
 	public void OnAwake(List<UIBase> uiList)
 	{
-		_uiList = uiList;
+		_uiList = uiList.Where(e => e != null).ToList();
 		_animationMap = new Dictionary<AnimType, Action<float, Vector3>>
 		{
 			{ AnimType.None, _Empty },
