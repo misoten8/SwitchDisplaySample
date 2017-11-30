@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DisplayBase" Collapsed="true">
+    <Position X="3.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQAAAAAAAIBgAAAIAAAIAAIAAAASAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\DisplayBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DisplayDebugEventBase" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\DisplayDebugEventBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayDebugger" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAQAAAAAAAAAAAACAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\DisplayDebugger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayManager" Collapsed="true">
+    <Position X="7" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBJAAgQAAAAAIABAACAgAAgAEAAEIAACAAATAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Display\DisplayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogoAnimText" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQIAAAAAAAAAAAAAAhAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Logo\LogoAnimText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogoDisplay" Collapsed="true">
+    <Position X="2" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Logo\LogoDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuDisplay" Collapsed="true">
+    <Position X="4.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAQAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Menu\MenuDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuEvent" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Menu\MenuEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuEvents" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Menu\MenuEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuTimer" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQIAAAAAAAAAAAAAAhIAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\Menu\MenuTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuDisplayDebugEvent" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\MenuDisplayDebugEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplaySwitchAnim" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQIAgCAQQAAAAkACiAAQAACAAAAAAgACAlCA=</HashCode>
+      <FileName>Assets\Scripts\Display\SwitchAnim\DisplaySwitchAnim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIBase" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAgAAAAIAAAAhAAAAAAAAAAgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Display\UIBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventsBase" Collapsed="true">
+    <Position X="10" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Events\EventsBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameSceneManager" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAIAAAQAAAAAAAAAQAAAAAACAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\Game\GameSceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneBase&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABIAAAAAEoAAAAAAQAABAAAAAIAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Scene\SceneBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitleSceneManager" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAIAAAQAAAAAAAAAQAAAAAACAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\Title\TitleSceneManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitleTimer" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Scene\Title\TitleTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameSceneCache" Collapsed="true">
+    <Position X="2" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneCache\GameSceneCache.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SceneCacheBase" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneCache\SceneCacheBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TitleSceneCache" Collapsed="true">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneCache\TitleSceneCache.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ScriptDebug" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utility\ScriptDebug.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SingletonMonoBehaviour&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Utility\SingletonMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IDisplay" Collapsed="true">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQAAAAAAAIAgAAAAAAAAAAAAAAASAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Display\IDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IEvents" Collapsed="true">
+    <Position X="15.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Events\IEvents.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ISceneCache" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneCache\ISceneCache.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

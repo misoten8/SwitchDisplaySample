@@ -1,35 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// シングルトン実装クラス
-/// 製作者：実川
+/// </summary>
+/// <remarks>
 /// 使用時の注意点
 /// シングルトン継承クラスにAwakeを実装すると、継承先の方が先に呼ばれるためAwakeを使用しないでください。
 /// また、シングルトン継承クラス内で呼び出し順を設定する必要がある場合、Unityのインスペクターから直接Awakeの呼び出し順を設定してください
-/// </summary>
+/// </remarks>
 public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
 {
-    static protected T instance = null;
+	/// <summary>
+	/// 継承クラスのインスタンス
+	/// </summary>
+    public static T Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    private static T _instance = null;
+
     void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = (T)this;
+            _instance = (T)this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
-        }
-    }
-
-    public static T Instance
-    {
-        get
-        {
-            return instance;
         }
     }
 }
