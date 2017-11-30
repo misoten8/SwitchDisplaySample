@@ -8,11 +8,11 @@ using System;
 public class MoveIventManager : MonoBehaviour {
 
     [SerializeField]
-    public GameObject Textmeshpro;
-    [SerializeField]
     private Transform ParentCanvas;
     [SerializeField]
-    public GameObject Ivent;
+    public GameObject NewsBackGround;
+    [SerializeField]
+    public GameObject Textmeshpro;
 
     //public Action onHoge;
 
@@ -37,7 +37,7 @@ public class MoveIventManager : MonoBehaviour {
     //{
     //    Instantiate.
     //}
-    public void Textcreate()
+    public void Textcreate(GameObject parent)
     {
         //Textmeshpro. = InputText.text;
         GameObject instance;
@@ -45,7 +45,7 @@ public class MoveIventManager : MonoBehaviour {
 
         //component.Cull( rect , true);
         //生成,親子付け
-        instance = Instantiate(Textmeshpro, ParentCanvas);
+        instance  = Instantiate(Textmeshpro, ParentCanvas);
         component = instance.GetComponent<TextMeshProUGUI>();
         //instance.transform.position.Set(ParentCanvas.position.x * 2.0f, ParentCanvas.position.y * 1.6f, ParentCanvas.position.z);
         //component.transform.position = new Vector3(ParentCanvas.position.x * 2.0f, ParentCanvas.position.y * 2.6f, ParentCanvas.position.z);
@@ -60,17 +60,19 @@ public class MoveIventManager : MonoBehaviour {
         ////サイズ変更
         //RectTransform textRect = instance.GetComponent<RectTransform>();
         //textRect.sizeDelta = new Vector2((fontsize - 2.0f) * len, fontsize);
+        instance.transform.position = new Vector3(parent.transform.position.x + 100, parent.transform.position.y, parent.transform.position.z);
     }
 
 
     public void IventCreate()
     {
-        //Textmeshpro. = InputText.text;
+       //Textmeshpro. = InputText.text;
        // GameObject instance;
        // TextMeshProUGUI component;
-
-        Instantiate(Ivent);
-        //component = instance.GetComponent<TextMeshProUGUI>();
+       GameObject image;
+       image = Instantiate( NewsBackGround , ParentCanvas);
+       Textcreate(image);
+       //component = instance.GetComponent<TextMeshProUGUI>();
 
     }
 
