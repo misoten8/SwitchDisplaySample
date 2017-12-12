@@ -43,8 +43,9 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 		/// </summary>
 		None,
 		Logo,
-		Menu
-	}
+		Menu,
+        Move
+    }
 
 	/// <summary>
 	/// フェードインアニメーション終了時実行イベント
@@ -61,11 +62,12 @@ public class DisplayManager : SingletonMonoBehaviour<DisplayManager>
 	/// </summary>
 	private static readonly Dictionary<DisplayType, string> _DISPLAY_MAP =
 		new Dictionary<DisplayType, string>
-	{
-		{ DisplayType.None, "None" },
-		{ DisplayType.Logo, "LogoDisplay" },
-		{ DisplayType.Menu, "MenuDisplay" }
-	};
+    {
+        { DisplayType.None, "None" },
+        { DisplayType.Logo, "LogoDisplay" },
+        { DisplayType.Menu, "MenuDisplay" },
+        { DisplayType.Move, "MoveDisplay" }
+    };
 
 	/// <summary>
 	/// 現在表示されているディスプレイ

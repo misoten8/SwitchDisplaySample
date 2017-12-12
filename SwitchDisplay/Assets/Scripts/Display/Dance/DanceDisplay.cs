@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-public class MoveDisplay : DisplayBase {
+public class DanceDisplay : DisplayBase {
 
     public override IEvents DisplayEvents
     {
@@ -10,7 +10,7 @@ public class MoveDisplay : DisplayBase {
     /// <summary>
     /// UIオブジェクト呼び出しイベントクラス
     /// </summary>
-    public MoveEvents _events = new MoveEvents();
+    public DanceEvents _events = new DanceEvents();
 
     public override void OnAwake(ISceneCache cache)
     {

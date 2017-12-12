@@ -17,11 +17,6 @@ public class GameSceneManager : SceneBase<GameSceneManager>
 	[SerializeField]
 	GameSceneCache _sceneCache;
 
-	void Start () 
-	{
-		DisplayManager.Switch(firstUsingDisplay);
-	}
-
 	/// <summary>
 	/// シーン切り替え
 	/// </summary>
@@ -41,6 +36,11 @@ public class GameSceneManager : SceneBase<GameSceneManager>
 		return this;
 	}
 
+	void Start () 
+	{
+		DisplayManager.Switch(firstUsingDisplay);
+	}
+
 	// デバッグ用
 #if UNITY_EDITOR
 	private void OnGUI()
@@ -52,7 +52,10 @@ public class GameSceneManager : SceneBase<GameSceneManager>
 				case DisplayManager.DisplayType.None:
 					DisplayManager.Switch(DisplayManager.DisplayType.None);
 					break;
-				default:
+                case DisplayManager.DisplayType.Move:
+                    DisplayManager.Switch(DisplayManager.DisplayType.Move);
+                    break;
+                default:
 					break;
 			}
 		}

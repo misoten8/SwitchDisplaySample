@@ -8,18 +8,12 @@ using UnityEngine.UI;
 /// </summary>
 public class MovePowerControl : UIBase
 {
-    private GameObject _text;
     private GameSceneCache _cache;
     private float _drawValue;
-
-
 
     [SerializeField]
     int No = 1;
     public Slider UIobj;
-
-
-
 
     public override void OnAwake(ISceneCache cache, IEvents displayEvents)
     {
